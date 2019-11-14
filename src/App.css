@@ -9,7 +9,7 @@
 }
 
 .App-Footer img {
-  margin-left: 10px;
+  margin-left: 5px;
   position: absolute;
   height: 20px;
 }
@@ -34,9 +34,27 @@
   margin-bottom: 10px;
 }
 
+.Expansion {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.Expansion img {
+  margin-right: 20px;
+}
+
+.Expansion p, span {
+  clear: both;
+  width: 100%;
+}
+
 .Qualification-Icon {
   height: 50px;
   float: left;
+}
+
+.Header-Icon {
+  height: 50px;
 }
 
 .Container {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, Paper, IconButton } from '@material-ui/core';
+import { Grid, Typography, Paper, IconButton, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core';
 import McsaIcon from '../images/mcsa.png';
 import DevWebIcon from '../images/devweb.png';
 import DevMvcIcon from '../images/devmvc.png';
@@ -10,7 +10,12 @@ import PadiOwdIcon from '../images/padiowd.png';
 import BcsIcon from '../images/bcs.png';
 import NvqIcon from '../images/nvq-logo.png';
 import RyaIcon from '../images/rya.gif';
+import NetCoreIcon from "../images/.netcore.png";
+import GcpIcon from "../images/gcp.png";
+import KubeIcon from "../images/kubernetes.png";
+import DhIcon from "../images/dunnhumby.jpg";
 import '../App.css';
+import { ExpandMore } from '@material-ui/icons';
 
 const HomePage: React.FC = () => {
   return (
@@ -94,12 +99,21 @@ const HomePage: React.FC = () => {
           </Grid>
           <Grid item md={12} xs={12}>
             <Typography variant='h4' className='Courier-Typography'>Latest Project</Typography>
-            <Paper className='Paper'>
-              <Typography variant='h6'>Some project</Typography>
-              <Typography variant='body1'>
-                I have been a software developer for twenty years now and have worked thirteen of those years as a freelance developer specializing in building enterprise web applications. The main technology stack is based around Microsoft .NET (Including .NET Core & ASP.NET MVC/WebAPI), JavaScript, TypeScript, React and Node. I have extensive knowledge of cloud technologies and architectures mainly on the Microsoft Azure platform and recently with Google’s Cloud Platform.
-              </Typography>
-            </Paper>
+            <ExpansionPanel className='Expansion' expanded>
+                <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                    <img src={DhIcon} className="Header-Icon"/>
+                    <img src={NetCoreIcon} className='Qualification-Icon' />
+                    <img src={GcpIcon} className='Qualification-Icon' />
+                    <img src={KubeIcon} className='Qualification-Icon' />
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography variant="body1">
+                        <Typography variant="caption">July 2019 - November 2019</Typography><br />
+                        This project was helping to rebuild from scratch, Dunnhumby's core data science platform with modern technologies such as .NET Core, Google Cloud Platform, Docker, Kubernetes and React.
+                        My role as a senior software engineer was to design and develop some middle tier and backend services utilising .NET Core. The services hooked into GCP PubSub messaging queues and a PostgresSQL database.
+                    </Typography>
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
           </Grid>
         </Grid>
       </Grid>

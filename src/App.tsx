@@ -8,7 +8,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import TechnologyPage from "./pages/TechnologyPage";
+import SoftwarePage from "./pages/SoftwarePage";
 import HomePage from "./pages/HomePage";
 import PhysicsPage from "./pages/PhysicsPage";
 import FlyingPage from "./pages/FlyingPage";
@@ -31,8 +31,8 @@ const App: React.FC = () => {
               <Route exact path="/" render={
                 (props) => <HomePage />
               } />
-              <Route exact path="/tech" render={
-                (props) => <TechnologyPage />
+              <Route exact path="/software" render={
+                (props) => <SoftwarePage />
               } />
               <Route exact path="/physics" render={
                 (props) => <PhysicsPage />
