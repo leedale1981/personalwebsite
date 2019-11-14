@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -8,15 +8,58 @@
   pointer-events: none;
 }
 
+.Me-Avatar {
+  margin: 15px;
+  width: 140px !important;
+  height: 140px !important;
+}
+
+.Courier-Typography {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace !important;
+    
+}
+
+.Nav-Button {
+  height: 70px;
+  float: left;
+  clear: both;
+}
+
+.Paper {
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.Qualification-Icon {
+  height: 50px;
+  float: left;
+}
+
+.Main-Container {
+  margin: 50px;
+  width: 100%;
+}
+
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color:black;
+  margin-left: 200px;
+}
+
+.App-header img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color:black;
 }
 
 .App-link {
