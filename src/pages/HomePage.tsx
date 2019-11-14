@@ -12,7 +12,7 @@ import NvqIcon from '../images/nvq-logo.png';
 import RyaIcon from '../images/rya.gif';
 import '../App.css';
 
-const MainContent: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
     <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='row'>
       <Grid item md={7} xs={12}>
@@ -107,4 +107,4 @@ const MainContent: React.FC = () => {
   );
 }
 
-export default MainContent;
+export default HomePage;
