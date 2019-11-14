@@ -9,6 +9,7 @@ import OuIcon from '../images/ou.png';
 import PadiOwdIcon from '../images/padiowd.png';
 import BcsIcon from '../images/bcs.png';
 import NvqIcon from '../images/nvq-logo.png';
+import RyaIcon from '../images/rya.gif';
 import '../App.css';
 
 const MainContent: React.FC = () => {
@@ -67,7 +68,7 @@ const MainContent: React.FC = () => {
             I’m am training to get my private pilots licence at North Weald Flight Training. I currently have about 23 hours logged as pilot under training and have completed 5 out of 9 ground exams.
           </Typography>
           <IconButton style={{ backgroundColor: 'transparent' }}>
-            <img src={CaaIcon} className='Qualification-Icon'/>
+            <img src={RyaIcon} className='Qualification-Icon'/>
           </IconButton>
         </Paper>
         <Paper className='Paper'>

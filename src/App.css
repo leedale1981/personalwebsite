@@ -8,6 +8,12 @@
   pointer-events: none;
 }
 
+.App-Footer img {
+  margin-left: 10px;
+  position: absolute;
+  height: 20px;
+}
+
 .Me-Avatar {
   margin: 15px;
   width: 140px !important;
@@ -15,9 +21,7 @@
 }
 
 .Courier-Typography {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace !important;
-    
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace !important;
 }
 
 .Nav-Button {
@@ -37,7 +41,7 @@
   float: left;
 }
 
-.Main-Container {
+.Container {
   margin: 50px;
   width: 100%;
 }
@@ -50,7 +54,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color:black;
-  margin-left: 200px;
+
 }
 
 .App-header img {
