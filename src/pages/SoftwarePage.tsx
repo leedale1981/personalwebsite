@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid, Typography, Paper, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, IconButton } from '@material-ui/core';
+import { Grid, Typography, Paper, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core';
 import DhIcon from "../images/dunnhumby.jpg";
 import { ExpandMore } from "@material-ui/icons";
 import NetCoreIcon from "../images/.netcore.png";
@@ -10,6 +10,8 @@ import ReactIcon from "../images/react.png";
 import AzureIcon from "../images/azure.png";
 import TsIcon from "../images/typescript.png";
 import NodeIcon from "../images/node.png";
+import GamingIcon from "../images/gaming.png";
+import { Link } from "react-router-dom";
 
 const SoftwarePage: React.FC = () => {
 
@@ -62,12 +64,13 @@ const SoftwarePage: React.FC = () => {
                         </Paper>
                     </Grid>
                     <Grid item md={12} xs={12}>
-                        <Typography variant='h4' className='Courier-Typography'>Recommendations</Typography>
+                        <Typography variant='h4' className='Courier-Typography'>Games</Typography>
                         <Paper className='Paper'>
-                        <Typography variant='h6'>Some project</Typography>
-                        <Typography variant='body1'>
-                            I have been a software developer for twenty years now and have worked thirteen of those years as a freelance developer specializing in building enterprise web applications. The main technology stack is based around Microsoft .NET (Including .NET Core & ASP.NET MVC/WebAPI), JavaScript, TypeScript, React and Node. I have extensive knowledge of cloud technologies and architectures mainly on the Microsoft Azure platform and recently with Google’s Cloud Platform.
-                        </Typography>
+                        <img src={GamingIcon} className="Qualification-Icon"/>
+                        <Typography variant='h6'>SpaceBlaster</Typography>
+                        <Link to={"/spaceblaster"}>
+                            <Typography variant='h4'>Play Me</Typography>
+                        </Link>
                         </Paper>
                     </Grid>
                 </Grid>
