@@ -14,6 +14,7 @@ import PhysicsPage from "./pages/PhysicsPage";
 import FlyingPage from "./pages/FlyingPage";
 import SailingPage from "./pages/SailingPage";
 import DivingPage from "./pages/DivingPage";
+import SpaceBlasterPage from "./pages/SpaceBlasterPage";
 
 const App: React.FC = () => {
   return (
@@ -45,6 +46,9 @@ const App: React.FC = () => {
               } />
               <Route exact path="/diving" render={
                 (props) => <DivingPage />
+              } />
+              <Route exact path="/spaceblaster" render={
+                (props) => <SpaceBlasterPage />
               } />
             </Switch>
           </Container>

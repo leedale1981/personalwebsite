@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Grid, Typography, Paper, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core';
+import { Grid, Typography, Paper, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Icon } from '@material-ui/core';
+import { PlayArrow, SportsEsports } from "@material-ui/icons";
 import DhIcon from "../images/dunnhumby.jpg";
 import { ExpandMore } from "@material-ui/icons";
 import NetCoreIcon from "../images/.netcore.png";
@@ -11,6 +12,7 @@ import AzureIcon from "../images/azure.png";
 import TsIcon from "../images/typescript.png";
 import NodeIcon from "../images/node.png";
 import GamingIcon from "../images/gaming.png";
+import SbIcon from "../images/spaceblaster.jpg";
 import { Link } from "react-router-dom";
 
 const SoftwarePage: React.FC = () => {
@@ -65,13 +67,21 @@ const SoftwarePage: React.FC = () => {
                     </Grid>
                     <Grid item md={12} xs={12}>
                         <Typography variant='h4' className='Courier-Typography'>Games</Typography>
-                        <Paper className='Paper'>
-                        <img src={GamingIcon} className="Qualification-Icon"/>
-                        <Typography variant='h6'>SpaceBlaster</Typography>
-                        <Link to={"/spaceblaster"}>
-                            <Typography variant='h4'>Play Me</Typography>
-                        </Link>
-                        </Paper>
+                        <ExpansionPanel className='Expansion' expanded>
+                            <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                                <Link to={"/spaceblaster"}>
+                                    <img src={SbIcon} className="Game-Icon"/>
+                                    <img src={GamingIcon} className="Game-Icon"/>
+                                    <PlayArrow fontSize="large" />
+                                </Link>
+                            </ExpansionPanelSummary>
+                            <ExpansionPanelDetails>
+                                <Typography variant="body1">
+                                    An open source Shoot em up game created with TypeScript. Game is still a work in progress but you can still see what I've done so far!<br /><br />
+                                    View the source at <a href="https://github.com/leedale1981/SpaceBlaster">https://github.com/leedale1981/SpaceBlaster</a>
+                                </Typography>
+                            </ExpansionPanelDetails>
+                        </ExpansionPanel>
                     </Grid>
                 </Grid>
             </Grid>

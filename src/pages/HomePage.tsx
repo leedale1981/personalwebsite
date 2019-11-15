@@ -14,8 +14,11 @@ import NetCoreIcon from "../images/.netcore.png";
 import GcpIcon from "../images/gcp.png";
 import KubeIcon from "../images/kubernetes.png";
 import DhIcon from "../images/dunnhumby.jpg";
+import GamingIcon from "../images/gaming.png";
+import SbIcon from "../images/spaceblaster.jpg";
 import '../App.css';
-import { ExpandMore } from '@material-ui/icons';
+import { Link } from "react-router-dom";
+import { ExpandMore, PlayArrow } from '@material-ui/icons';
 
 const HomePage: React.FC = () => {
   return (
@@ -114,6 +117,24 @@ const HomePage: React.FC = () => {
                     </Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
+          </Grid>
+          <Grid item md={12} xs={12}>
+              <Typography variant='h4' className='Courier-Typography'>Games</Typography>
+              <ExpansionPanel className='Expansion' expanded>
+                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                      <Link to={"/spaceblaster"}>
+                          <img src={SbIcon} className="Game-Icon"/>
+                          <img src={GamingIcon} className="Game-Icon"/>
+                          <PlayArrow fontSize="large" />
+                      </Link>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+                      <Typography variant="body1">
+                          An open source Shoot em up game created with TypeScript. Game is still a work in progress but you can still see what I've done so far!<br /><br />
+                          View the source at <a href="https://github.com/leedale1981/SpaceBlaster">https://github.com/leedale1981/SpaceBlaster</a>
+                      </Typography>
+                  </ExpansionPanelDetails>
+              </ExpansionPanel>
           </Grid>
         </Grid>
       </Grid>

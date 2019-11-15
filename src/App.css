@@ -57,6 +57,11 @@
   height: 50px;
 }
 
+.Game-Icon {
+  clear: both;
+  height: 50px;
+}
+
 .Container {
   margin: 50px;
   width: 100%;
@@ -69,6 +74,17 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color:black;
+}
+
+.Space-Blaster-Frame {
+  width: 1040px;
+  height: 1135px;
+  border: none;
+}
+
+.Space-Blaster-Container {
+  text-align: center;
+  width: 1040px;
 }
 
 .App-header a {
