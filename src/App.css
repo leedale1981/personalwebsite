@@ -67,6 +67,11 @@
   width: 100%;
 }
 
+.Social-Links {
+  width: 38px;
+  float: left;
+}
+
 .App-header {
   display: flex;
   flex-direction: column;

@@ -51,7 +51,7 @@ const HomePage: React.FC = () => {
         <Paper className='Paper'>
           <Typography variant='h6'>Education</Typography>
           <Typography variant='body1'>
-            I am working towards a BSc (Hons) degree with the Open University. The degree is an open degree and has been split between computing and physics. I am currently doing modules SM358 The Quantum World and TM352 Web, mobile and cloud technologies. 
+            I am working towards a BSc (Hons) degree part time with the Open University. The degree is an open degree and has been split between computing and physics. I am currently doing modules SM358 The Quantum World and TM352 Web, mobile and cloud technologies. 
             I also have an NVQ in Business Administration
           </Typography>
           <IconButton style={{ backgroundColor: 'transparent' }}>
@@ -64,8 +64,12 @@ const HomePage: React.FC = () => {
         <Paper className='Paper'>
           <Typography variant='h6'>Flying</Typography>
           <Typography variant='body1'>
-            I’m am training to get my private pilots licence at North Weald Flight Training. I currently have about 23 hours logged as pilot under training and have completed 5 out of 9 ground exams.
+            I enjoy flying small aircraft when I get the time and I'm currently training to get my private pilots licence at North Weald Flight Training. I have about 23 hours logged at the moment as a pilot under training and looking to go solo for the first time soon!
           </Typography>
+          <br /><br />
+          <Link to={"/flying"}>
+            <Typography variant='body1'>Take a look at the flying section for photos and videos.</Typography>
+          </Link>
           <IconButton style={{ backgroundColor: 'transparent' }}>
             <img src={CaaIcon} className='Qualification-Icon'/>
           </IconButton>
@@ -73,7 +77,11 @@ const HomePage: React.FC = () => {
         <Paper className='Paper'>
           <Typography variant='h6'>Sailing</Typography>
           <Typography variant='body1'>
-            I’m am training to get my private pilots licence at North Weald Flight Training. I currently have about 23 hours logged as pilot under training and have completed 5 out of 9 ground exams.
+            My plan in the next few years is to purchase a yacht and sail around the world for a few years with my wife. We are both working our way through the RYA certifications so we can gain as much experience as possible before we set off.
+            <br /><br />
+            <Link to={"/flying"}>
+              <Typography variant='body1'>Visit the sailing section for updates and photos of our journey.</Typography>
+            </Link>
           </Typography>
           <IconButton style={{ backgroundColor: 'transparent' }}>
             <img src={RyaIcon} className='Qualification-Icon'/>
@@ -82,7 +90,11 @@ const HomePage: React.FC = () => {
         <Paper className='Paper'>
           <Typography variant='h6'>Diving</Typography>
           <Typography variant='body1'>
-            I have been a software developer for twenty years now and have worked thirteen of those years as a freelance developer specializing in building enterprise web applications. The main technology stack is based around Microsoft .NET (Including .NET Core & ASP.NET MVC/WebAPI), JavaScript, TypeScript, React and Node. I have extensive knowledge of cloud technologies and architectures mainly on the Microsoft Azure platform and recently with Google’s Cloud Platform.
+            I have recently qualified as a PADI certified Open Water Diver and plan to do more diving in the future.
+            <br /><br />
+            <Link to={"/flying"}>
+              <Typography variant='body1'>Check out the diving section for updates to our diving journey.</Typography>
+            </Link>
           </Typography>
           <IconButton style={{ backgroundColor: 'transparent' }}>
             <img src={PadiOwdIcon} className='Qualification-Icon' />
@@ -114,6 +126,10 @@ const HomePage: React.FC = () => {
                         <Typography variant="caption">July 2019 - November 2019</Typography><br />
                         This project was helping to rebuild from scratch, Dunnhumby's core data science platform with modern technologies such as .NET Core, Google Cloud Platform, Docker, Kubernetes and React.
                         My role as a senior software engineer was to design and develop some middle tier and backend services utilising .NET Core. The services hooked into GCP PubSub messaging queues and a PostgresSQL database.
+                        <br /><br />
+                        <Link to={"/software"}>
+                          <Typography variant='body1'>View more projects</Typography>
+                        </Link>
                     </Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>

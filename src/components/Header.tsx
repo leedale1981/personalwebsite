@@ -6,6 +6,7 @@ import TechIcon from "../images/macbook.png";
 import ScienceIcon from "../images/science.png";
 import ScubaIcon from "../images/mask.png";
 import BoatIcon from "../images/boat.png";
+import { Instagram, LinkedIn, Twitter, GitHub } from '@material-ui/icons';
 import { Link } from "react-router-dom";
 import "../App.css";
 
@@ -17,6 +18,10 @@ const Header: React.FC = () => {
       </Grid>
       <Grid item md={2} xs={6} alignContent='flex-start' alignItems='flex-start'>
         <Typography variant='h4' className='Courier-Typography'>Lee Dale</Typography>
+        <a href="https://www.instagram.com/its.a.dales.life/" target="_blank" className="Social-Links"><Instagram /></a>
+        <a href="https://www.linkedin.com/in/leedale/" target="_blank" className="Social-Links"><LinkedIn /></a>
+        <a href="https://twitter.com/leejdale" target="_blank" className="Social-Links"><Twitter /></a>
+        <a href="https://github.com/leedale1981" target="_blank" className="Social-Links"><GitHub /></a>
       </Grid>
       <Grid item md={8} xs={12}>
         <Grid container spacing={0} direction='row'>
