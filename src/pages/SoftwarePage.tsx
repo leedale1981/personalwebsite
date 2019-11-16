@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Grid, Typography, Paper, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Icon } from '@material-ui/core';
-import { PlayArrow, SportsEsports } from "@material-ui/icons";
+import { PlayArrow } from "@material-ui/icons";
 import DhIcon from "../images/dunnhumby.jpg";
 import { ExpandMore } from "@material-ui/icons";
 import NetCoreIcon from "../images/.netcore.png";
