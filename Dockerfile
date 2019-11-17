@@ -11,10 +11,12 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json /app/package.json
 RUN npm install --silent
 RUN npm install react-scripts@3.0.1 -g --silent
-RUN npm install serve -g --silent
-RUN npm run build
 
 COPY . ./
+
+RUN npm -g config set user root
+RUN npm install serve -g --silent
+RUN npm run build
 
 # start app
 CMD ["serve", "-s", "build" "-l", "80"]
