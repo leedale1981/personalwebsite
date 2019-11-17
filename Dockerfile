@@ -18,7 +18,5 @@ RUN npm -g config set user root
 RUN npm install serve -g --silent
 RUN npm run build
 
-EXPOSE 80
-
 # start app
-CMD ["serve", "-s", "build" "-l", "43384"]
+CMD ["npm", "start"]
