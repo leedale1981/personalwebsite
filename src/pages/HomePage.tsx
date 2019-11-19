@@ -1,5 +1,7 @@
-import React from 'react';
-import { Grid, Typography, Paper, IconButton, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core';
+import React, { useState } from 'react';
+import '../App.css';
+import { Grid, Typography, Paper, IconButton, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Fade, Collapse } from '@material-ui/core';
+import BcIcon from "../images/blockchain.png";
 import McsaIcon from '../images/mcsa.png';
 import DevWebIcon from '../images/devweb.png';
 import DevMvcIcon from '../images/devmvc.png';
@@ -16,22 +18,51 @@ import KubeIcon from "../images/kubernetes.png";
 import DhIcon from "../images/dunnhumby.jpg";
 import GamingIcon from "../images/gaming.png";
 import SbIcon from "../images/spaceblaster.jpg";
-import '../App.css';
 import { Link } from "react-router-dom";
-import { ExpandMore, PlayArrow } from '@material-ui/icons';
+import { ExpandMore, PlayArrow, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 
 const HomePage: React.FC = () => {
+  const [projectExpanded, setProjectExpanded] = useState("");
+  const [gamesExpanded, setGamesExpanded] = useState("");
+  const [articleExpanded, setArticleExpanded] = useState("");
+  const [moreAboutMeExpanded, setMoreAboutMeExpanded] = useState(false);
+
+  const handleExpansionChange = (panel: string) => (event: any, newExpanded: boolean) => {
+    switch (panel) {
+      case "projectPanel":
+        setProjectExpanded(newExpanded ? panel : "");
+        break;
+      case "gamesPanel":
+        setGamesExpanded(newExpanded ? panel : "");
+        break;
+      case "articlePanel":
+          setArticleExpanded(newExpanded ? panel : "");
+          break;
+    }
+  };
+
+  const handleLinkExpandClick = (panel: string) => {
+    switch (panel) {
+      case "moreAboutMe":
+        setMoreAboutMeExpanded(!moreAboutMeExpanded);
+        break;
+    }
+  }
+
   return (
     <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='row'>
       <Grid item md={7} xs={12}>
-        <Typography variant='h4' className='Courier-Typography'>About me</Typography>
-        <Paper className='Paper'>
+        <Typography variant='h5' className='Courier-Typography'>About me</Typography>
+        <Paper className='Paper' style={{minHeight: 370}}>
           <Typography variant='h6'>Career</Typography>
           <Typography variant='body1'>
-            I have been a software developer for twenty years now and have worked thirteen of those years as a freelance developer specializing in building enterprise web applications. The main technology stack is based around Microsoft .NET (Including .NET Core & ASP.NET MVC/WebAPI), JavaScript, TypeScript, React and Node. I have extensive knowledge of cloud technologies and architectures mainly on the Microsoft Azure platform and recently with Google’s Cloud Platform.
+            I am a software developer who has been writing software professionally for the last twenty years. I have worked thirteen of those years as a freelance developer specialising in building enterprise web applications for various clients in many different industries. 
+            <br /><br />
+            My main technology stack is based around Microsoft .NET (Including .NET Core & ASP.NET MVC/WebAPI), JavaScript, TypeScript, React and Node. I have extensive knowledge of cloud technologies and architectures mainly on the Microsoft Azure platform and recently with Google’s Cloud Platform.
             <br /><br />
             I try to focus on building clean, testable code that not only delivers on my clients requirements but leaves them with a simple maintainable code base.
           </Typography>
+          <br />
           <IconButton style={{ backgroundColor: 'transparent' }}>
             <img src={McsaIcon} className='Qualification-Icon' />
           </IconButton>
@@ -48,73 +79,98 @@ const HomePage: React.FC = () => {
             <img src={BcsIcon} className='Qualification-Icon' />
           </IconButton>
         </Paper>
-        <Paper className='Paper'>
-          <Typography variant='h6'>Education</Typography>
-          <Typography variant='body1'>
-            I am working towards a BSc (Hons) degree part time with the Open University. The degree is an open degree and has been split between computing and physics. I am currently doing modules SM358 The Quantum World and TM352 Web, mobile and cloud technologies. 
-            I also have an NVQ in Business Administration
+        <IconButton 
+          disableRipple disableTouchRipple style={{ backgroundColor: 'transparent' }}
+          onClick={() => handleLinkExpandClick("moreAboutMe")}>
+          <Typography variant="h5" className='Courier-Typography'>
+            {(moreAboutMeExpanded) ? "Less about me": "More about me" }
           </Typography>
-          <IconButton style={{ backgroundColor: 'transparent' }}>
-            <img src={OuIcon} className='Qualification-Icon' />
-          </IconButton>
-          <IconButton style={{ backgroundColor: 'transparent' }}>
-            <img src={NvqIcon} className='Qualification-Icon' />
-          </IconButton>
-        </Paper>
-        <Paper className='Paper'>
-          <Typography variant='h6'>Flying</Typography>
-          <Typography variant='body1'>
-            I enjoy flying small aircraft when I get the time and I'm currently training to get my private pilots licence at North Weald Flight Training. I have about 23 hours logged at the moment as a pilot under training and looking to go solo for the first time soon!
-          </Typography>
-          <br /><br />
-          <Link to={"/flying"}>
-            <Typography variant='body1'>Take a look at the flying section for photos and videos.</Typography>
-          </Link>
-          <IconButton style={{ backgroundColor: 'transparent' }}>
-            <img src={CaaIcon} className='Qualification-Icon'/>
-          </IconButton>
-        </Paper>
-        <Paper className='Paper'>
-          <Typography variant='h6'>Sailing</Typography>
-          <Typography variant='body1'>
-            My plan in the next few years is to purchase a yacht and sail around the world for a few years with my wife. We are both working our way through the RYA certifications so we can gain as much experience as possible before we set off.
+          {(moreAboutMeExpanded) ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
+        </IconButton>
+        <Collapse in={moreAboutMeExpanded}>
+          <Paper className='Paper'>
+            <Typography variant='h6'>Education</Typography>
+            <Typography variant='body1'>
+              I am working towards a BSc (Hons) degree part time with the Open University. The degree is an open degree and has been split between computing and physics. I am currently doing modules SM358 The Quantum World and TM352 Web, mobile and cloud technologies. 
+              I also have an NVQ in Business Administration
+            </Typography>
+            <IconButton style={{ backgroundColor: 'transparent' }}>
+              <img src={OuIcon} className='Qualification-Icon' />
+            </IconButton>
+            <IconButton style={{ backgroundColor: 'transparent' }}>
+              <img src={NvqIcon} className='Qualification-Icon' />
+            </IconButton>
+          </Paper>
+        </Collapse>
+        <Collapse in={moreAboutMeExpanded}>
+          <Paper className='Paper'>
+            <Typography variant='h6'>Flying</Typography>
+            <Typography variant='body1'>
+              I enjoy flying small aircraft in my free time and I'm currently training to get my private pilots licence at North Weald Flight Training. I have about 23 hours logged at the moment as a pilot under training and looking to go solo for the first time soon!
+            </Typography>
             <br /><br />
             <Link to={"/flying"}>
-              <Typography variant='body1'>Visit the sailing section for updates and photos of our journey.</Typography>
+              <Typography variant='body1'>If your interested in following my progress in flying then check out the flying section.</Typography>
             </Link>
-          </Typography>
-          <IconButton style={{ backgroundColor: 'transparent' }}>
-            <img src={RyaIcon} className='Qualification-Icon'/>
-          </IconButton>
-        </Paper>
-        <Paper className='Paper'>
-          <Typography variant='h6'>Diving</Typography>
-          <Typography variant='body1'>
-            I have recently qualified as a PADI certified Open Water Diver and plan to do more diving in the future.
-            <br /><br />
-            <Link to={"/flying"}>
-              <Typography variant='body1'>Check out the diving section for updates to our diving journey.</Typography>
-            </Link>
-          </Typography>
-          <IconButton style={{ backgroundColor: 'transparent' }}>
-            <img src={PadiOwdIcon} className='Qualification-Icon' />
-          </IconButton>
-        </Paper>
+            <IconButton style={{ backgroundColor: 'transparent' }}>
+              <img src={CaaIcon} className='Qualification-Icon'/>
+            </IconButton>
+          </Paper>
+        </Collapse>
+        <Collapse in={moreAboutMeExpanded}>
+          <Paper className='Paper'>
+            <Typography variant='h6'>Sailing</Typography>
+            <Typography variant='body1'>
+              My plan in the next few years is to purchase a yacht and sail around the world with my wife (and dogs). We are both working our way through the RYA certifications so we can gain as much experience as possible before we set off.
+              <br /><br />
+              <Link to={"/flying"}>
+                <Typography variant='body1'>Visit the sailing section for updates and photos of our journey.</Typography>
+              </Link>
+            </Typography>
+            <IconButton style={{ backgroundColor: 'transparent' }}>
+              <img src={RyaIcon} className='Qualification-Icon'/>
+            </IconButton>
+          </Paper>
+        </Collapse>
+        <Collapse in={moreAboutMeExpanded}>
+          <Paper className='Paper'>
+            <Typography variant='h6'>Diving</Typography>
+            <Typography variant='body1'>
+              I have recently qualified as a PADI certified Open Water Diver and plan to do more diving in the future. Hoepfully working towards the Master Scuba Diver qualification.
+              <br /><br />
+              <Link to={"/flying"}>
+                <Typography variant='body1'>Check out the diving section for updates on my diving progress.</Typography>
+              </Link>
+            </Typography>
+            <IconButton style={{ backgroundColor: 'transparent' }}>
+              <img src={PadiOwdIcon} className='Qualification-Icon' />
+            </IconButton>
+          </Paper>
+        </Collapse>
       </Grid>
       <Grid item md={5} xs={12}>
         <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='column'>
           <Grid item md={12} xs={12}>
-            <Typography variant='h4' className='Courier-Typography'>Latest Article</Typography>
-            <Paper className='Paper'>
-              <Typography variant='h6'>Some article</Typography>
-              <Typography variant='body1'>
-                I have been a software developer for twenty years now and have worked thirteen of those years as a freelance developer specializing in building enterprise web applications. The main technology stack is based around Microsoft .NET (Including .NET Core & ASP.NET MVC/WebAPI), JavaScript, TypeScript, React and Node. I have extensive knowledge of cloud technologies and architectures mainly on the Microsoft Azure platform and recently with Google’s Cloud Platform.
-              </Typography>
-            </Paper>
+            <Typography variant='h5' className='Courier-Typography'>Latest Article</Typography>
+            <ExpansionPanel className='Expansion' expanded={articleExpanded === 'articlePanel'} onChange={handleExpansionChange('articlePanel')}>
+                <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                    <img src={BcIcon} className="Header-Icon"/>
+                    <Typography variant="h6" style={{lineHeight: 2.3}}>The blockchain, what is it?</Typography>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography variant="body1">
+                        Lately I've been reading and taking an interest in the technology known as the blockchain. In this article I attempt to outline and explain in broad terms what the blockchain is and how it has the potential to change society in a number of ways.
+                        <br /><br />
+                        <Link to={"/tech/articles/blockchain-what-is-it"}>
+                          <Typography variant='body1'>Read the whole article</Typography>
+                        </Link>
+                    </Typography>
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
           </Grid>
           <Grid item md={12} xs={12}>
-            <Typography variant='h4' className='Courier-Typography'>Latest Project</Typography>
-            <ExpansionPanel className='Expansion' expanded>
+            <Typography variant='h5' className='Courier-Typography'>Latest Project</Typography>
+            <ExpansionPanel className='Expansion' expanded={projectExpanded === 'projectPanel'} onChange={handleExpansionChange('projectPanel')}>
                 <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <img src={DhIcon} className="Header-Icon"/>
                     <img src={NetCoreIcon} className='Qualification-Icon' />
@@ -135,8 +191,8 @@ const HomePage: React.FC = () => {
             </ExpansionPanel>
           </Grid>
           <Grid item md={12} xs={12}>
-              <Typography variant='h4' className='Courier-Typography'>Games</Typography>
-              <ExpansionPanel className='Expansion' expanded>
+              <Typography variant='h5' className='Courier-Typography'>Games</Typography>
+              <ExpansionPanel className='Expansion' expanded={gamesExpanded === 'gamesPanel'} onChange={handleExpansionChange('gamesPanel')}>
                   <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                       <Link to={"/spaceblaster"}>
                           <img src={SbIcon} className="Game-Icon"/>

@@ -15,6 +15,7 @@ import FlyingPage from "./pages/FlyingPage";
 import SailingPage from "./pages/SailingPage";
 import DivingPage from "./pages/DivingPage";
 import SpaceBlasterPage from "./pages/SpaceBlasterPage";
+import ArticlesRouter from "./components/ArticlesRouter";
 
 const App: React.FC = () => {
   return (
@@ -50,6 +51,7 @@ const App: React.FC = () => {
               <Route exact path="/spaceblaster" render={
                 (props) => <SpaceBlasterPage />
               } />
+              <ArticlesRouter />
             </Switch>
           </Container>
           <Divider />

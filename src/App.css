@@ -34,9 +34,40 @@
   margin-bottom: 10px;
 }
 
-.Expansion {
+.Article {
+  padding: 50px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.Article p {
+  margin-bottom: 20px;
+  clear: both;
+}
+
+.Article h6 {
+  margin-bottom: 20px;
+}
+
+.Article img {
+  height: 150px;
+  float: left;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+.Article-Tags {
+  width: 100%;
+}
+
+.Article-Tags div {
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.Expansion {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .Expansion img {
@@ -49,12 +80,12 @@
 }
 
 .Qualification-Icon {
-  height: 50px;
+  height: 40px;
   float: left;
 }
 
 .Header-Icon {
-  height: 50px;
+  height: 40px;
 }
 
 .Game-Icon {
@@ -93,12 +124,16 @@
 }
 
 .App-header a {
-  text-decoration: none;
-  display: block;
   text-align: center;
+  display: block;
 }
 
-.App-header a:visited {
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
   color: black;
 }
 
