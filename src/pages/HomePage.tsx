@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css';
 import { Grid, Typography, Paper, IconButton, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Fade, Collapse } from '@material-ui/core';
-import BcIcon from "../images/blockchain.png";
+import FpIcon from "../images/factorydesignpattern.png";
 import McsaIcon from '../images/mcsa.png';
 import DevWebIcon from '../images/devweb.png';
 import DevMvcIcon from '../images/devmvc.png';
@@ -154,14 +154,14 @@ const HomePage: React.FC = () => {
             <Typography variant='h5' className='Courier-Typography'>Latest Article</Typography>
             <ExpansionPanel className='Expansion' expanded={articleExpanded === 'articlePanel'} onChange={handleExpansionChange('articlePanel')}>
                 <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                    <img src={BcIcon} className="Header-Icon"/>
-                    <Typography variant="h6" style={{lineHeight: 2.3}}>The blockchain, what is it?</Typography>
+                    <img src={FpIcon} className="Header-Icon"/>
+                    <Typography variant="body2" style={{lineHeight: 3}}>How to use the Factory Design Pattern with C#.</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography variant="body1">
-                        Lately I've been reading and taking an interest in the technology known as the blockchain. In this article I attempt to outline and explain in broad terms what the blockchain is and how it has the potential to change society in a number of ways.
+                        The factory method is a design pattern that can be used in your .NET projects to support dependency injection and therefore testable classes while also keeping your components decoupled from external dependencies.
                         <br /><br />
-                        <Link to={"/tech/articles/blockchain-what-is-it"}>
+                        <Link to={"/tech/articles/factory-method-design-pattern-csharp"}>
                           <Typography variant='body1'>Read the whole article</Typography>
                         </Link>
                     </Typography>
