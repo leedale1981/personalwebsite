@@ -15,6 +15,7 @@ import NodeIcon from "../images/node.png";
 import GamingIcon from "../images/gaming.png";
 import SbIcon from "../images/spaceblaster.jpg";
 import BcIcon from "../images/blockchain.png";
+import FpIcon from "../images/factorydesignpattern.png";
 import AlIcon from "../images/alexa.png";
 import { Link } from "react-router-dom";
 
@@ -25,6 +26,7 @@ const SoftwarePage: React.FC = () => {
     const [gamesExpanded, setGamesExpanded] = useState("gamesPanel");
     const [blockchainExpanded, setBlockchainExpanded] = useState("");
     const [alexaskillExpanded, setAlexaskillExpanded] = useState("");
+    const [factoryPatternExpanded, setFactoryPatternExpanded] = useState("");
     const [moreProjectsExpanded, setMoreProjectsExpanded] = useState(false);
 
     const handleExpansionChange = (panel: string) => (event: any, newExpanded: boolean) => {
@@ -46,6 +48,9 @@ const SoftwarePage: React.FC = () => {
             break;
         case "alexaskillPanel":
             setAlexaskillExpanded(newExpanded ? panel : "");
+            break;
+        case "factoryPatternPanel":
+            setFactoryPatternExpanded(newExpanded ? panel : "");
             break;
       }
     };
@@ -123,6 +128,21 @@ const SoftwarePage: React.FC = () => {
                 <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='column'>
                     <Grid item md={12} xs={12}>
                         <Typography variant='h5' className='Courier-Typography'>Articles</Typography>
+                        <ExpansionPanel className='Expansion' expanded={factoryPatternExpanded === 'factoryPatternPanel'} onChange={handleExpansionChange('factoryPatternPanel')}>
+                            <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                                <img src={FpIcon} className="Header-Icon"/>
+                                <Typography variant="body2" style={{lineHeight: 3}}>How to use the Factory Design Pattern with C#.</Typography>
+                            </ExpansionPanelSummary>
+                            <ExpansionPanelDetails>
+                                <Typography variant="body1">
+                                    The factory method is a design pattern that can be used in your .NET projects to support dependency injection and therefore testable classes while also keeping your components decoupled from external dependencies.
+                                    <br /><br />
+                                    <Link to={"/tech/articles/factory-method-design-pattern-csharp"}>
+                                    <Typography variant='body1'>Read the whole article</Typography>
+                                    </Link>
+                                </Typography>
+                            </ExpansionPanelDetails>
+                        </ExpansionPanel>
                         <ExpansionPanel className='Expansion' expanded={blockchainExpanded === 'blockchainPanel'} onChange={handleExpansionChange('blockchainPanel')}>
                             <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                                 <img src={BcIcon} className="Header-Icon"/>
