@@ -18,6 +18,7 @@ import FpIcon from "../images/factorydesignpattern.png";
 import AlIcon from "../images/alexa.png";
 import McsaIcon from '../images/mcsa.png';
 import BcsIcon from '../images/bcs.png';
+import IntroCyberIcon from '../images/introcyber.png';
 import ltIcon from '../images/learningtree-cert.png';
 import wordIcon from '../images/word.png';
 import { Link } from "react-router-dom";
@@ -100,17 +101,28 @@ const SoftwarePage: React.FC = () => {
                         <img src={MedalIcon} className="Header-Icon" alt="Certifications"/>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
-                        <IconButton style={{ backgroundColor: 'transparent' }}>
-                            <Tooltip title='MCSA Web Applications'>
-                                <img src={McsaIcon} className='Qualification-Icon-Large' alt="MCSA Web Applications" />
-                            </Tooltip>
-                            <Tooltip title='Foundation Certificate in Systems Development'>
-                                <img src={BcsIcon} className='Qualification-Icon-Large' alt="Foundation Certificate in Systems Development" />
-                            </Tooltip>
-                            <Tooltip title='Visual Basic 6 Enterprise Development Certified Professional'>
-                                <img src={ltIcon} className='Qualification-Icon-Large' alt="Visual Basic 6 Enterprise Development Certified Professional" />
-                            </Tooltip>
-                        </IconButton>
+                        <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
+                            <Grid item md={4} sm={6} xs={12}>
+                                <Tooltip title='MCSA Web Applications'>
+                                    <img src={McsaIcon} className='Qualification-Icon-Large' alt="MCSA Web Applications" />
+                                </Tooltip>
+                            </Grid>
+                            <Grid item md={4} sm={6} xs={12}>
+                                <Tooltip title='Foundation Certificate in Systems Development'>
+                                    <img src={BcsIcon} className='Qualification-Icon-Large' alt="Foundation Certificate in Systems Development" />
+                                </Tooltip>
+                            </Grid>
+                            <Grid item md={4} sm={6} xs={12}>
+                                <Tooltip title='Introduction to Cyber Security'>
+                                    <img src={IntroCyberIcon} className='Qualification-Icon-Large' alt="Introduction to Cyber Security" />
+                                </Tooltip>
+                            </Grid>
+                            <Grid item md={4} sm={6} xs={12}>
+                                <Tooltip title='Visual Basic 6 Enterprise Development Certified Professional'>
+                                    <img src={ltIcon} className='Qualification-Icon-Large' alt="Visual Basic 6 Enterprise Development Certified Professional" />
+                                </Tooltip>
+                            </Grid>
+                        </Grid>
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
             </Grid>
