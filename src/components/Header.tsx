@@ -26,10 +26,10 @@ const Header: React.FC = () => {
       <Grid item md={8} xs={12}>
         <Grid container spacing={0} direction='row'>
           <Grid item md={2} sm={4} xs={6}>
-            <Link to={"/software"}>
+            <Link to={"/technology"}>
               <Icon>
                 <img src={TechIcon} className='Nav-Button' />
-                <Typography variant='h6' className='Courier-Typography'>Software</Typography>
+                <Typography variant='h6' className='Courier-Typography'>Technology</Typography>
               </Icon>
             </Link>
           </Grid>

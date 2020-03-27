@@ -84,8 +84,19 @@
   float: left;
 }
 
+.Qualification-Icon-Large {
+  height: 150px;
+  float: left;
+}
+
 .Header-Icon {
   height: 40px;
+}
+
+.Link-Icon {
+  height: 80px;
+  float: left;
+  padding-bottom: 20px;
 }
 
 .Game-Icon {

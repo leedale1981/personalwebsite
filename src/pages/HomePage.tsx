@@ -3,9 +3,6 @@ import '../App.css';
 import { Grid, Typography, Paper, IconButton, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Fade, Collapse } from '@material-ui/core';
 import FpIcon from "../images/factorydesignpattern.png";
 import McsaIcon from '../images/mcsa.png';
-import DevWebIcon from '../images/devweb.png';
-import DevMvcIcon from '../images/devmvc.png';
-import Html5Icon from '../images/html5.png';
 import CaaIcon from '../images/caa.gif';
 import OuIcon from '../images/ou.png';
 import PadiOwdIcon from '../images/padiowd.png';
@@ -65,15 +62,6 @@ const HomePage: React.FC = () => {
           <br />
           <IconButton style={{ backgroundColor: 'transparent' }}>
             <img src={McsaIcon} className='Qualification-Icon' />
-          </IconButton>
-          <IconButton style={{ backgroundColor: 'transparent' }}>
-            <img src={DevWebIcon} className='Qualification-Icon' />
-          </IconButton>
-          <IconButton style={{ backgroundColor: 'transparent' }}>
-            <img src={DevMvcIcon} className='Qualification-Icon' />
-          </IconButton>
-          <IconButton style={{ backgroundColor: 'transparent' }}>
-            <img src={Html5Icon} className='Qualification-Icon' />
           </IconButton>
           <IconButton style={{ backgroundColor: 'transparent' }}>
             <img src={BcsIcon} className='Qualification-Icon' />

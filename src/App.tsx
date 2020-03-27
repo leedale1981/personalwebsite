@@ -29,7 +29,7 @@ const App: React.FC = () => {
               <Route exact path="/" render={
                 (props) => <HomePage />
               } />
-              <Route exact path="/software" render={
+              <Route exact path="/technology" render={
                 (props) => <SoftwarePage />
               } />
               <Route exact path="/physics" render={
