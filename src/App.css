@@ -70,6 +70,10 @@
   margin-bottom: 20px;
 }
 
+.Expansion-Details {
+  display: block !important;
+}
+
 .Expansion img {
   margin-right: 20px;
 }
@@ -84,9 +88,18 @@
   float: left;
 }
 
-.Qualification-Icon-Large {
-  height: 150px;
-  float: left;
+@media only screen and (max-width: 599px) {
+  .Qualification-Icon-Large {
+    height: 100px;
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .Qualification-Icon-Large {
+    height: 150px;
+    float: left;
+  }
 }
 
 .Header-Icon {

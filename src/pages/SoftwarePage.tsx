@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Typography, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, IconButton, Tooltip } from '@material-ui/core';
+import { Grid, Typography, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Tooltip, Hidden } from '@material-ui/core';
 import { PlayArrow, ExpandMore } from "@material-ui/icons";
 import DhIcon from "../images/dunnhumby.jpg";
 import NetCoreIcon from "../images/.netcore.png";
@@ -64,28 +64,56 @@ const SoftwarePage: React.FC = () => {
                 <Typography variant='h5' className='Courier-Typography'>Recent Projects</Typography>
                 <ExpansionPanel className='Expansion' expanded={ofqualExpanded === 'ofqualPanel'} onChange={handleExpansionChange('ofqualPanel')}>
                     <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                        <img src={OfqualIcon} className="Header-Icon"  alt="Ofqual"/>
-                        <img src={ReactIcon} className='Qualification-Icon'  alt="React" />
-                        <img src={NetCoreIcon} className='Qualification-Icon' alt=".NET Core" />
-                        <img src={AzureIcon} className='Qualification-Icon'  alt="Azure" />
-                        <img src={TsIcon} className='Qualification-Icon'  alt="Typescript" />
-                        <img src={NodeIcon} className='Qualification-Icon'  alt="Node" />
+                    <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
+                        <Grid item md={3}>
+                            <img src={OfqualIcon} className="Header-Icon"  alt="Ofqual"/>
+                        </Grid>
+                        <Hidden xsDown>
+                            <Grid item md={2}>
+                                <img src={ReactIcon} className='Qualification-Icon'  alt="React" />
+                            </Grid>
+                            <Grid item md={1}>
+                                <img src={NetCoreIcon} className='Qualification-Icon' alt=".NET Core" />
+                            </Grid>
+                            <Grid item md={2}>
+                                <img src={AzureIcon} className='Qualification-Icon'  alt="Azure" />
+                            </Grid>
+                            <Grid item md={2}>
+                                <img src={TsIcon} className='Qualification-Icon'  alt="Typescript" />
+                            </Grid>
+                            <Grid item md={1}>
+                                <img src={NodeIcon} className='Qualification-Icon'  alt="Node" />
+                            </Grid>
+                        </Hidden>
+                    </Grid>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <Typography variant="body1">
                             <Typography variant="caption">June 2018 - July 2019</Typography><br />
-                            My role at Ofqual as a senior web developer was to design and build from scratch a fully working single page web application that would allow Ofqual to manage awarding organisations across England and Wales and to handle their accreditation process.
-                            React was choosen for the front end applicatyion and Node was used to build out the backend API. The application was hosted on the Micrtosoft Azure Cloud and services like CosmosDB, Azure AD and Azure Search were utilised within the application.
-                            The application was sucessfully delivered into production and is now live.
+                            My role at Ofqual was to design and build from scratch a fully working single page web application that would allow Ofqual to manage awarding organisations across England and Wales and to handle their accreditation process.
+                            React was choosen for the front end application calling into and Node backend API. The application was hosted on the Micrtosoft Azure Cloud and services like CosmosDB, Azure AD and Azure Search were utilised within the application.
+                            The application was sucessfully delivered into production. I went back to Ofqual a while later to migrate the backend API to .NET core and build extra functionality into the system.
                         </Typography>
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
                 <ExpansionPanel className='Expansion' expanded={dunnhumbyExpanded === 'dunnhumbyPanel'} onChange={handleExpansionChange('dunnhumbyPanel')}>
                     <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                        <img src={DhIcon} className="Header-Icon"  alt="Dunnhumby" />
-                        <img src={NetCoreIcon} className='Qualification-Icon'  alt=".Net Core" />
-                        <img src={GcpIcon} className='Qualification-Icon' alt="Google Cloud Platform" />
-                        <img src={KubeIcon} className='Qualification-Icon'  alt="Kubernetes" />
+                    <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
+                        <Grid item md={5}>
+                            <img src={DhIcon} className="Header-Icon" alt="Dunnhumby" />
+                        </Grid>
+                        <Hidden xsDown>
+                            <Grid item md={2}>
+                                <img src={NetCoreIcon} className='Qualification-Icon'  alt=".Net Core" />
+                            </Grid>
+                            <Grid item md={2}>
+                                <img src={GcpIcon} className='Qualification-Icon' alt="Google Cloud Platform" />
+                            </Grid>
+                            <Grid item md={2}>
+                                <img src={KubeIcon} className='Qualification-Icon'  alt="Kubernetes" />
+                            </Grid>
+                        </Hidden>
+                    </Grid>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <Typography variant="body1">
@@ -102,22 +130,22 @@ const SoftwarePage: React.FC = () => {
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
-                            <Grid item md={4} sm={6} xs={12}>
+                            <Grid item md={4} sm={6}>
                                 <Tooltip title='MCSA Web Applications'>
                                     <img src={McsaIcon} className='Qualification-Icon-Large' alt="MCSA Web Applications" />
                                 </Tooltip>
                             </Grid>
-                            <Grid item md={4} sm={6} xs={12}>
+                            <Grid item md={4} sm={6}>
                                 <Tooltip title='Foundation Certificate in Systems Development'>
                                     <img src={BcsIcon} className='Qualification-Icon-Large' alt="Foundation Certificate in Systems Development" />
                                 </Tooltip>
                             </Grid>
-                            <Grid item md={4} sm={6} xs={12}>
+                            <Grid item md={4} sm={6}>
                                 <Tooltip title='Introduction to Cyber Security'>
                                     <img src={IntroCyberIcon} className='Qualification-Icon-Large' alt="Introduction to Cyber Security" />
                                 </Tooltip>
                             </Grid>
-                            <Grid item md={4} sm={6} xs={12}>
+                            <Grid item md={4} sm={6}>
                                 <Tooltip title='Visual Basic 6 Enterprise Development Certified Professional'>
                                     <img src={ltIcon} className='Qualification-Icon-Large' alt="Visual Basic 6 Enterprise Development Certified Professional" />
                                 </Tooltip>

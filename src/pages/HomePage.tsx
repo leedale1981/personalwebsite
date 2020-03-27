@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../App.css';
-import { Grid, Typography, Paper, IconButton, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Fade, Collapse } from '@material-ui/core';
+import { Grid, Typography, Paper, IconButton, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Collapse, Hidden, Tooltip } from '@material-ui/core';
 import FpIcon from "../images/factorydesignpattern.png";
 import McsaIcon from '../images/mcsa.png';
 import CaaIcon from '../images/caa.gif';
@@ -14,6 +14,8 @@ import GcpIcon from "../images/gcp.png";
 import KubeIcon from "../images/kubernetes.png";
 import DhIcon from "../images/dunnhumby.jpg";
 import GamingIcon from "../images/gaming.png";
+import IntroCyberIcon from '../images/introcyber.png';
+import ltIcon from '../images/learningtree-cert.png';
 import SbIcon from "../images/spaceblaster.jpg";
 import { Link } from "react-router-dom";
 import { ExpandMore, PlayArrow, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
@@ -61,10 +63,24 @@ const HomePage: React.FC = () => {
           </Typography>
           <br />
           <IconButton style={{ backgroundColor: 'transparent' }}>
-            <img src={McsaIcon} className='Qualification-Icon' />
+            <Tooltip title='MCSA Web Applications'>
+                <img src={McsaIcon} className='Qualification-Icon' alt="MCSA Web Applications" />
+            </Tooltip>
           </IconButton>
           <IconButton style={{ backgroundColor: 'transparent' }}>
-            <img src={BcsIcon} className='Qualification-Icon' />
+            <Tooltip title='Foundation Certificate in Systems Development'>
+                <img src={BcsIcon} className='Qualification-Icon' alt="Foundation Certificate in Systems Development" />
+            </Tooltip>
+          </IconButton>
+          <IconButton style={{ backgroundColor: 'transparent' }}>
+            <Tooltip title='Introduction to Cyber Security'>
+                <img src={IntroCyberIcon} className='Qualification-Icon' alt="Introduction to Cyber Security" />
+            </Tooltip>
+          </IconButton>
+          <IconButton style={{ backgroundColor: 'transparent' }}>
+            <Tooltip title='Visual Basic 6 Enterprise Development Certified Professional'>
+                <img src={ltIcon} className='Qualification-Icon' alt="Visual Basic 6 Enterprise Development Certified Professional" />
+            </Tooltip>
           </IconButton>
         </Paper>
         <IconButton 
@@ -160,22 +176,30 @@ const HomePage: React.FC = () => {
             <Typography variant='h5' className='Courier-Typography'>Latest Project</Typography>
             <ExpansionPanel className='Expansion' expanded={projectExpanded === 'projectPanel'} onChange={handleExpansionChange('projectPanel')}>
                 <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                    <img src={DhIcon} className="Header-Icon"/>
-                    <img src={NetCoreIcon} className='Qualification-Icon' />
-                    <img src={GcpIcon} className='Qualification-Icon' />
-                    <img src={KubeIcon} className='Qualification-Icon' />
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                    <Typography variant="body1">
-                        <Typography variant="caption">July 2019 - November 2019</Typography><br />
-                        This project was helping to rebuild from scratch, Dunnhumby's core data science platform with modern technologies such as .NET Core, Google Cloud Platform, Docker, Kubernetes and React.
-                        My role as a senior software engineer was to design and develop some middle tier and backend services utilising .NET Core. The services hooked into GCP PubSub messaging queues and a PostgresSQL database.
-                        <br /><br />
-                        <Link to={"/software"}>
-                          <Typography variant='body1'>View more projects</Typography>
-                        </Link>
-                    </Typography>
-                </ExpansionPanelDetails>
+                <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
+                        <Grid item md={5}>
+                            <img src={DhIcon} className="Header-Icon" alt="Dunnhumby" />
+                        </Grid>
+                        <Hidden xsDown>
+                            <Grid item md={2}>
+                                <img src={NetCoreIcon} className='Qualification-Icon'  alt=".Net Core" />
+                            </Grid>
+                            <Grid item md={2}>
+                                <img src={GcpIcon} className='Qualification-Icon' alt="Google Cloud Platform" />
+                            </Grid>
+                            <Grid item md={2}>
+                                <img src={KubeIcon} className='Qualification-Icon'  alt="Kubernetes" />
+                            </Grid>
+                        </Hidden>
+                    </Grid>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails>
+                        <Typography variant="body1">
+                            <Typography variant="caption">July 2019 - November 2019</Typography><br />
+                            This project was helping to rebuild from scratch, Dunnhumby's core data science platform with modern technologies such as .NET Core, Google Cloud Platform, Docker, Kubernetes and React.
+                            My role as a senior software engineer was to design and develop some middle tier and backend services utilising .NET Core. The services hooked into GCP PubSub messaging queues and a PostgresSQL database.
+                        </Typography>
+                    </ExpansionPanelDetails>
             </ExpansionPanel>
           </Grid>
           <Grid item md={12} xs={12}>
