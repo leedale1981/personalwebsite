@@ -3,6 +3,7 @@ import '../App.css';
 import { Grid, Typography, Paper, IconButton, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Collapse, Hidden, Tooltip } from '@material-ui/core';
 import FpIcon from "../images/factorydesignpattern.png";
 import McsaIcon from '../images/mcsa.png';
+import McsdIcon from '../images/mcsd.png';
 import CaaIcon from '../images/caa.gif';
 import OuIcon from '../images/ou.png';
 import PadiOwdIcon from '../images/padiowd.png';
@@ -62,6 +63,11 @@ const HomePage: React.FC = () => {
             I try to focus on building clean, testable code that not only delivers on my clients requirements but leaves them with a simple maintainable code base.
           </Typography>
           <br />
+          <IconButton style={{ backgroundColor: 'transparent' }}>
+            <Tooltip title='MCSD App Builder'>
+                <img src={McsdIcon} className='Qualification-Icon' alt="MCSD App Builder" />
+            </Tooltip>
+          </IconButton>
           <IconButton style={{ backgroundColor: 'transparent' }}>
             <Tooltip title='MCSA Web Applications'>
                 <img src={McsaIcon} className='Qualification-Icon' alt="MCSA Web Applications" />
