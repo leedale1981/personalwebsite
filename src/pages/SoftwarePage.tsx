@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { Grid, Typography, Paper, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Icon, Collapse, IconButton } from '@material-ui/core';
-import { PlayArrow, KeyboardArrowUp, KeyboardArrowDown } from "@material-ui/icons";
+import { Grid, Typography, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Tooltip, Hidden } from '@material-ui/core';
+import { PlayArrow, ExpandMore } from "@material-ui/icons";
 import DhIcon from "../images/dunnhumby.jpg";
-import CandcIcon from "../images/candc.png";
-import { ExpandMore } from "@material-ui/icons";
 import NetCoreIcon from "../images/.netcore.png";
 import GcpIcon from "../images/gcp.png";
 import KubeIcon from "../images/kubernetes.png";
 import OfqualIcon from "../images/ofqual.png";
+import MedalIcon from "../images/medal.png";
 import ReactIcon from "../images/react.png";
 import AzureIcon from "../images/azure.png";
 import TsIcon from "../images/typescript.png";
@@ -17,17 +16,21 @@ import SbIcon from "../images/spaceblaster.jpg";
 import BcIcon from "../images/blockchain.png";
 import FpIcon from "../images/factorydesignpattern.png";
 import AlIcon from "../images/alexa.png";
+import McsaIcon from '../images/mcsa.png';
+import BcsIcon from '../images/bcs.png';
+import IntroCyberIcon from '../images/introcyber.png';
+import ltIcon from '../images/learningtree-cert.png';
+import wordIcon from '../images/word.png';
 import { Link } from "react-router-dom";
 
 const SoftwarePage: React.FC = () => {
     const [dunnhumbyExpanded, setDunnhumbyExpanded] = useState('dunnhumbyPanel');
     const [ofqualExpanded, setOfqualExpanded] = useState("ofqualPanel");
-    const [candcExpanded, setCandcExpanded] = useState("");
+    const [certExpanded, setCertExpanded] = useState("certPanel");
     const [gamesExpanded, setGamesExpanded] = useState("gamesPanel");
     const [blockchainExpanded, setBlockchainExpanded] = useState("");
     const [alexaskillExpanded, setAlexaskillExpanded] = useState("");
     const [factoryPatternExpanded, setFactoryPatternExpanded] = useState("");
-    const [moreProjectsExpanded, setMoreProjectsExpanded] = useState(false);
 
     const handleExpansionChange = (panel: string) => (event: any, newExpanded: boolean) => {
       switch (panel) {
@@ -40,8 +43,8 @@ const SoftwarePage: React.FC = () => {
         case "ofqualPanel":
           setOfqualExpanded(newExpanded ? panel : "");
           break;
-        case "candcPanel":
-            setCandcExpanded(newExpanded ? panel : "");
+        case "certPanel":
+            setCertExpanded(newExpanded ? panel : "");
             break;
         case "blockchainPanel":
             setBlockchainExpanded(newExpanded ? panel : "");
@@ -55,24 +58,62 @@ const SoftwarePage: React.FC = () => {
       }
     };
 
-    const handleLinkExpandClick = (panel: string) => {
-        switch (panel) {
-          case "moreProjects":
-            setMoreProjectsExpanded(!moreProjectsExpanded);
-            break;
-        }
-      }
-
     return (
         <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='row'>
             <Grid item md={7} xs={12}>
                 <Typography variant='h5' className='Courier-Typography'>Recent Projects</Typography>
+                <ExpansionPanel className='Expansion' expanded={ofqualExpanded === 'ofqualPanel'} onChange={handleExpansionChange('ofqualPanel')}>
+                    <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                    <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
+                        <Grid item md={3}>
+                            <img src={OfqualIcon} className="Header-Icon"  alt="Ofqual"/>
+                        </Grid>
+                        <Hidden xsDown>
+                            <Grid item md={2}>
+                                <img src={ReactIcon} className='Qualification-Icon'  alt="React" />
+                            </Grid>
+                            <Grid item md={1}>
+                                <img src={NetCoreIcon} className='Qualification-Icon' alt=".NET Core" />
+                            </Grid>
+                            <Grid item md={2}>
+                                <img src={AzureIcon} className='Qualification-Icon'  alt="Azure" />
+                            </Grid>
+                            <Grid item md={2}>
+                                <img src={TsIcon} className='Qualification-Icon'  alt="Typescript" />
+                            </Grid>
+                            <Grid item md={1}>
+                                <img src={NodeIcon} className='Qualification-Icon'  alt="Node" />
+                            </Grid>
+                        </Hidden>
+                    </Grid>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails>
+                        <Typography variant="body1">
+                            <Typography variant="caption">June 2018 - July 2019</Typography><br />
+                            My role at Ofqual was to design and build from scratch a fully working single page web application that would allow Ofqual to manage awarding organisations across England and Wales and to handle their accreditation process.
+                            React was choosen for the front end application calling into and Node backend API. The application was hosted on the Micrtosoft Azure Cloud and services like CosmosDB, Azure AD and Azure Search were utilised within the application.
+                            The application was sucessfully delivered into production. I went back to Ofqual a while later to migrate the backend API to .NET core and build extra functionality into the system.
+                        </Typography>
+                    </ExpansionPanelDetails>
+                </ExpansionPanel>
                 <ExpansionPanel className='Expansion' expanded={dunnhumbyExpanded === 'dunnhumbyPanel'} onChange={handleExpansionChange('dunnhumbyPanel')}>
                     <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                        <img src={DhIcon} className="Header-Icon"/>
-                        <img src={NetCoreIcon} className='Qualification-Icon' />
-                        <img src={GcpIcon} className='Qualification-Icon' />
-                        <img src={KubeIcon} className='Qualification-Icon' />
+                    <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
+                        <Grid item md={5}>
+                            <img src={DhIcon} className="Header-Icon" alt="Dunnhumby" />
+                        </Grid>
+                        <Hidden xsDown>
+                            <Grid item md={2}>
+                                <img src={NetCoreIcon} className='Qualification-Icon'  alt=".Net Core" />
+                            </Grid>
+                            <Grid item md={2}>
+                                <img src={GcpIcon} className='Qualification-Icon' alt="Google Cloud Platform" />
+                            </Grid>
+                            <Grid item md={2}>
+                                <img src={KubeIcon} className='Qualification-Icon'  alt="Kubernetes" />
+                            </Grid>
+                        </Hidden>
+                    </Grid>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <Typography variant="body1">
@@ -82,47 +123,36 @@ const SoftwarePage: React.FC = () => {
                         </Typography>
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
-                <ExpansionPanel className='Expansion' expanded={ofqualExpanded === 'ofqualPanel'} onChange={handleExpansionChange('ofqualPanel')}>
+                <Typography variant='h5' className='Courier-Typography'>Certifications</Typography>
+                <ExpansionPanel className='Expansion' expanded={certExpanded === 'certPanel'} onChange={handleExpansionChange('certPanel')}>
                     <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                        <img src={OfqualIcon} className="Header-Icon"/>
-                        <img src={ReactIcon} className='Qualification-Icon' />
-                        <img src={AzureIcon} className='Qualification-Icon' />
-                        <img src={TsIcon} className='Qualification-Icon' />
-                        <img src={NodeIcon} className='Qualification-Icon' />
+                        <img src={MedalIcon} className="Header-Icon" alt="Certifications"/>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
-                        <Typography variant="body1">
-                            <Typography variant="caption">June 2018 - July 2019</Typography><br />
-                            My role at Ofqual as a senior web developer was to design and build from scratch a fully working single page web application that would allow Ofqual to manage awarding organisations across England and Wales and to handle their accreditation process.
-                            React was choosen for the front end applicatyion and Node was used to build out the backend API. The application was hosted on the Micrtosoft Azure Cloud and services like CosmosDB, Azure AD and Azure Search were utilised within the application.
-                            The application was sucessfully delivered into production and is now live.
-                        </Typography>
+                        <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
+                            <Grid item md={4} sm={6}>
+                                <Tooltip title='MCSA Web Applications'>
+                                    <img src={McsaIcon} className='Qualification-Icon-Large' alt="MCSA Web Applications" />
+                                </Tooltip>
+                            </Grid>
+                            <Grid item md={4} sm={6}>
+                                <Tooltip title='Foundation Certificate in Systems Development'>
+                                    <img src={BcsIcon} className='Qualification-Icon-Large' alt="Foundation Certificate in Systems Development" />
+                                </Tooltip>
+                            </Grid>
+                            <Grid item md={4} sm={6}>
+                                <Tooltip title='Introduction to Cyber Security'>
+                                    <img src={IntroCyberIcon} className='Qualification-Icon-Large' alt="Introduction to Cyber Security" />
+                                </Tooltip>
+                            </Grid>
+                            <Grid item md={4} sm={6}>
+                                <Tooltip title='Visual Basic 6 Enterprise Development Certified Professional'>
+                                    <img src={ltIcon} className='Qualification-Icon-Large' alt="Visual Basic 6 Enterprise Development Certified Professional" />
+                                </Tooltip>
+                            </Grid>
+                        </Grid>
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
-                <IconButton 
-                    disableRipple disableTouchRipple style={{ backgroundColor: 'transparent' }}
-                    onClick={() => handleLinkExpandClick("moreProjects")}>
-                    <Typography variant="h5" className='Courier-Typography'>
-                        {(moreProjectsExpanded) ? "Less projects": "More projects" }
-                    </Typography>
-                    {(moreProjectsExpanded) ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
-                </IconButton>
-                <Collapse in={moreProjectsExpanded}>
-                    <ExpansionPanel className='Expansion' expanded={candcExpanded === 'candcPanel'} onChange={handleExpansionChange('candcPanel')}>
-                        <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                            <img src={CandcIcon} className="Header-Icon"/>
-                            <img src={NetCoreIcon} className='Qualification-Icon' />
-                            <img src={AzureIcon} className='Qualification-Icon' />
-                            <img src={TsIcon} className='Qualification-Icon' />
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
-                            <Typography variant="body1">
-                                <Typography variant="caption">February 2018 - June 2018</Typography><br />
-                                My role at Content and Code was to design and build a .NET core Web API service layer that surfaced data from Microsoft Office 365 to allow an iOS mobile application to access content. I also built components using TypeScript with React for use in C&C's intranet product. All projects were deployed to the Microsoft Azure cloud.
-                            </Typography>
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                </Collapse>
             </Grid>
             <Grid item md={5} xs={12}>
                 <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='column'>
@@ -130,7 +160,7 @@ const SoftwarePage: React.FC = () => {
                         <Typography variant='h5' className='Courier-Typography'>Articles</Typography>
                         <ExpansionPanel className='Expansion' expanded={factoryPatternExpanded === 'factoryPatternPanel'} onChange={handleExpansionChange('factoryPatternPanel')}>
                             <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                                <img src={FpIcon} className="Header-Icon"/>
+                                <img src={FpIcon} className="Header-Icon"  alt="Factory Pattern"/>
                                 <Typography variant="body2" style={{lineHeight: 3}}>How to use the Factory Design Pattern with C#.</Typography>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>
@@ -145,7 +175,7 @@ const SoftwarePage: React.FC = () => {
                         </ExpansionPanel>
                         <ExpansionPanel className='Expansion' expanded={blockchainExpanded === 'blockchainPanel'} onChange={handleExpansionChange('blockchainPanel')}>
                             <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                                <img src={BcIcon} className="Header-Icon"/>
+                                <img src={BcIcon} className="Header-Icon"  alt="Blockchain"/>
                                 <Typography variant="h6" style={{lineHeight: 2.3}}>The blockchain, what is it?</Typography>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>
@@ -160,7 +190,7 @@ const SoftwarePage: React.FC = () => {
                         </ExpansionPanel>
                         <ExpansionPanel className='Expansion' expanded={alexaskillExpanded === 'alexaskillPanel'} onChange={handleExpansionChange('alexaskillPanel')}>
                             <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                                <img src={AlIcon} className="Header-Icon"/>
+                                <img src={AlIcon} className="Header-Icon"  alt="Amazon Alexa"/>
                                 <Typography variant="h6" style={{lineHeight: 2.3}}>My first Alexa Skill.</Typography>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>
@@ -179,8 +209,8 @@ const SoftwarePage: React.FC = () => {
                         <ExpansionPanel className='Expansion' expanded={gamesExpanded === 'gamesPanel'} onChange={handleExpansionChange('gamesPanel')}>
                             <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                                 <Link to={"/spaceblaster"}>
-                                    <img src={SbIcon} className="Game-Icon"/>
-                                    <img src={GamingIcon} className="Game-Icon"/>
+                                    <img src={SbIcon} className="Game-Icon"  alt="SpaceBlaster"/>
+                                    <img src={GamingIcon} className="Game-Icon"  alt="Gaming"/>
                                     <PlayArrow fontSize="large" />
                                 </Link>
                             </ExpansionPanelSummary>
@@ -191,6 +221,9 @@ const SoftwarePage: React.FC = () => {
                                 </Typography>
                             </ExpansionPanelDetails>
                         </ExpansionPanel>
+                    </Grid>
+                    <Grid item md={12} xs={12}>
+                        <a href='/cv/leedaleprofile.docx'><img src={wordIcon} className="Link-Icon" alt="CV"/><Typography variant="body1">Download CV</Typography></a>
                     </Grid>
                 </Grid>
             </Grid>

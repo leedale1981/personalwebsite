@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SoftwarePage from "./pages/SoftwarePage";
 import HomePage from "./pages/HomePage";
-import PhysicsPage from "./pages/PhysicsPage";
+import StudyPage from "./pages/StudyPage";
 import FlyingPage from "./pages/FlyingPage";
 import SailingPage from "./pages/SailingPage";
 import DivingPage from "./pages/DivingPage";
@@ -29,11 +29,11 @@ const App: React.FC = () => {
               <Route exact path="/" render={
                 (props) => <HomePage />
               } />
-              <Route exact path="/software" render={
+              <Route exact path="/technology" render={
                 (props) => <SoftwarePage />
               } />
-              <Route exact path="/physics" render={
-                (props) => <PhysicsPage />
+              <Route exact path="/study" render={
+                (props) => <StudyPage />
               } />
               <Route exact path="/flying" render={
                 (props) => <FlyingPage />
