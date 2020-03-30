@@ -18,6 +18,7 @@ import FpIcon from "../images/factorydesignpattern.png";
 import AlIcon from "../images/alexa.png";
 import McsaIcon from '../images/mcsa.png';
 import McsdIcon from '../images/mcsd.png';
+import AzFundIcon from '../images/azure-fundamentals.png';
 import BcsIcon from '../images/bcs.png';
 import IntroCyberIcon from '../images/introcyber.png';
 import ltIcon from '../images/learningtree-cert.png';
@@ -131,6 +132,11 @@ const SoftwarePage: React.FC = () => {
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
+                            <Grid item md={4} sm={6}>
+                                <Tooltip title='Azure Fundamentals'>
+                                    <img src={AzFundIcon} className='Qualification-Icon-Large' alt="Azure Fundamentals" />
+                                </Tooltip>
+                            </Grid>
                             <Grid item md={4} sm={6}>
                                 <Tooltip title='MCSD Web App Builder'>
                                     <img src={McsdIcon} className='Qualification-Icon-Large' alt="MCSD App Builder" />
