@@ -5,6 +5,7 @@ import FpIcon from "../images/factorydesignpattern.png";
 import McsaIcon from '../images/mcsa.png';
 import McsdIcon from '../images/mcsd.png';
 import AzFundIcon from '../images/azure-fundamentals.png';
+import AzDevIncon from '../images/azure-developer-associate-600x600.png';
 import CaaIcon from '../images/caa.gif';
 import OuIcon from '../images/ou.png';
 import PadiOwdIcon from '../images/padiowd.png';
@@ -64,6 +65,11 @@ const HomePage: React.FC = () => {
             I try to focus on building clean, testable code that not only delivers on my clients requirements but leaves them with a simple maintainable code base.
           </Typography>
           <br />
+          <IconButton style={{ backgroundColor: 'transparent' }}>
+            <Tooltip title='Azure Developer Associate'>
+                <img src={AzDevIncon} className='Qualification-Icon' alt="Azure Developer Associate" />
+            </Tooltip>
+          </IconButton>
           <IconButton style={{ backgroundColor: 'transparent' }}>
             <Tooltip title='Azure Fundamentals'>
                 <img src={AzFundIcon} className='Qualification-Icon' alt="Azure Fundamentals" />
