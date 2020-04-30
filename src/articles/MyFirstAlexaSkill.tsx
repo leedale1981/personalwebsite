@@ -1,10 +1,13 @@
 import * as React from 'react';
 import AlIcon from "../images/alexa.png";
 import { Paper, Typography, Chip } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const MyFirstAlexaSkill: React.FC = () => {
     
     return (
+        <div>
+        <Link to={"/articles"}><Typography variant='h6' className='Courier-Typography'>{`<- Back to articles`}</Typography></Link>
         <Paper className="Article">
             <img src={AlIcon} />
             <Typography variant="h4" style={{marginBottom: 20}}>My first Alexa Skill with Node & Typescript.
@@ -47,6 +50,7 @@ const MyFirstAlexaSkill: React.FC = () => {
                 </ul>
             </Typography>
         </Paper>
+        </div>
     );
 }
 

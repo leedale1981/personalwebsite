@@ -5,7 +5,8 @@ import FpIcon from "../images/factorydesignpattern.png";
 import McsaIcon from '../images/mcsa.png';
 import McsdIcon from '../images/mcsd.png';
 import AzFundIcon from '../images/azure-fundamentals.png';
-import AzDevIncon from '../images/azure-developer-associate-600x600.png';
+import AzDevIcon from '../images/azure-developer-associate-600x600.png';
+import AzIcon from "../images/azureicon.png";
 import CaaIcon from '../images/caa.gif';
 import OuIcon from '../images/ou.png';
 import PadiOwdIcon from '../images/padiowd.png';
@@ -13,9 +14,11 @@ import BcsIcon from '../images/bcs.png';
 import NvqIcon from '../images/nvq-logo.png';
 import RyaIcon from '../images/rya.gif';
 import NetCoreIcon from "../images/.netcore.png";
-import GcpIcon from "../images/gcp.png";
-import KubeIcon from "../images/kubernetes.png";
-import DhIcon from "../images/dunnhumby.jpg";
+import OfqualIcon from "../images/ofqual.png";
+import ReactIcon from "../images/react.png";
+import AzureIcon from "../images/azure.png";
+import TsIcon from "../images/typescript.png";
+import NodeIcon from "../images/node.png";
 import GamingIcon from "../images/gaming.png";
 import IntroCyberIcon from '../images/introcyber.png';
 import ltIcon from '../images/learningtree-cert.png';
@@ -58,7 +61,7 @@ const HomePage: React.FC = () => {
         <Paper className='Paper' style={{minHeight: 370}}>
           <Typography variant='h6'>Career</Typography>
           <Typography variant='body1'>
-            I am a software developer who has been writing software professionally for the last twenty years. I have worked thirteen of those years as a freelance developer specialising in building enterprise web applications for various clients in many different industries. 
+            I am a software developer and cloud architect who has been designing and building software solutions professionally for the last twenty years. I have worked thirteen of those years as a freelance developer specialising in building enterprise web applications for various clients in many different industries. 
             <br /><br />
             My main technology stack is based around Microsoft .NET (Including .NET Core & ASP.NET MVC/WebAPI), JavaScript, TypeScript, React and Node. I have extensive knowledge of cloud technologies and architectures mainly on the Microsoft Azure platform and recently with Google’s Cloud Platform.
             <br /><br />
@@ -67,7 +70,7 @@ const HomePage: React.FC = () => {
           <br />
           <IconButton style={{ backgroundColor: 'transparent' }}>
             <Tooltip title='Azure Developer Associate'>
-                <img src={AzDevIncon} className='Qualification-Icon' alt="Azure Developer Associate" />
+                <img src={AzDevIcon} className='Qualification-Icon' alt="Azure Developer Associate" />
             </Tooltip>
           </IconButton>
           <IconButton style={{ backgroundColor: 'transparent' }}>
@@ -128,7 +131,7 @@ const HomePage: React.FC = () => {
           <Paper className='Paper'>
             <Typography variant='h6'>Flying</Typography>
             <Typography variant='body1'>
-              I enjoy flying small aircraft in my free time and I'm currently training to get my private pilots licence at North Weald Flight Training. I have about 23 hours logged at the moment as a pilot under training and looking to go solo for the first time soon!
+              I enjoy flying small aircraft in my free time and I'm currently training to get my private pilots licence at North Weald Flight Training. I have about 32 hours logged at the moment as a pilot under training.
             </Typography>
             <br /><br />
             <Link to={"/flying"}>
@@ -173,17 +176,20 @@ const HomePage: React.FC = () => {
       <Grid item md={5} xs={12}>
         <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='column'>
           <Grid item md={12} xs={12}>
-            <Typography variant='h5' className='Courier-Typography'>Latest Article</Typography>
-            <ExpansionPanel className='Expansion' expanded={articleExpanded === 'articlePanel'} onChange={handleExpansionChange('articlePanel')}>
+            <Typography variant='h5' className='Courier-Typography Section-Header'>Latest Article</Typography>
+            <Link to={"/articles"} className="Section-Link">
+              <Typography variant='body1'>View All</Typography>
+            </Link>
+            <ExpansionPanel className='Expansion Section-Body' expanded={articleExpanded === 'articlePanel'} onChange={handleExpansionChange('articlePanel')}>
                 <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                    <img src={FpIcon} className="Header-Icon"/>
-                    <Typography variant="body2" style={{lineHeight: 3}}>How to use the Factory Design Pattern with C#.</Typography>
+                    <img src={AzIcon} className="Header-Icon"/>
+                    <Typography variant="body2" style={{lineHeight: 2}}>How I studied and passed two Microsoft Azure Exams in a month</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography variant="body1">
-                        The factory method is a design pattern that can be used in your .NET projects to support dependency injection and therefore testable classes while also keeping your components decoupled from external dependencies.
+                        This article outlines what resources and approach I took to passing Microsoft exams AZ-900 and AZ-203
                         <br /><br />
-                        <Link to={"/tech/articles/factory-method-design-pattern-csharp"}>
+                        <Link to={"/tech/articles/microsoft-azure-exams"}>
                           <Typography variant='body1'>Read the whole article</Typography>
                         </Link>
                     </Typography>
@@ -195,27 +201,31 @@ const HomePage: React.FC = () => {
             <ExpansionPanel className='Expansion' expanded={projectExpanded === 'projectPanel'} onChange={handleExpansionChange('projectPanel')}>
                 <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                 <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
-                        <Grid item md={5}>
-                            <img src={DhIcon} className="Header-Icon" alt="Dunnhumby" />
+                        <Grid item md={3}>
+                          <img src={OfqualIcon} className="Header-Icon"  alt="Ofqual"/>
                         </Grid>
                         <Hidden xsDown>
-                            <Grid item md={2}>
-                                <img src={NetCoreIcon} className='Qualification-Icon'  alt=".Net Core" />
+                          <Grid item md={2}>
+                                <img src={ReactIcon} className='Qualification-Icon'  alt="React" />
                             </Grid>
                             <Grid item md={2}>
-                                <img src={GcpIcon} className='Qualification-Icon' alt="Google Cloud Platform" />
+                                <img src={NetCoreIcon} className='Qualification-Icon' alt=".NET Core" />
                             </Grid>
                             <Grid item md={2}>
-                                <img src={KubeIcon} className='Qualification-Icon'  alt="Kubernetes" />
+                                <img src={AzureIcon} className='Qualification-Icon'  alt="Azure" />
+                            </Grid>
+                            <Grid item md={2}>
+                                <img src={TsIcon} className='Qualification-Icon'  alt="Typescript" />
                             </Grid>
                         </Hidden>
                     </Grid>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
-                        <Typography variant="body1">
-                            <Typography variant="caption">July 2019 - November 2019</Typography><br />
-                            This project was helping to rebuild from scratch, Dunnhumby's core data science platform with modern technologies such as .NET Core, Google Cloud Platform, Docker, Kubernetes and React.
-                            My role as a senior software engineer was to design and develop some middle tier and backend services utilising .NET Core. The services hooked into GCP PubSub messaging queues and a PostgresSQL database.
+                      <Typography variant="body1">
+                            <Typography variant="caption">June 2018 - April 2020</Typography><br />
+                            My role at Ofqual was to design and build from scratch a fully working single page web application that would allow Ofqual to manage awarding organisations across England and Wales and to handle their accreditation process.
+                            React was choosen for the front end application calling into and Node backend API. The application was hosted on the Micrtosoft Azure Cloud and services like CosmosDB, Azure AD and Azure Search were utilised within the application.
+                            The application was sucessfully delivered into production. I went back to Ofqual a while later to migrate the backend API to .NET core and build extra functionality into the system.
                         </Typography>
                     </ExpansionPanelDetails>
             </ExpansionPanel>

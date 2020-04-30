@@ -7,6 +7,7 @@ import StudyPage from "./pages/StudyPage";
 import FlyingPage from "./pages/FlyingPage";
 import SailingPage from "./pages/SailingPage";
 import DivingPage from "./pages/DivingPage";
+import ArticlesListPage from "./pages/ArticleListPage";
 import SpaceBlasterPage from "./pages/SpaceBlasterPage";
 import ArticlesRouter from "./components/ArticlesRouter";
 import { Divider, Container } from "@material-ui/core";
@@ -46,6 +47,9 @@ const App: React.FC = () => {
               } />
               <Route exact path="/spaceblaster" render={
                 (props) => <SpaceBlasterPage />
+              } />
+              <Route exact path="/articles" render={
+                (props) => <ArticlesListPage />
               } />
               <ArticlesRouter />
             </Switch>

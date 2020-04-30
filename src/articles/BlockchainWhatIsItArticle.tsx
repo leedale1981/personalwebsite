@@ -1,10 +1,13 @@
 import * as React from 'react';
 import BcIcon from "../images/blockchain.png";
 import { Paper, Typography, Chip } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const BlockchainWhatIsItArticle: React.FC = () => {
 
     return (
+        <div>
+        <Link to={"/articles"}><Typography variant='h6' className='Courier-Typography'>{`<- Back to articles`}</Typography></Link>
         <Paper className="Article">
             <img src={BcIcon} />
             <Typography variant="h4" style={{marginBottom: 20}}>The blockchain what is it?
@@ -92,6 +95,7 @@ const BlockchainWhatIsItArticle: React.FC = () => {
             I am going to follow this article up with a deeper dive into specific uses and the technical aspects of blockchain implementations.
             </Typography>
         </Paper>
+        </div>
     );
 }
 

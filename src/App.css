@@ -40,6 +40,10 @@
   margin-bottom: 10px;
 }
 
+.Article a {
+  text-decoration: underline;
+}
+
 .Article p {
   margin-bottom: 20px;
   clear: both;
@@ -54,6 +58,28 @@
   float: left;
   margin-right: 50px;
   margin-bottom: 50px;
+}
+
+.Article-Large img {
+  height: 500px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+.Section-Header {
+  float: left;
+  margin-right: 20px;
+}
+
+.Section-Link {
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 8px;
+  padding: 5px;
+}
+
+.Section-Body {
+  clear: both;
 }
 
 .Article-Tags {

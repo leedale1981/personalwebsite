@@ -15,7 +15,7 @@ import GamingIcon from "../images/gaming.png";
 import SbIcon from "../images/spaceblaster.jpg";
 import BcIcon from "../images/blockchain.png";
 import FpIcon from "../images/factorydesignpattern.png";
-import AlIcon from "../images/alexa.png";
+import AzIcon from "../images/azureicon.png";
 import McsaIcon from '../images/mcsa.png';
 import McsdIcon from '../images/mcsd.png';
 import AzFundIcon from '../images/azure-fundamentals.png';
@@ -92,7 +92,7 @@ const SoftwarePage: React.FC = () => {
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <Typography variant="body1">
-                            <Typography variant="caption">June 2018 - July 2019</Typography><br />
+                            <Typography variant="caption">June 2018 - April 2020</Typography><br />
                             My role at Ofqual was to design and build from scratch a fully working single page web application that would allow Ofqual to manage awarding organisations across England and Wales and to handle their accreditation process.
                             React was choosen for the front end application calling into and Node backend API. The application was hosted on the Micrtosoft Azure Cloud and services like CosmosDB, Azure AD and Azure Search were utilised within the application.
                             The application was sucessfully delivered into production. I went back to Ofqual a while later to migrate the backend API to .NET core and build extra functionality into the system.
@@ -175,7 +175,25 @@ const SoftwarePage: React.FC = () => {
             <Grid item md={5} xs={12}>
                 <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='column'>
                     <Grid item md={12} xs={12}>
-                        <Typography variant='h5' className='Courier-Typography'>Articles</Typography>
+                        <Typography variant='h5' className='Courier-Typography Section-Header'>Articles</Typography>
+                        <Link to={"/articles"} className="Section-Link">
+                            <Typography variant='body1'>View All</Typography>
+                        </Link>
+                        <ExpansionPanel className='Expansion Section-Body' expanded={factoryPatternExpanded === 'factoryPatternPanel'} onChange={handleExpansionChange('factoryPatternPanel')}>
+                            <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                                <img src={AzIcon} className="Header-Icon"  alt="Factory Pattern"/>
+                                <Typography variant="body2" style={{lineHeight: 2}}>How I studied and passed two Microsoft Azure Exams in a month</Typography>
+                            </ExpansionPanelSummary>
+                            <ExpansionPanelDetails>
+                                <Typography variant="body1">
+                                This article outlines what resources and approach I took to passing Microsoft exams AZ-900 and AZ-203
+                                <br /><br />
+                                <Link to={"/tech/articles/microsoft-azure-exams"}>
+                                <Typography variant='body1'>Read the whole article</Typography>
+                                </Link>
+                                </Typography>
+                            </ExpansionPanelDetails>
+                        </ExpansionPanel>
                         <ExpansionPanel className='Expansion' expanded={factoryPatternExpanded === 'factoryPatternPanel'} onChange={handleExpansionChange('factoryPatternPanel')}>
                             <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                                 <img src={FpIcon} className="Header-Icon"  alt="Factory Pattern"/>
@@ -194,28 +212,13 @@ const SoftwarePage: React.FC = () => {
                         <ExpansionPanel className='Expansion' expanded={blockchainExpanded === 'blockchainPanel'} onChange={handleExpansionChange('blockchainPanel')}>
                             <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                                 <img src={BcIcon} className="Header-Icon"  alt="Blockchain"/>
-                                <Typography variant="h6" style={{lineHeight: 2.3}}>The blockchain, what is it?</Typography>
+                                <Typography variant="body2" style={{lineHeight: 2.3}}>The blockchain, what is it?</Typography>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>
                                 <Typography variant="body1">
                                     Lately I've been reading and taking an interest in the technology known as the blockchain. In this article I attempt to outline and explain in broad terms what the blockchain is and how it has the potential to change society in a number of ways.
                                     <br /><br />
                                     <Link to={"/tech/articles/blockchain-what-is-it"}>
-                                    <Typography variant='body1'>Read the whole article</Typography>
-                                    </Link>
-                                </Typography>
-                            </ExpansionPanelDetails>
-                        </ExpansionPanel>
-                        <ExpansionPanel className='Expansion' expanded={alexaskillExpanded === 'alexaskillPanel'} onChange={handleExpansionChange('alexaskillPanel')}>
-                            <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                                <img src={AlIcon} className="Header-Icon"  alt="Amazon Alexa"/>
-                                <Typography variant="h6" style={{lineHeight: 2.3}}>My first Alexa Skill.</Typography>
-                            </ExpansionPanelSummary>
-                            <ExpansionPanelDetails>
-                                <Typography variant="body1">
-                                    I created an Alexa skills with Node and TypeScript and this article runs through the steps I took to create and deploy the application.
-                                    <br /><br />
-                                    <Link to={"/tech/articles/my-first-alexa-skill"}>
                                     <Typography variant='body1'>Read the whole article</Typography>
                                     </Link>
                                 </Typography>

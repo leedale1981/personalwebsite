@@ -1,10 +1,13 @@
 import * as React from 'react';
 import FdpIcon from "../images/factorydesignpattern.png";
 import { Paper, Typography, Chip } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const FactoryDesignPatternArticle: React.FC = () => {
 
     return (
+        <div>
+        <Link to={"/articles"}><Typography variant='h6' className='Courier-Typography'>{`<- Back to articles`}</Typography></Link>
         <Paper className="Article">
             <img src={FdpIcon} />
             <Typography variant="h4" style={{marginBottom: 20}}>How to use the Factory Design Pattern with C#
@@ -21,6 +24,7 @@ const FactoryDesignPatternArticle: React.FC = () => {
             </Typography>
             <iframe width="100%" height="720" src="https://www.youtube.com/embed/hrXvJz2YnEM?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=1&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"><div><small><a href="https://youtubeembedcode.com/de/">youtubeembedcode.com/de/</a></small></div><div><small><a href="http://add-link-exchange.com">get more info</a></small></div><div><small><a href="https://youtubeembedcode.com/es/">youtubeembedcode es</a></small></div><div><small><a href="http://add-link-exchange.com">get more info</a></small></div><div><small><a href="https://youtubeembedcode.com/nl/">youtubeembedcode.com/nl/</a></small></div><div><small><a href="http://add-link-exchange.com">this site</a></small></div></iframe>
         </Paper>
+        </div>
     );
 }
 
