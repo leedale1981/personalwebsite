@@ -188,7 +188,7 @@ const HomePage: React.FC = () => {
                     <Typography variant="body1">
                         This article outlines what resources and approach I took to passing Microsoft exams AZ-900 and AZ-203
                         <br /><br />
-                        <Link to={"/tech/articles/microsoft-azure-exams"}>
+                        <Link to={"/technology/articles/microsoft-azure-exams"}>
                           <Typography variant='body1'>Read the whole article</Typography>
                         </Link>
                     </Typography>
