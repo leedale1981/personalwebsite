@@ -16,6 +16,7 @@ import SbIcon from "../images/spaceblaster.jpg";
 import BcIcon from "../images/blockchain.png";
 import FpIcon from "../images/factorydesignpattern.png";
 import AzIcon from "../images/azureicon.png";
+import AlgoIcon from "../images/algorithm.png";
 import McsaIcon from '../images/mcsa.png';
 import McsdIcon from '../images/mcsd.png';
 import AzFundIcon from '../images/azure-fundamentals.png';
@@ -211,14 +212,14 @@ const SoftwarePage: React.FC = () => {
                         </ExpansionPanel>
                         <ExpansionPanel className='Expansion' expanded={blockchainExpanded === 'blockchainPanel'} onChange={handleExpansionChange('blockchainPanel')}>
                             <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                                <img src={BcIcon} className="Header-Icon"  alt="Blockchain"/>
-                                <Typography variant="body2" style={{lineHeight: 2.3}}>The blockchain, what is it?</Typography>
+                                <img src={AlgoIcon} className="Header-Icon"  alt="Bloom filter"/>
+                                <Typography variant="body2" style={{lineHeight: 2.3}}>What is a Bloom Filter?</Typography>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>
                                 <Typography variant="body1">
-                                    Lately I've been reading and taking an interest in the technology known as the blockchain. In this article I attempt to outline and explain in broad terms what the blockchain is and how it has the potential to change society in a number of ways.
+                                    This article is about a data structure called a <a href="https://en.wikipedia.org/wiki/Bloom_filter" target="_blank">Bloom Filter</a>. I was asked to write this as part of the M269 module for my Open University degree course in 2018. I thought I would share this here as it has some applications in network routing and may be interesting to some.
                                     <br /><br />
-                                    <Link to={"/tech/articles/blockchain-what-is-it"}>
+                                    <Link to={"/tech/articles/bloom-filters"}>
                                     <Typography variant='body1'>Read the whole article</Typography>
                                     </Link>
                                 </Typography>

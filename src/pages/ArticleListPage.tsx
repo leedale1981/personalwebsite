@@ -4,7 +4,7 @@ import FpIcon from "../images/factorydesignpattern.png";
 import BcIcon from "../images/blockchain.png";
 import AlIcon from "../images/alexa.png";
 import AzIcon from "../images/azureicon.png";
-import OfficeIcon from "../images/office.png";
+import AlgoIcon from "../images/algorithm.png";
 import { Link } from 'react-router-dom';
 
 const ArticleListPage: React.FC = () => {
@@ -15,6 +15,12 @@ const ArticleListPage: React.FC = () => {
                 <Typography variant='h5' className='Courier-Typography'>All Articles</Typography>
                 <Paper className="Paper">
                 <List>
+                    <Link to={"/tech/articles/bloom-filters"}>
+                        <ListItem divider>
+                            <ListItemAvatar><img src={AlgoIcon} className="Header-Icon"  alt="Bloom Filter Algorithm"/></ListItemAvatar>
+                            <ListItemText><Typography variant="body1" style={{lineHeight: 3}}>What is a Bloom Filter?</Typography></ListItemText>
+                        </ListItem>
+                    </Link>
                     <Link to={"/tech/articles/microsoft-azure-exams"}>
                         <ListItem divider>
                             <ListItemAvatar><img src={AzIcon} className="Header-Icon"  alt="Microsoft Azure Exams"/></ListItemAvatar>

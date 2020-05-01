@@ -4,6 +4,7 @@ import BlockchainWhatIsItArticle from '../articles/BlockchainWhatIsItArticle';
 import MicrosoftAzureExams from '../articles/MicrosoftAzureExamsArticle';
 import MyFirstAlexaSkill from '../articles/MyFirstAlexaSkill';
 import FactoryDesignPattern from '../articles/FactoryDesignPatternArticle';
+import BloomFilters from '../articles/BloomFiltersArticle';
 
 const ArticlesRouter: React.FC = () => {
 
@@ -20,6 +21,9 @@ const ArticlesRouter: React.FC = () => {
         } />
         <Route exact path="/tech/articles/microsoft-azure-exams" render={
             (props) => <MicrosoftAzureExams />
+        } />
+        <Route exact path="/tech/articles/bloom-filters" render={
+            (props) => <BloomFilters />
         } />
         </div>
     );
