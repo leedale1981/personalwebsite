@@ -33,7 +33,6 @@ const SoftwarePage: React.FC = () => {
     const [certExpanded, setCertExpanded] = useState("certPanel");
     const [gamesExpanded, setGamesExpanded] = useState("gamesPanel");
     const [blockchainExpanded, setBlockchainExpanded] = useState("");
-    const [alexaskillExpanded, setAlexaskillExpanded] = useState("");
     const [factoryPatternExpanded, setFactoryPatternExpanded] = useState("");
 
     const handleExpansionChange = (panel: string) => (event: any, newExpanded: boolean) => {
@@ -52,9 +51,6 @@ const SoftwarePage: React.FC = () => {
             break;
         case "blockchainPanel":
             setBlockchainExpanded(newExpanded ? panel : "");
-            break;
-        case "alexaskillPanel":
-            setAlexaskillExpanded(newExpanded ? panel : "");
             break;
         case "factoryPatternPanel":
             setFactoryPatternExpanded(newExpanded ? panel : "");

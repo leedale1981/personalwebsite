@@ -36,7 +36,7 @@ const Header: React.FC = () => {
             <a href="https://www.linkedin.com/in/leedale/" target="_blank" rel='noreferrer noopener' className="Social-Links"><LinkedIn /></a>
           </Grid>
           <Grid item md={2}>
-            <a href="https://twitter.com/leejdale" target="_blank" rel='noreferrer noopener' className="Social-Links"><Twitter /></a>
+            <a href="https://twitter.com/cloudshark4" target="_blank" rel='noreferrer noopener' className="Social-Links"><Twitter /></a>
           </Grid>
           <Grid item md={2}>
             <a href="https://github.com/leedale1981" target="_blank" rel='noreferrer noopener' className="Social-Links"><GitHub /></a>
@@ -66,11 +66,6 @@ const Header: React.FC = () => {
               </Link>
             </MenuItem>
               <MenuItem onClick={() => setMenuExpanded(false)}>
-              <Link to={"/study"}>
-                <Typography variant='h6' className='Courier-Typography'>Study</Typography>
-              </Link>
-            </MenuItem>
-              <MenuItem onClick={() => setMenuExpanded(false)}>
               <Link to={"/flying"}>
                 <Typography variant='h6' className='Courier-Typography'>Flying</Typography>
               </Link>
@@ -91,7 +86,7 @@ const Header: React.FC = () => {
       <Hidden xsDown>
         <Grid item md={12} lg={8}>
           <Grid container spacing={0} direction='row'>
-            <Grid item md={2} sm={4} xs={6}>
+            <Grid item md={3} sm={6} xs={6}>
               <Link to={"/technology"}>
                 <Icon>
                   <img src={TechIcon} className='Nav-Button' alt='Technology' />
@@ -99,15 +94,7 @@ const Header: React.FC = () => {
                 </Icon>
               </Link>
             </Grid>
-            <Grid item md={2} sm={4} xs={6}>
-              <Link to={"/study"}>
-                <Icon>
-                  <img src={ScienceIcon} className='Nav-Button' alt='Study' />
-                  <Typography variant='h6' className='Courier-Typography'>Study</Typography>
-                </Icon>
-              </Link>
-            </Grid>
-            <Grid item md={2} sm={4} xs={6}>
+            <Grid item md={3} sm={6} xs={6}>
               <Link to={"/flying"}>
                 <Icon>
                   <img src={AviationIcon} className='Nav-Button' alt='flying' />
@@ -115,7 +102,7 @@ const Header: React.FC = () => {
                 </Icon>
               </Link>
             </Grid>
-            <Grid item md={2} sm={4} xs={6}>
+            <Grid item md={3} sm={6} xs={6}>
               <Link to={"/sailing"}>
                 <Icon>
                   <img src={BoatIcon} className='Nav-Button' alt='sailing' />
@@ -123,7 +110,7 @@ const Header: React.FC = () => {
                 </Icon>
               </Link>
             </Grid>
-            <Grid item md={2} sm={4} xs={6}>
+            <Grid item md={3} sm={6} xs={6}>
               <Link to={"/diving"}>
                 <Icon>
                   <img src={ScubaIcon} className='Nav-Button' alt='diving' />
