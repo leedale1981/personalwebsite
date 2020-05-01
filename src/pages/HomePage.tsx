@@ -18,7 +18,6 @@ import OfqualIcon from "../images/ofqual.png";
 import ReactIcon from "../images/react.png";
 import AzureIcon from "../images/azure.png";
 import TsIcon from "../images/typescript.png";
-import NodeIcon from "../images/node.png";
 import GamingIcon from "../images/gaming.png";
 import IntroCyberIcon from '../images/introcyber.png';
 import ltIcon from '../images/learningtree-cert.png';

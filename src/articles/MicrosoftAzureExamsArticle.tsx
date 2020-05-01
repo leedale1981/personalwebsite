@@ -15,7 +15,7 @@ const MicrosoftAzureExamsArticle: React.FC = () => {
         <div>
         <Link to={"/articles"}><Typography variant='h6' className='Courier-Typography'>{`<- Back to articles`}</Typography></Link>
         <Paper className="Article">
-            <img src={AzIcon} />
+            <img src={AzIcon} alt="Microsoft Azure"/>
             <Typography variant="h4" style={{marginBottom: 20}}>How I studied and passed two Microsoft Azure Exams in a month.
             </Typography>
             <div className="Article-Tags">
@@ -23,8 +23,8 @@ const MicrosoftAzureExamsArticle: React.FC = () => {
             </div>
             <Typography variant="caption" className="Article-Date">30th April 2020</Typography>
             <div style={{padding: 20}}>
-                <img src={AzDevIcon} />
-                <img src={AzFundIcon} />
+                <img src={AzDevIcon} alt="Azure Developer Associate"/>
+                <img src={AzFundIcon} alt="Azure Fundamentals"/>
             </div>
             <Typography variant="body1">
                 I have not taken any Microsoft exams for a while mainly due to other commitments like trying to finish a degree part time with the Open University. However, I thought while we are all quarantined at home during this COVID-19 pandemic there was no better time to get myself certified and go back to cover the basics a little.
@@ -42,19 +42,19 @@ const MicrosoftAzureExamsArticle: React.FC = () => {
                 AZ-900 Azure Fundamentals
             </Typography>
             <div className="Article-Large">
-                <img src={Az900Page} />
+                <img src={Az900Page} alt="AZ-900 Exam Page" />
             </div>
             <Typography variant="body1">
                 The first thing I did was purchase <a href="https://www.udemy.com/course/az900-azure/" target="_blank">Scott Duffy’s course on Udemy</a>. I did a bit of research on Azure courses and found that Scott’s courses had good reviews.
             </Typography>
             <div className="Article-Large">
-                <img src={Az900Course} />
+                <img src={Az900Course} alt="AZ-900 Udemy Course"/>
             </div>
             <Typography variant="body1">
                 I also found the <a href="https://docs.microsoft.com/en-us/learn/" target="_blank">Microsoft Learn site</a> extremely useful and studied all the content in the  <a href="https://docs.microsoft.com/en-gb/learn/paths/azure-fundamentals/" target="_blank">Fundamentals learning path.</a>  
             </Typography>
             <div className="Article-Large">
-                <img src={Az900Learn} />
+                <img src={Az900Learn} alt="AZ-900 Microsoft Learn Page"/>
             </div>
             <Typography variant="body1">
                 The content is fairly light on this course and I got through all this content and passed the exam in a couple of days.
@@ -63,7 +63,7 @@ const MicrosoftAzureExamsArticle: React.FC = () => {
                 AZ-203 Azure Developer Associate
             </Typography>
             <div className="Article-Large">
-                <img src={Az203Page} />
+                <img src={Az203Page} alt="AZ-203 Exam Page"/>
             </div>
             <Typography variant="body1">
                 The next exam I targeted was the AZ-203 Azure Developer Associate exam. As I am a developer this seemed the most logical exam to tackle next.

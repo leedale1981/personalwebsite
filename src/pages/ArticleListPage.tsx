@@ -4,6 +4,7 @@ import FpIcon from "../images/factorydesignpattern.png";
 import BcIcon from "../images/blockchain.png";
 import AlIcon from "../images/alexa.png";
 import AzIcon from "../images/azureicon.png";
+import OfficeIcon from "../images/office.png";
 import { Link } from 'react-router-dom';
 
 const ArticleListPage: React.FC = () => {
