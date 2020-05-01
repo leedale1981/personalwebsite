@@ -15,31 +15,31 @@ const ArticleListPage: React.FC = () => {
                 <Typography variant='h5' className='Courier-Typography'>All Articles</Typography>
                 <Paper className="Paper">
                 <List>
-                    <Link to={"/technology/articles/bloom-filters"}>
+                    <Link to={"/tech/articles/bloom-filters"}>
                         <ListItem divider>
                             <ListItemAvatar><img src={AlgoIcon} className="Header-Icon"  alt="Bloom Filter Algorithm"/></ListItemAvatar>
                             <ListItemText><Typography variant="body1" style={{lineHeight: 3}}>What is a Bloom Filter?</Typography></ListItemText>
                         </ListItem>
                     </Link>
-                    <Link to={"/technology/articles/microsoft-azure-exams"}>
+                    <Link to={"/tech/articles/microsoft-azure-exams"}>
                         <ListItem divider>
                             <ListItemAvatar><img src={AzIcon} className="Header-Icon"  alt="Microsoft Azure Exams"/></ListItemAvatar>
                             <ListItemText><Typography variant="body1" style={{lineHeight: 3}}>How I studied and passed two Microsoft Azure Exams in a month</Typography></ListItemText>
                         </ListItem>
                     </Link>
-                    <Link to={"/technology/articles/factory-method-design-pattern-csharp"}>
+                    <Link to={"/tech/articles/factory-method-design-pattern-csharp"}>
                         <ListItem divider>
                             <ListItemAvatar><img src={FpIcon} className="Header-Icon"  alt="Factory Pattern"/></ListItemAvatar>
                             <ListItemText><Typography variant="body1" style={{lineHeight: 3}}>How to use the Factory Design Pattern with C#.</Typography></ListItemText>
                         </ListItem>
                     </Link>
-                    <Link to={"/technology/articles/blockchain-what-is-it"}>
+                    <Link to={"/tech/articles/blockchain-what-is-it"}>
                         <ListItem divider>
                             <ListItemAvatar><img src={BcIcon} className="Header-Icon"  alt="Blockchain"/></ListItemAvatar>
                             <ListItemText><Typography variant="body1" style={{lineHeight: 2.3}}>The blockchain, what is it?</Typography></ListItemText>
                         </ListItem>
                     </Link>
-                    <Link to={"/technology/articles/my-first-alexa-skill"}>
+                    <Link to={"/tech/articles/my-first-alexa-skill"}>
                         <ListItem divider>
                             <ListItemAvatar><img src={AlIcon} className="Header-Icon"  alt="Amazon Alexa"/></ListItemAvatar>
                             <ListItemText><Typography variant="body1" style={{lineHeight: 2.3}}>My first Alexa Skill.</Typography></ListItemText>

@@ -30,7 +30,7 @@ const App: React.FC = () => {
               <Route exact path="/" render={
                 (props) => <HomePage />
               } />
-              <Route exact path="/technology" render={
+              <Route exact path="/tech" render={
                 (props) => <SoftwarePage />
               } />
               <Route exact path="/study" render={

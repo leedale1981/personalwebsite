@@ -185,7 +185,7 @@ const SoftwarePage: React.FC = () => {
                                 <Typography variant="body1">
                                 This article outlines what resources and approach I took to passing Microsoft exams AZ-900 and AZ-203
                                 <br /><br />
-                                <Link to={"/technology/articles/microsoft-azure-exams"}>
+                                <Link to={"/tech/articles/microsoft-azure-exams"}>
                                 <Typography variant='body1'>Read the whole article</Typography>
                                 </Link>
                                 </Typography>
@@ -200,7 +200,7 @@ const SoftwarePage: React.FC = () => {
                                 <Typography variant="body1">
                                     The factory method is a design pattern that can be used in your .NET projects to support dependency injection and therefore testable classes while also keeping your components decoupled from external dependencies.
                                     <br /><br />
-                                    <Link to={"/technology/articles/factory-method-design-pattern-csharp"}>
+                                    <Link to={"/tech/articles/factory-method-design-pattern-csharp"}>
                                     <Typography variant='body1'>Read the whole article</Typography>
                                     </Link>
                                 </Typography>
@@ -215,7 +215,7 @@ const SoftwarePage: React.FC = () => {
                                 <Typography variant="body1">
                                     This article is about a data structure called a <a href="https://en.wikipedia.org/wiki/Bloom_filter" target="_blank">Bloom Filter</a>. I was asked to write this as part of the M269 module for my Open University degree course in 2018. I thought I would share this here as it has some applications in network routing and may be interesting to some.
                                     <br /><br />
-                                    <Link to={"/technology/articles/bloom-filters"}>
+                                    <Link to={"/tech/articles/bloom-filters"}>
                                     <Typography variant='body1'>Read the whole article</Typography>
                                     </Link>
                                 </Typography>

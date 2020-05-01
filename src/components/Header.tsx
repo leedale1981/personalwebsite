@@ -61,7 +61,7 @@ const Header: React.FC = () => {
               </Link>
             </MenuItem>
               <MenuItem onClick={() => setMenuExpanded(false)}>
-              <Link to={"/technology"}>
+              <Link to={"/tech"}>
                 <Typography variant='h6' className='Courier-Typography'>Technology</Typography>
               </Link>
             </MenuItem>
@@ -87,7 +87,7 @@ const Header: React.FC = () => {
         <Grid item md={12} lg={8}>
           <Grid container spacing={0} direction='row'>
             <Grid item md={3} sm={6} xs={6}>
-              <Link to={"/technology"}>
+              <Link to={"/tech"}>
                 <Icon>
                   <img src={TechIcon} className='Nav-Button' alt='Technology' />
                   <Typography variant='h6' className='Courier-Typography'>Technology</Typography>

@@ -10,19 +10,19 @@ const ArticlesRouter: React.FC = () => {
 
     return (
         <div>
-        <Route exact path="/technology/articles/blockchain-what-is-it" render={
+        <Route exact path="/tech/articles/blockchain-what-is-it" render={
             (props) => <BlockchainWhatIsItArticle />
         } />
-        <Route exact path="/technology/articles/my-first-alexa-skill" render={
+        <Route exact path="/tech/articles/my-first-alexa-skill" render={
             (props) => <MyFirstAlexaSkill />
         } />
-        <Route exact path="/technology/articles/factory-method-design-pattern-csharp" render={
+        <Route exact path="/tech/articles/factory-method-design-pattern-csharp" render={
             (props) => <FactoryDesignPattern />
         } />
-        <Route exact path="/technology/articles/microsoft-azure-exams" render={
+        <Route exact path="/tech/articles/microsoft-azure-exams" render={
             (props) => <MicrosoftAzureExams />
         } />
-        <Route exact path="/technology/articles/bloom-filters" render={
+        <Route exact path="/tech/articles/bloom-filters" render={
             (props) => <BloomFilters />
         } />
         </div>
