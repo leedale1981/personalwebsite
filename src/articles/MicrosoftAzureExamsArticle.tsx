@@ -89,6 +89,7 @@ const MicrosoftAzureExamsArticle: React.FC = () => {
             <Typography variant="body1">
             My next focus is on the Google Cloud platform and taking the Associate Cloud Engineer exam.
             </Typography>
+            <script data-ad-client="ca-pub-0502846809836648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         </Paper>
         </div>
     );
