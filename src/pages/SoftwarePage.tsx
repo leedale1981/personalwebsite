@@ -25,6 +25,7 @@ import BcsIcon from '../images/bcs.png';
 import IntroCyberIcon from '../images/introcyber.png';
 import ltIcon from '../images/learningtree-cert.png';
 import wordIcon from '../images/word.png';
+import QuantumImage from "../images/quantum.png";
 import { Link } from "react-router-dom";
 
 const SoftwarePage: React.FC = () => {
@@ -34,6 +35,7 @@ const SoftwarePage: React.FC = () => {
     const [gamesExpanded, setGamesExpanded] = useState("gamesPanel");
     const [blockchainExpanded, setBlockchainExpanded] = useState("");
     const [factoryPatternExpanded, setFactoryPatternExpanded] = useState("");
+    const [quantumExpanded, setQuantumExpanded] = useState("");
 
     const handleExpansionChange = (panel: string) => (event: any, newExpanded: boolean) => {
       switch (panel) {
@@ -54,6 +56,9 @@ const SoftwarePage: React.FC = () => {
             break;
         case "factoryPatternPanel":
             setFactoryPatternExpanded(newExpanded ? panel : "");
+            break;
+        case "quantumPanel":
+            setQuantumExpanded(newExpanded ? panel : "");
             break;
       }
     };
@@ -176,6 +181,21 @@ const SoftwarePage: React.FC = () => {
                         <Link to={"/articles"} className="Section-Link">
                             <Typography variant='body1'>View All</Typography>
                         </Link>
+                        <ExpansionPanel className='Expansion Section-Body' expanded={quantumExpanded === 'quantumPanel'} onChange={handleExpansionChange('quantumPanel')}>
+                            <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                                <img src={QuantumImage} className="Header-Icon"/>
+                                <Typography variant="body2" style={{lineHeight: 2}}>Quantum Computing: What is the Schrodinger Equation anyway?</Typography>
+                            </ExpansionPanelSummary>
+                            <ExpansionPanelDetails>
+                                <Typography variant="body1">
+                                In this article I give a very brief introduction to the Schrodinger Equation and how we can use quantum mechanics in computing to achieve things classical computation methods cannot.
+                                    <br /><br />
+                                    <Link to={"/tech/articles/quantum-computing"}>
+                                    <Typography variant='body1'>Read the whole article</Typography>
+                                    </Link>
+                                </Typography>
+                            </ExpansionPanelDetails>
+                        </ExpansionPanel>
                         <ExpansionPanel className='Expansion Section-Body' expanded={factoryPatternExpanded === 'factoryPatternPanel'} onChange={handleExpansionChange('factoryPatternPanel')}>
                             <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                                 <img src={AzIcon} className="Header-Icon"  alt="Factory Pattern"/>

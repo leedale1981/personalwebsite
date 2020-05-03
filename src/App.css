@@ -200,3 +200,9 @@ a:visited {
 .App-link {
   color: #61dafb;
 }
+
+.Math, span
+{
+  clear: unset;
+  width: unset;
+}

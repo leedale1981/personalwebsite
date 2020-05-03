@@ -20,6 +20,7 @@ import AzureIcon from "../images/azure.png";
 import TsIcon from "../images/typescript.png";
 import GamingIcon from "../images/gaming.png";
 import IntroCyberIcon from '../images/introcyber.png';
+import QuantumImage from "../images/quantum.png";
 import ltIcon from '../images/learningtree-cert.png';
 import SbIcon from "../images/spaceblaster.jpg";
 import { Link } from "react-router-dom";
@@ -181,14 +182,14 @@ const HomePage: React.FC = () => {
             </Link>
             <ExpansionPanel className='Expansion Section-Body' expanded={articleExpanded === 'articlePanel'} onChange={handleExpansionChange('articlePanel')}>
                 <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                    <img src={AzIcon} className="Header-Icon"/>
-                    <Typography variant="body2" style={{lineHeight: 2}}>How I studied and passed two Microsoft Azure Exams in a month</Typography>
+                    <img src={QuantumImage} className="Header-Icon"/>
+                    <Typography variant="body2" style={{lineHeight: 2}}>Quantum Computing: What is the Schrodinger Equation anyway?</Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography variant="body1">
-                        This article outlines what resources and approach I took to passing Microsoft exams AZ-900 and AZ-203
+                      In this article I give a very brief introduction to the Schrodinger Equation and how we can use quantum mechanics in computing to achieve things classical computation methods cannot.
                         <br /><br />
-                        <Link to={"/tech/articles/microsoft-azure-exams"}>
+                        <Link to={"/tech/articles/quantum-computing"}>
                           <Typography variant='body1'>Read the whole article</Typography>
                         </Link>
                     </Typography>

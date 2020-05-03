@@ -5,6 +5,7 @@ import BcIcon from "../images/blockchain.png";
 import AlIcon from "../images/alexa.png";
 import AzIcon from "../images/azureicon.png";
 import AlgoIcon from "../images/algorithm.png";
+import QuantumImage from "../images/quantum.png";
 import { Link } from 'react-router-dom';
 
 const ArticleListPage: React.FC = () => {
@@ -15,6 +16,12 @@ const ArticleListPage: React.FC = () => {
                 <Typography variant='h5' className='Courier-Typography'>All Articles</Typography>
                 <Paper className="Paper">
                 <List>
+                    <Link to={"/tech/articles/quantum-computing"}>
+                        <ListItem divider>
+                            <ListItemAvatar><img src={QuantumImage} className="Header-Icon"  alt="Quantum Computing: What is the Schrodinger Equation anyway?"/></ListItemAvatar>
+                            <ListItemText><Typography variant="body1" style={{lineHeight: 1.5}}>Quantum Computing: What is the Schrodinger Equation anyway?</Typography></ListItemText>
+                        </ListItem>
+                    </Link>
                     <Link to={"/tech/articles/bloom-filters"}>
                         <ListItem divider>
                             <ListItemAvatar><img src={AlgoIcon} className="Header-Icon"  alt="Bloom Filter Algorithm"/></ListItemAvatar>
@@ -24,7 +31,7 @@ const ArticleListPage: React.FC = () => {
                     <Link to={"/tech/articles/microsoft-azure-exams"}>
                         <ListItem divider>
                             <ListItemAvatar><img src={AzIcon} className="Header-Icon"  alt="Microsoft Azure Exams"/></ListItemAvatar>
-                            <ListItemText><Typography variant="body1" style={{lineHeight: 3}}>How I studied and passed two Microsoft Azure Exams in a month</Typography></ListItemText>
+                            <ListItemText><Typography variant="body1" style={{lineHeight: 1.5}}>How I studied and passed two Microsoft Azure Exams in a month</Typography></ListItemText>
                         </ListItem>
                     </Link>
                     <Link to={"/tech/articles/factory-method-design-pattern-csharp"}>

@@ -5,6 +5,7 @@ import MicrosoftAzureExams from '../articles/MicrosoftAzureExamsArticle';
 import MyFirstAlexaSkill from '../articles/MyFirstAlexaSkill';
 import FactoryDesignPattern from '../articles/FactoryDesignPatternArticle';
 import BloomFilters from '../articles/BloomFiltersArticle';
+import QuantumCpmputing from '../articles/QuantumComputingArticle';
 
 const ArticlesRouter: React.FC = () => {
 
@@ -24,6 +25,9 @@ const ArticlesRouter: React.FC = () => {
         } />
         <Route exact path="/tech/articles/bloom-filters" render={
             (props) => <BloomFilters />
+        } />
+        <Route exact path="/tech/articles/quantum-computing" render={
+            (props) => <QuantumCpmputing />
         } />
         </div>
     );
