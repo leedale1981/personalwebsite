@@ -13,7 +13,7 @@ const FactoryDesignPatternArticle: React.FC = () => {
             <Typography variant="h4" style={{marginBottom: 20}}>How to deploy a Web App and Load Balancer to Kubernetes on GKE
             </Typography>
             <div className="Article-Tags">
-                <Chip label="tech" /><Chip label="c#" /><Chip label="programming" /><Chip label="software development" /><Chip label=".net core" />
+                <Chip label="tech" /><Chip label="c#" /><Chip label="cloud" /><Chip label="kubernetes" /><Chip label="gke" /><Chip label="microservices" /><Chip label="google" /><Chip label="containers" />
             </div>
             <Typography variant="caption" className="Article-Date">27th November 2019</Typography>
             <Typography variant="body1">
