@@ -6,6 +6,7 @@ import MyFirstAlexaSkill from '../articles/MyFirstAlexaSkill';
 import FactoryDesignPattern from '../articles/FactoryDesignPatternArticle';
 import BloomFilters from '../articles/BloomFiltersArticle';
 import QuantumCpmputing from '../articles/QuantumComputingArticle';
+import KubernetesGke from '../articles/KubernetesGkeArticle';
 
 const ArticlesRouter: React.FC = () => {
 
@@ -28,6 +29,9 @@ const ArticlesRouter: React.FC = () => {
         } />
         <Route exact path="/tech/articles/quantum-computing" render={
             (props) => <QuantumCpmputing />
+        } />
+        <Route exact path="/tech/articles/kubernetes-gke" render={
+            (props) => <KubernetesGke />
         } />
         </div>
     );

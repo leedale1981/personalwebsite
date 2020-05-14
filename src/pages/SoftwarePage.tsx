@@ -13,7 +13,6 @@ import TsIcon from "../images/typescript.png";
 import NodeIcon from "../images/node.png";
 import GamingIcon from "../images/gaming.png";
 import SbIcon from "../images/spaceblaster.jpg";
-import BcIcon from "../images/blockchain.png";
 import FpIcon from "../images/factorydesignpattern.png";
 import AzIcon from "../images/azureicon.png";
 import AlgoIcon from "../images/algorithm.png";
@@ -27,6 +26,7 @@ import ltIcon from '../images/learningtree-cert.png';
 import wordIcon from '../images/word.png';
 import QuantumImage from "../images/quantum.png";
 import TogafIcon from "../images/togaf.png";
+import CloudIcon from "../images/cloud.png";
 import { Link } from "react-router-dom";
 
 const SoftwarePage: React.FC = () => {
@@ -189,7 +189,22 @@ const SoftwarePage: React.FC = () => {
                         </Link>
                         <ExpansionPanel className='Expansion Section-Body' expanded={quantumExpanded === 'quantumPanel'} onChange={handleExpansionChange('quantumPanel')}>
                             <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                                <img src={QuantumImage} className="Header-Icon"/>
+                                <img src={CloudIcon} className="Header-Icon" alt="CloudComputing"/>
+                                <Typography variant="body2" style={{lineHeight: 2}}>How to deploy a Web App and Load Balancer to Kubernetes on GKE</Typography>
+                            </ExpansionPanelSummary>
+                            <ExpansionPanelDetails>
+                                <Typography variant="body1">
+                                    This video walks through creating a Kubernetes cluster on Google Cloud Platform GKE. It shows hows to deploy a YAML deployment file using the gcloud SDK and deploy a load balancer service type to connect to a web server running in a container.
+                                    <br /><br />
+                                    <Link to={"/tech/articles/kubernetes-gke"}>
+                                    <Typography variant='body1'>Read the whole article</Typography>
+                                    </Link>
+                                </Typography>
+                            </ExpansionPanelDetails>
+                        </ExpansionPanel>
+                        <ExpansionPanel className='Expansion Section-Body' expanded={quantumExpanded === 'quantumPanel'} onChange={handleExpansionChange('quantumPanel')}>
+                            <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                                <img src={QuantumImage} className="Header-Icon" alt="QuantumComputing"/>
                                 <Typography variant="body2" style={{lineHeight: 2}}>Quantum Computing: What is the Schrodinger Equation anyway?</Typography>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>

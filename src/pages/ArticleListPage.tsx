@@ -6,6 +6,7 @@ import AlIcon from "../images/alexa.png";
 import AzIcon from "../images/azureicon.png";
 import AlgoIcon from "../images/algorithm.png";
 import QuantumImage from "../images/quantum.png";
+import CloudIcon from "../images/cloud.png";
 import { Link } from 'react-router-dom';
 
 const ArticleListPage: React.FC = () => {
@@ -16,6 +17,12 @@ const ArticleListPage: React.FC = () => {
                 <Typography variant='h5' className='Courier-Typography'>All Articles</Typography>
                 <Paper className="Paper">
                 <List>
+                    <Link to={"/tech/articles/kubernetes-gke"}>
+                        <ListItem divider>
+                            <ListItemAvatar><img src={CloudIcon} className="Header-Icon"  alt="How to deploy a Web App and Load Balancer to Kubernetes on GKE"/></ListItemAvatar>
+                            <ListItemText><Typography variant="body1" style={{lineHeight: 1.5}}>How to deploy a Web App and Load Balancer to Kubernetes on GKE</Typography></ListItemText>
+                        </ListItem>
+                    </Link>
                     <Link to={"/tech/articles/quantum-computing"}>
                         <ListItem divider>
                             <ListItemAvatar><img src={QuantumImage} className="Header-Icon"  alt="Quantum Computing: What is the Schrodinger Equation anyway?"/></ListItemAvatar>

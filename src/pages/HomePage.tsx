@@ -20,7 +20,7 @@ import AzureIcon from "../images/azure.png";
 import TsIcon from "../images/typescript.png";
 import GamingIcon from "../images/gaming.png";
 import IntroCyberIcon from '../images/introcyber.png';
-import QuantumImage from "../images/quantum.png";
+import CloudIcon from "../images/cloud.png";
 import ltIcon from '../images/learningtree-cert.png';
 import SbIcon from "../images/spaceblaster.jpg";
 import { Link } from "react-router-dom";
@@ -186,20 +186,20 @@ const HomePage: React.FC = () => {
               <Typography variant='body1'>View All</Typography>
             </Link>
             <ExpansionPanel className='Expansion Section-Body' expanded={articleExpanded === 'articlePanel'} onChange={handleExpansionChange('articlePanel')}>
-                <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                    <img src={QuantumImage} className="Header-Icon"/>
-                    <Typography variant="body2" style={{lineHeight: 2}}>Quantum Computing: What is the Schrodinger Equation anyway?</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                    <Typography variant="body1">
-                      In this article I give a very brief introduction to the Schrodinger Equation and how we can use quantum mechanics in computing to achieve things classical computation methods cannot.
-                        <br /><br />
-                        <Link to={"/tech/articles/quantum-computing"}>
+                  <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                      <img src={CloudIcon} className="Header-Icon" alt="CloudComputing"/>
+                      <Typography variant="body2" style={{lineHeight: 2}}>How to deploy a Web App and Load Balancer to Kubernetes on GKE</Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+                      <Typography variant="body1">
+                          This video walks through creating a Kubernetes cluster on Google Cloud Platform GKE. It shows hows to deploy a YAML deployment file using the gcloud SDK and deploy a load balancer service type to connect to a web server running in a container.
+                          <br /><br />
+                          <Link to={"/tech/articles/kubernetes-gke"}>
                           <Typography variant='body1'>Read the whole article</Typography>
-                        </Link>
-                    </Typography>
-                </ExpansionPanelDetails>
-            </ExpansionPanel>
+                          </Link>
+                      </Typography>
+                  </ExpansionPanelDetails>
+              </ExpansionPanel>
           </Grid>
           <Grid item md={12} xs={12}>
             <Typography variant='h5' className='Courier-Typography'>Latest Project</Typography>
