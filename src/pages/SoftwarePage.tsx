@@ -27,6 +27,7 @@ import wordIcon from '../images/word.png';
 import QuantumImage from "../images/quantum.png";
 import TogafIcon from "../images/togaf.png";
 import CloudIcon from "../images/cloud.png";
+import gcpAceIcon from "../images/gcp-ace.png";
 import { Link } from "react-router-dom";
 
 const SoftwarePage: React.FC = () => {
@@ -136,6 +137,11 @@ const SoftwarePage: React.FC = () => {
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
+                            <Grid item md={4} sm={6}>
+                                <Tooltip title='Google Certified Associate Cloud Engineer'>
+                                    <img src={gcpAceIcon} className='Qualification-Icon-Large' alt="Google Certified Associate Cloud Engineer" />
+                                </Tooltip>
+                            </Grid>
                             <Grid item md={4} sm={6}>
                                 <Tooltip title='TOGAF 9.2 Certified'>
                                     <img src={TogafIcon} className='Qualification-Icon-Large' alt="TOGAF 9.2 Certified" />

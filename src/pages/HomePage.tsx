@@ -23,6 +23,7 @@ import IntroCyberIcon from '../images/introcyber.png';
 import CloudIcon from "../images/cloud.png";
 import ltIcon from '../images/learningtree-cert.png';
 import SbIcon from "../images/spaceblaster.jpg";
+import gcpAceIcon from "../images/gcp-ace.png";
 import { Link } from "react-router-dom";
 import { ExpandMore, PlayArrow, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 
@@ -68,6 +69,11 @@ const HomePage: React.FC = () => {
             I try to focus on building clean, testable code that not only delivers on my clients requirements but leaves them with a simple maintainable code base.
           </Typography>
           <br />
+          <IconButton style={{ backgroundColor: 'transparent' }}>
+            <Tooltip title='Google Certified Associate Cloud Engineer'>
+                <img src={gcpAceIcon} className='Qualification-Icon' alt="Google Certified Associate Cloud Engineer" />
+            </Tooltip>
+          </IconButton>
           <IconButton style={{ backgroundColor: 'transparent' }}>
             <Tooltip title='TOGAF 9.2 Certified'>
                 <img src={TogafIcon} className='Qualification-Icon' alt="TOGAF 9.2 Certified" />
