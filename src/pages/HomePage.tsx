@@ -24,6 +24,7 @@ import CloudIcon from "../images/cloud.png";
 import ltIcon from '../images/learningtree-cert.png';
 import SbIcon from "../images/spaceblaster.jpg";
 import gcpAceIcon from "../images/gcp-ace.png";
+import networkPlusIcon from "../images/networkplus.jpg";
 import { Link } from "react-router-dom";
 import { ExpandMore, PlayArrow, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 
@@ -97,6 +98,11 @@ const HomePage: React.FC = () => {
           <IconButton style={{ backgroundColor: 'transparent' }}>
             <Tooltip title='MCSA Web Applications'>
                 <img src={McsaIcon} className='Qualification-Icon' alt="MCSA Web Applications" />
+            </Tooltip>
+          </IconButton>
+          <IconButton style={{ backgroundColor: 'transparent' }}>
+            <Tooltip title='CompTIA Network+'>
+                <img src={networkPlusIcon} className='Qualification-Icon' alt="CompTIA Network+" />
             </Tooltip>
           </IconButton>
           <IconButton style={{ backgroundColor: 'transparent' }}>

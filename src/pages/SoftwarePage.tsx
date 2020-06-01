@@ -28,6 +28,7 @@ import QuantumImage from "../images/quantum.png";
 import TogafIcon from "../images/togaf.png";
 import CloudIcon from "../images/cloud.png";
 import gcpAceIcon from "../images/gcp-ace.png";
+import networkPlusIcon from "../images/networkplus.jpg";
 import { Link } from "react-router-dom";
 
 const SoftwarePage: React.FC = () => {
@@ -165,6 +166,11 @@ const SoftwarePage: React.FC = () => {
                             <Grid item md={4} sm={6}>
                                 <Tooltip title='MCSA Web Applications'>
                                     <img src={McsaIcon} className='Qualification-Icon-Large' alt="MCSA Web Applications" />
+                                </Tooltip>
+                            </Grid>
+                            <Grid item md={4} sm={6}>
+                                <Tooltip title='CompTIA Network+'>
+                                    <img src={networkPlusIcon} className='Qualification-Icon-Large' alt="CompTIA Network+" />
                                 </Tooltip>
                             </Grid>
                             <Grid item md={4} sm={6}>
