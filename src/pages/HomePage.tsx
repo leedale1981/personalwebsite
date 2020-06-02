@@ -24,7 +24,7 @@ import CloudIcon from "../images/cloud.png";
 import ltIcon from '../images/learningtree-cert.png';
 import SbIcon from "../images/spaceblaster.jpg";
 import gcpAceIcon from "../images/gcp-ace.png";
-import networkPlusIcon from "../images/networkplus.jpg";
+import networkPlusIcon from "../images/networkplus.png";
 import { Link } from "react-router-dom";
 import { ExpandMore, PlayArrow, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 

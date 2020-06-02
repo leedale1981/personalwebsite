@@ -28,7 +28,7 @@ import QuantumImage from "../images/quantum.png";
 import TogafIcon from "../images/togaf.png";
 import CloudIcon from "../images/cloud.png";
 import gcpAceIcon from "../images/gcp-ace.png";
-import networkPlusIcon from "../images/networkplus.jpg";
+import networkPlusIcon from "../images/networkplus.png";
 import { Link } from "react-router-dom";
 
 const SoftwarePage: React.FC = () => {
