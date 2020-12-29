@@ -7,16 +7,16 @@ import Solo1 from '../images/solo1.jpg';
 import Solo2 from '../images/solo2.jpg';
 
 const FlyingPage: React.FC = () => {
-    const [update1Expanded, setUpdate1Expanded] = useState("update1Panel");
-    const [statusExpanded, setStatusExpanded] = useState("statusPanel");
+    const [update2Expanded, setUpdate2Expanded] = useState("update2Panel");
+    const [update1Expanded, setUpdate1Expanded] = useState("");
 
     const handleExpansionChange = (panel: string) => (event: any, newExpanded: boolean) => {
         switch (panel) {
-          case "update1Panel":
-            setUpdate1Expanded(update1Expanded ? panel : "");
+          case "update2Panel":
+            setUpdate2Expanded(newExpanded ? panel : "");
             break;
-        case "statusPanel":
-            setStatusExpanded(statusExpanded ? panel : "");
+          case "update1Panel":
+            setUpdate1Expanded(newExpanded ? panel : "");
             break;
         }
       };
@@ -25,30 +25,46 @@ const FlyingPage: React.FC = () => {
         <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='row'>
             <Grid item md={7} xs={12}>
                 <Typography variant='h5' className='Courier-Typography'>Updates</Typography>
-                <ExpansionPanel className='Expansion' expanded={update1Expanded === 'update1Panel'} onChange={handleExpansionChange('update1Panel')}>
+                <ExpansionPanel className='Expansion' expanded={update2Expanded === 'update2Panel'} onChange={handleExpansionChange('update2Panel')}>
                     <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
-                        <Grid item md={3}>
+                        <Grid item xs={2}>
                             <img src={FlyingIcon} className="Header-Icon"  alt="Flying update"/>
+                        </Grid>
+                        <Grid item xs={10}>
+                            <Typography variant="h5">29th December 2020</Typography><br />
                         </Grid>
                     </Grid>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <Typography variant="body1">
-                            <Typography variant="caption">29th December 2029</Typography><br />
-                            A year to the day since my last update. I've made great progress despite delays due to a combination of bad weather and the COVID pandemic. I managed to complete three hours solo in the circuit around summertime, and have been doing navigation flights. I was just about the go off to do a solo navigation when the tier 4 restrictions came in. I'm now waiting for the green light to get flying again.
-                            I managed to complete the online navigation exam as well which means all ground exams out the way. 
-                            Heres a couple of videos of solo flights:
+                            A year to the day since my last update. I've made great progress this year despite delays due to a combination of bad weather and the COVID pandemic. I managed to complete three hours solo in the circuit around summertime, and have since been doing navigation flights. I was just about the go off to do a solo navigation when the tier 4 restrictions came in. I'm now waiting for the green light to get flying again.
+                            One upside of more time indoors was that I managed to complete the online navigation exam, which means all ground exams out the way. 
+                            Hopefully once the restrictions are lifted I can get back to working towards the cross country solo.
+                            In the meantime, heres a couple of videos of solo flights:
                             <br /><br />
                             <div className="Article-Large">
-                            <iframe width="100%" height="250px" src="https://youtu.be/137PsMFD0Wg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            <iframe width="100%" height="315px" src="https://www.youtube.com/embed/137PsMFD0Wg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            <iframe width="100%" height="315px" src="https://www.youtube.com/embed/vQZsiQnw6Hg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
                             </div>
                         </Typography>
                     </ExpansionPanelDetails>
+                </ExpansionPanel>
+                <ExpansionPanel className='Expansion' expanded={update1Expanded === 'update1Panel'} onChange={handleExpansionChange('update1Panel')}>
+                    <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                    <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
+                        <Grid item xs={2}>
+                            <img src={FlyingIcon} className="Header-Icon"  alt="Flying update"/>
+                        </Grid>
+                        <Grid item xs={10}>
+                            <Typography variant="h5">29th December 2019</Typography><br />
+                        </Grid>
+                    </Grid>
+                    </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <Typography variant="body1">
                             <Typography variant="caption">29th December 2019</Typography><br />
-                            Today was my first time flying solo in the circuit!
+                            Today was my first time flying solo in the circuit! 
                             <br /><br />
                             <div className="Article-Large">
                                 <img src={Solo1} alt="Solo flying in G-BNKV" />
@@ -162,16 +178,16 @@ const FlyingPage: React.FC = () => {
                             </Table>
                         </TableContainer>
                     </Grid>
-                    <Grid item md={12} xs={12}>
-                        <Typography variant='h5' className='Courier-Typography'>Videos</Typography>
-                        <Paper className="Paper Section-Body">
-                            <iframe width="100%" height="250px" src="https://www.youtube.com/embed/Nl-KGapB6GM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                            <iframe width="100%" height="250px" src="https://www.youtube.com/embed/WASz-0Tb51c" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                            <iframe width="100%" height="250px" src="https://www.youtube.com/embed/c8WISS9nvzQ" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                            <iframe width="100%" height="250px" src="https://www.youtube.com/embed/PIVJkKprRkM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                            <iframe width="100%" height="250px" src="https://www.youtube.com/embed/c9Ae9ISOvSg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                        </Paper>
-                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid item md={12} xs={12}>
+                <Typography variant='h5' className='Courier-Typography'>Videos</Typography>
+                <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='row'>
+                    <Grid item md={6} xs={6}><iframe width="100%" height="250px" src="https://www.youtube.com/embed/Nl-KGapB6GM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
+                    <Grid item md={6} xs={6}><iframe width="100%" height="250px" src="https://www.youtube.com/embed/WASz-0Tb51c" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
+                    <Grid item md={6} xs={6}><iframe width="100%" height="250px" src="https://www.youtube.com/embed/c8WISS9nvzQ" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
+                    <Grid item md={6} xs={6}><iframe width="100%" height="250px" src="https://www.youtube.com/embed/PIVJkKprRkM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
+                    <Grid item md={6} xs={6}><iframe width="100%" height="250px" src="https://www.youtube.com/embed/c9Ae9ISOvSg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
                 </Grid>
             </Grid>
         </Grid>
