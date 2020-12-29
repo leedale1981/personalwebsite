@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Typography, Paper, IconButton, ExpansionPanel, ExpansionPanelSummary, Hidden, ExpansionPanelDetails, TableContainer, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
+import { Grid, Typography, Paper, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, TableContainer, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
 import FlyingIcon from '../images/flying.png';
 import { Done } from '@material-ui/icons';
@@ -35,11 +35,20 @@ const FlyingPage: React.FC = () => {
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                         <Typography variant="body1">
+                            <Typography variant="caption">29th December 2029</Typography><br />
+                            A year to the day since my last update. I've made great progress despite delays due to a combination of bad weather and the COVID pandemic. I managed to complete three hours solo in the circuit around summertime, and have been doing navigation flights. I was just about the go off to do a solo navigation when the tier 4 restrictions came in. I'm now waiting for the green light to get flying again.
+                            I managed to complete the online navigation exam as well which means all ground exams out the way. 
+                            Heres a couple of videos of solo flights:
+                            <br /><br />
+                            <div className="Article-Large">
+                            <iframe width="100%" height="250px" src="https://youtu.be/137PsMFD0Wg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            </div>
+                        </Typography>
+                    </ExpansionPanelDetails>
+                    <ExpansionPanelDetails>
+                        <Typography variant="body1">
                             <Typography variant="caption">29th December 2019</Typography><br />
-                            Today was my first time solo flying in the circuit at North Weald Airfield! Me and my instructor started the day doing a few circuits and as the weather was good and I was flying good circuits, we did a quick stop and my instructor jumped out and I was left in the cockpit on my own for the first time ever. 
-                            I felt more switched on being on my own and somehow everything seemed clearer for the first time. I made my way to the holding point for runway 20. There was a couple of aircraft in front of me which made me a bit nervous but I made my radio calls and waited for a clear runway to make my way to the ORP.
-                            After more waiting for landing aircraft I finally lined up and took off. My circuit flying was the best I have ever done as I felt more in control and responsible. The aircraft felt light and ascended to 1200ft in no time. I made one circuit of the airfield and landed back safely on runway 20.
-                            Looking forward to more hours in the solo seat.
+                            Today was my first time flying solo in the circuit!
                             <br /><br />
                             <div className="Article-Large">
                                 <img src={Solo1} alt="Solo flying in G-BNKV" />
@@ -64,10 +73,10 @@ const FlyingPage: React.FC = () => {
                                 <TableBody>
                                     <TableRow>
                                         <TableCell component="th" scope="row">
-                                            32
+                                            50
                                         </TableCell>
                                         <TableCell component="th" scope="row">
-                                            0.25
+                                            3.15
                                         </TableCell>
                                     </TableRow>
                                 </TableBody>
@@ -114,6 +123,7 @@ const FlyingPage: React.FC = () => {
                                             Navigation
                                         </TableCell>
                                         <TableCell component="th" scope="row">
+                                            <Done />
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>
