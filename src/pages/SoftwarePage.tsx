@@ -11,6 +11,7 @@ import {
 import { PlayArrow, ExpandMore } from "@material-ui/icons";
 import DhIcon from "../images/dunnhumby.jpg";
 import NetCoreIcon from "../images/.netcore.png";
+import ProvidorIcon from "../images/providor.jpg";
 import GcpIcon from "../images/gcp.png";
 import KubeIcon from "../images/kubernetes.png";
 import OfqualIcon from "../images/ofqual.png";
@@ -38,22 +39,28 @@ import CloudIcon from "../images/cloud.png";
 import gcpAceIcon from "../images/gcp-ace.png";
 import networkPlusIcon from "../images/networkplus.png";
 import securityPlusIcon from "../images/securityplus.png";
+import DockerIcon from "../images/docker.png";
 import { Link } from "react-router-dom";
 
 const SoftwarePage: React.FC = () => {
-  const [dunnhumbyExpanded, setDunnhumbyExpanded] = useState("dunnhumbyPanel");
-  const [ofqualExpanded, setOfqualExpanded] = useState("ofqualPanel");
+  const [providorExpanded, setProvidorExpanded] = useState("providorPanel");
+  const [dunnhumbyExpanded, setDunnhumbyExpanded] = useState("");
+  const [ofqualExpanded, setOfqualExpanded] = useState("");
   const [certExpanded, setCertExpanded] = useState("certPanel");
   const [gamesExpanded, setGamesExpanded] = useState("gamesPanel");
   const [blockchainExpanded, setBlockchainExpanded] = useState("");
   const [factoryPatternExpanded, setFactoryPatternExpanded] = useState("");
   const [quantumExpanded, setQuantumExpanded] = useState("");
+  const [gkeExpanded, setGkeExpanded] = useState("gkePanel");
 
   const handleExpansionChange = (panel: string) => (
     event: any,
     newExpanded: boolean
   ) => {
     switch (panel) {
+      case "providorPanel":
+        setProvidorExpanded(newExpanded ? panel : "");
+        break;
       case "gamesPanel":
         setGamesExpanded(newExpanded ? panel : "");
         break;
@@ -75,6 +82,9 @@ const SoftwarePage: React.FC = () => {
       case "quantumPanel":
         setQuantumExpanded(newExpanded ? panel : "");
         break;
+      case "gkePanel":
+        setGkeExpanded(newExpanded ? panel : "");
+        break;
     }
   };
 
@@ -90,6 +100,76 @@ const SoftwarePage: React.FC = () => {
         <Typography variant="h5" className="Courier-Typography">
           Recent Projects
         </Typography>
+
+        <ExpansionPanel
+          className="Expansion"
+          expanded={providorExpanded === "providorPanel"}
+          onChange={handleExpansionChange("providorPanel")}
+        >
+          <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+            <Grid
+              container
+              spacing={3}
+              alignItems="flex-start"
+              justify="flex-start"
+            >
+              <Grid item md={3}>
+                <img src={ProvidorIcon} className="Header-Icon" alt="Providor" />
+              </Grid>
+              <Hidden xsDown>
+                <Grid item md={2}>
+                  <img
+                    src={DockerIcon}
+                    className="Qualification-Icon"
+                    alt="Docker"
+                  />
+                </Grid>
+                <Grid item md={2}>
+                  <img
+                    src={ReactIcon}
+                    className="Qualification-Icon"
+                    alt="React"
+                  />
+                </Grid>
+                <Grid item md={1}>
+                  <img
+                    src={NetCoreIcon}
+                    className="Qualification-Icon"
+                    alt=".NET Core"
+                  />
+                </Grid>
+                <Grid item md={2}>
+                  <img
+                    src={AzureIcon}
+                    className="Qualification-Icon"
+                    alt="Azure"
+                  />
+                </Grid>
+                <Grid item md={2}>
+                  <img
+                    src={TsIcon}
+                    className="Qualification-Icon"
+                    alt="Typescript"
+                  />
+                </Grid>
+              </Hidden>
+            </Grid>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <Typography variant="body1">
+              <Typography variant="caption">July 2020 - Present</Typography>
+              <br />
+              I am a software developer/technical lead/cloud architect who has been designing
+            and building software solutions professionally for the last twenty
+            years. I have worked thirteen of those years as a freelance
+            developer specialising in building enterprise web applications for
+            various clients in many different industries. I currently work for a company called Providor which is part of the Sureserve Group designing and building software solutions in the energy industry.
+              system.
+            </Typography>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+
+
         <ExpansionPanel
           className="Expansion"
           expanded={ofqualExpanded === "ofqualPanel"}
@@ -358,8 +438,8 @@ const SoftwarePage: React.FC = () => {
             </Link>
             <ExpansionPanel
               className="Expansion Section-Body"
-              expanded={quantumExpanded === "quantumPanel"}
-              onChange={handleExpansionChange("quantumPanel")}
+              expanded={gkeExpanded === "gkePanel"}
+              onChange={handleExpansionChange("gkePanel")}
             >
               <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                 <img

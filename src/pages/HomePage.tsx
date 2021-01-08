@@ -8,11 +8,10 @@ import {
   ExpansionPanel,
   ExpansionPanelSummary,
   ExpansionPanelDetails,
-  Collapse,
   Hidden,
   Tooltip,
+  Divider,
 } from "@material-ui/core";
-import FpIcon from "../images/factorydesignpattern.png";
 import McsaIcon from "../images/mcsa.png";
 import McsdIcon from "../images/mcsd.png";
 import AzFundIcon from "../images/azure-fundamentals.png";
@@ -25,30 +24,28 @@ import BcsIcon from "../images/bcs.png";
 import NvqIcon from "../images/nvq-logo.png";
 import RyaIcon from "../images/rya.gif";
 import NetCoreIcon from "../images/.netcore.png";
-import OfqualIcon from "../images/ofqual.png";
+import DockerIcon from "../images/docker.png";
 import ReactIcon from "../images/react.png";
 import AzureIcon from "../images/azure.png";
 import TsIcon from "../images/typescript.png";
 import GamingIcon from "../images/gaming.png";
 import IntroCyberIcon from "../images/introcyber.png";
 import CloudIcon from "../images/cloud.png";
-import ltIcon from "../images/learningtree-cert.png";
 import SbIcon from "../images/spaceblaster.jpg";
 import gcpAceIcon from "../images/gcp-ace.png";
 import networkPlusIcon from "../images/networkplus.png";
 import securityPlusIcon from "../images/securityplus.png";
+import ProvidorIcon from "../images/providor.jpg";
 import { Link } from "react-router-dom";
 import {
   ExpandMore,
   PlayArrow,
-  KeyboardArrowDown,
-  KeyboardArrowUp,
 } from "@material-ui/icons";
 
 const HomePage: React.FC = () => {
-  const [projectExpanded, setProjectExpanded] = useState("");
-  const [gamesExpanded, setGamesExpanded] = useState("");
-  const [articleExpanded, setArticleExpanded] = useState("");
+  const [projectExpanded, setProjectExpanded] = useState("projectPanel");
+  const [gamesExpanded, setGamesExpanded] = useState("gamesPanel");
+  const [articleExpanded, setArticleExpanded] = useState("articlePanel");
   const [moreAboutMeExpanded, setMoreAboutMeExpanded] = useState(false);
 
   const handleExpansionChange = (panel: string) => (
@@ -91,22 +88,13 @@ const HomePage: React.FC = () => {
         <Paper className="Paper" style={{ minHeight: 370 }}>
           <Typography variant="h6">Career</Typography>
           <Typography variant="body1">
-            I am a software developer and cloud architect who has been designing
+            I am a software developer/technical lead/cloud architect who has been designing
             and building software solutions professionally for the last twenty
             years. I have worked thirteen of those years as a freelance
             developer specialising in building enterprise web applications for
-            various clients in many different industries.
+            various clients in many different industries. I currently work for a company called Providor which is part of the Sureserve Group designing and building software solutions in the energy industry.
             <br />
             <br />
-            My main technology stack is based around Microsoft .NET (Including
-            .NET Core & ASP.NET MVC/WebAPI), JavaScript, TypeScript, React and
-            Node. I have extensive knowledge of cloud technologies and
-            architectures mainly on the Microsoft Azure platform and recently
-            with Google’s Cloud Platform.
-            <br />
-            <br />I try to focus on building clean, testable code that not only
-            delivers on my clients requirements but leaves them with a simple
-            maintainable code base.
           </Typography>
           <br />
           <IconButton style={{ backgroundColor: "transparent" }}>
@@ -199,110 +187,85 @@ const HomePage: React.FC = () => {
               />
             </Tooltip>
           </IconButton>
-          <IconButton style={{ backgroundColor: "transparent" }}>
-            <Tooltip title="Visual Basic 6 Enterprise Development Certified Professional">
-              <img
-                src={ltIcon}
-                className="Qualification-Icon"
-                alt="Visual Basic 6 Enterprise Development Certified Professional"
-              />
-            </Tooltip>
-          </IconButton>
-        </Paper>
-        <IconButton
-          disableRipple
-          disableTouchRipple
-          style={{ backgroundColor: "transparent" }}
-          onClick={() => handleLinkExpandClick("moreAboutMe")}
-        >
-          <Typography variant="h5" className="Courier-Typography">
-            {moreAboutMeExpanded ? "Less about me" : "More about me"}
+          <br />
+          <br />
+          <Divider />
+          <br />
+          <br />
+          <Typography variant="h6">Education</Typography>
+          <Typography variant="body1">
+            I am about the finish up a <a href="http://www.open.ac.uk/courses/combined-studies/degrees/open-degree-qd" target="_blank">BSc Hons degree with the Open University</a> in June. My degree was split between physics and computing.
+            I also completed an <a href="https://essentialsiteskills.co.uk/nvq/level-2-diploma-business-administration" target="_blank">NVQ in Business Administration</a> 
           </Typography>
-          {moreAboutMeExpanded ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
-        </IconButton>
-        <Collapse in={moreAboutMeExpanded}>
-          <Paper className="Paper">
-            <Typography variant="h6">Education</Typography>
+          <IconButton style={{ backgroundColor: "transparent" }}>
+            <img src={OuIcon} className="Qualification-Icon" />
+          </IconButton>
+          <IconButton style={{ backgroundColor: "transparent" }}>
+            <img src={NvqIcon} className="Qualification-Icon" />
+          </IconButton>
+          <br />
+          <br />
+          <Divider />
+          <br />
+          <br />
+          <Typography variant="h6">Flying</Typography>
+          <Typography variant="body1">
+            I enjoy flying in my free time and I'm currently
+            training to get my private pilots licence at <a href="https://northwealdflighttraining.co.uk/book-trial-lessons-and-flying-experiences/" target="_blank">North Weald Flight
+            Training</a>. I have about 50 hours logged at the moment with 3 hours solo in the circuit at North Weald. Looking to complete my cross country solo soon.
+          </Typography>
+          <IconButton style={{ backgroundColor: "transparent" }}>
+            <img src={CaaIcon} className="Qualification-Icon" />
+          </IconButton>
+          <br />
+          <br />
+          <Link to={"/flying"}>
             <Typography variant="body1">
-              I am working towards a BSc (Hons) degree part time with the Open
-              University. The degree is an open degree and has been split
-              between computing and physics. I am currently doing modules SM358
-              The Quantum World and TM352 Web, mobile and cloud technologies. I
-              also have an NVQ in Business Administration
+              If your interested in following my progress in flying then check
+              out the flying section.
             </Typography>
-            <IconButton style={{ backgroundColor: "transparent" }}>
-              <img src={OuIcon} className="Qualification-Icon" />
-            </IconButton>
-            <IconButton style={{ backgroundColor: "transparent" }}>
-              <img src={NvqIcon} className="Qualification-Icon" />
-            </IconButton>
-          </Paper>
-        </Collapse>
-        <Collapse in={moreAboutMeExpanded}>
-          <Paper className="Paper">
-            <Typography variant="h6">Flying</Typography>
-            <Typography variant="body1">
-              I enjoy flying small aircraft in my free time and I'm currently
-              training to get my private pilots licence at North Weald Flight
-              Training. I have about 32 hours logged at the moment as a pilot
-              under training.
-            </Typography>
+          </Link>
+          <br />
+          <br />
+          <Divider />
+          <br />
+          <br />
+          <Typography variant="h6">Sailing</Typography>
+          <Typography variant="body1">
+            I enjoy sailing and I am currently working my through the <a href="https://www.rya.org.uk/courses-training/courses/Pages/hub.aspx" target="_blank">RYA qualifications</a>. I have completed Level 1 & 2 Dinghy and the Compentent Crew course
             <br />
             <br />
             <Link to={"/flying"}>
               <Typography variant="body1">
-                If your interested in following my progress in flying then check
-                out the flying section.
+                Visit the sailing section for updates and photos of our
+                journey.
               </Typography>
             </Link>
-            <IconButton style={{ backgroundColor: "transparent" }}>
-              <img src={CaaIcon} className="Qualification-Icon" />
-            </IconButton>
-          </Paper>
-        </Collapse>
-        <Collapse in={moreAboutMeExpanded}>
-          <Paper className="Paper">
-            <Typography variant="h6">Sailing</Typography>
-            <Typography variant="body1">
-              My plan in the next few years is to purchase a yacht and sail
-              around the world with my wife (and dogs). We are both working our
-              way through the RYA certifications so we can gain as much
-              experience as possible before we set off.
-              <br />
-              <br />
-              <Link to={"/flying"}>
-                <Typography variant="body1">
-                  Visit the sailing section for updates and photos of our
-                  journey.
-                </Typography>
-              </Link>
-            </Typography>
-            <IconButton style={{ backgroundColor: "transparent" }}>
-              <img src={RyaIcon} className="Qualification-Icon" />
-            </IconButton>
-          </Paper>
-        </Collapse>
-        <Collapse in={moreAboutMeExpanded}>
-          <Paper className="Paper">
-            <Typography variant="h6">Diving</Typography>
-            <Typography variant="body1">
-              I have recently qualified as a PADI certified Open Water Diver and
-              plan to do more diving in the future. Hoepfully working towards
-              the Master Scuba Diver qualification.
-              <br />
-              <br />
-              <Link to={"/flying"}>
-                <Typography variant="body1">
-                  Check out the diving section for updates on my diving
-                  progress.
-                </Typography>
-              </Link>
-            </Typography>
-            <IconButton style={{ backgroundColor: "transparent" }}>
-              <img src={PadiOwdIcon} className="Qualification-Icon" />
-            </IconButton>
-          </Paper>
-        </Collapse>
+          </Typography>
+          <IconButton style={{ backgroundColor: "transparent" }}>
+            <img src={RyaIcon} className="Qualification-Icon" />
+          </IconButton>
+          <br />
+          <br />
+          <Divider />
+          <br />
+          <br />
+          <Typography variant="h6">Diving</Typography>
+          <Typography variant="body1">
+            My last (but not least) hobby is scuba diving. I am currently qualified as an <a href="https://www.padi.com/courses/advanced-open-water" target="_blank">PADI Advanced Open Water diver</a>.
+            <br />
+            <br />
+            <Link to={"/flying"}>
+              <Typography variant="body1">
+                Check out the diving section for updates on my diving
+                progress.
+              </Typography>
+            </Link>
+          </Typography>
+          <IconButton style={{ backgroundColor: "transparent" }}>
+            <img src={PadiOwdIcon} className="Qualification-Icon" />
+          </IconButton>
+        </Paper>
       </Grid>
       <Grid item md={5} xs={12}>
         <Grid
@@ -371,11 +334,18 @@ const HomePage: React.FC = () => {
                   alignItems="flex-start"
                   justify="flex-start"
                 >
-                  <Grid item md={3}>
+                  <Grid item md={4}>
                     <img
-                      src={OfqualIcon}
+                      src={ProvidorIcon}
                       className="Header-Icon"
-                      alt="Ofqual"
+                      alt="Providor"
+                    />
+                  </Grid>
+                  <Grid item md={2}>
+                    <img
+                      src={DockerIcon}
+                      className="Header-Icon"
+                      alt="Docker"
                     />
                   </Grid>
                   <Hidden xsDown>
@@ -393,18 +363,11 @@ const HomePage: React.FC = () => {
                         alt=".NET Core"
                       />
                     </Grid>
-                    <Grid item md={2}>
+                    <Grid item md={1}>
                       <img
                         src={AzureIcon}
                         className="Qualification-Icon"
                         alt="Azure"
-                      />
-                    </Grid>
-                    <Grid item md={2}>
-                      <img
-                        src={TsIcon}
-                        className="Qualification-Icon"
-                        alt="Typescript"
                       />
                     </Grid>
                   </Hidden>
@@ -413,20 +376,11 @@ const HomePage: React.FC = () => {
               <ExpansionPanelDetails>
                 <Typography variant="body1">
                   <Typography variant="caption">
-                    June 2018 - April 2020
+                    July 2020 - Present
                   </Typography>
                   <br />
-                  My role at Ofqual was to design and build from scratch a fully
-                  working single page web application that would allow Ofqual to
-                  manage awarding organisations across England and Wales and to
-                  handle their accreditation process. React was choosen for the
-                  front end application calling into and Node backend API. The
-                  application was hosted on the Micrtosoft Azure Cloud and
-                  services like CosmosDB, Azure AD and Azure Search were
-                  utilised within the application. The application was
-                  sucessfully delivered into production. I went back to Ofqual a
-                  while later to migrate the backend API to .NET core and build
-                  extra functionality into the system.
+                  In my role as senior software developer at <a href="https://www.providor.co.uk/">Providor</a> I am currentlydeveloping a new in house smart meter data flow system. 
+                  The system is based on a microservice architecture using .NET Core, React, Docker Swarm, Azure DevOps among other technologies.
                 </Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>

@@ -21,7 +21,8 @@
 }
 
 .Courier-Typography {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace !important;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace !important;
 }
 
 .Nav-Button {
@@ -38,10 +39,6 @@
   padding: 50px;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-.Article a {
-  text-decoration: underline;
 }
 
 .Article p {
@@ -106,7 +103,8 @@
   margin-right: 20px;
 }
 
-.Expansion p, span {
+.Expansion p,
+span {
   clear: both;
   width: 100%;
 }
@@ -161,7 +159,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color:black;
+  color: black;
 }
 
 .Space-Blaster-Frame {
@@ -194,15 +192,15 @@ a:visited {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color:black;
+  color: black;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-.Math, span
-{
+.Math,
+span {
   clear: unset;
   width: unset;
 }
