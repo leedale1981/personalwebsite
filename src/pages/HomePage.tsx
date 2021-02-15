@@ -27,10 +27,10 @@ import NetCoreIcon from "../images/.netcore.png";
 import DockerIcon from "../images/docker.png";
 import ReactIcon from "../images/react.png";
 import AzureIcon from "../images/azure.png";
-import TsIcon from "../images/typescript.png";
 import GamingIcon from "../images/gaming.png";
 import IntroCyberIcon from "../images/introcyber.png";
 import CloudIcon from "../images/cloud.png";
+import Docker from "../images/docker2.png";
 import SbIcon from "../images/spaceblaster.jpg";
 import gcpAceIcon from "../images/gcp-ace.png";
 import networkPlusIcon from "../images/networkplus.png";
@@ -46,7 +46,6 @@ const HomePage: React.FC = () => {
   const [projectExpanded, setProjectExpanded] = useState("projectPanel");
   const [gamesExpanded, setGamesExpanded] = useState("gamesPanel");
   const [articleExpanded, setArticleExpanded] = useState("articlePanel");
-  const [moreAboutMeExpanded, setMoreAboutMeExpanded] = useState(false);
 
   const handleExpansionChange = (panel: string) => (
     event: any,
@@ -61,14 +60,6 @@ const HomePage: React.FC = () => {
         break;
       case "articlePanel":
         setArticleExpanded(newExpanded ? panel : "");
-        break;
-    }
-  };
-
-  const handleLinkExpandClick = (panel: string) => {
-    switch (panel) {
-      case "moreAboutMe":
-        setMoreAboutMeExpanded(!moreAboutMeExpanded);
         break;
     }
   };
@@ -194,14 +185,14 @@ const HomePage: React.FC = () => {
           <br />
           <Typography variant="h6">Education</Typography>
           <Typography variant="body1">
-            I am about the finish up a <a href="http://www.open.ac.uk/courses/combined-studies/degrees/open-degree-qd" target="_blank">BSc Hons degree with the Open University</a> in June. My degree was split between physics and computing.
-            I also completed an <a href="https://essentialsiteskills.co.uk/nvq/level-2-diploma-business-administration" target="_blank">NVQ in Business Administration</a> 
+            I am about the finish up a <a href="http://www.open.ac.uk/courses/combined-studies/degrees/open-degree-qd" target="_blank" rel="noopener noreferrer">BSc Hons degree with the Open University</a> in June. My degree was split between physics and computing.
+            I also completed an <a href="https://essentialsiteskills.co.uk/nvq/level-2-diploma-business-administration" target="_blank" rel="noopener noreferrer">NVQ in Business Administration</a> 
           </Typography>
           <IconButton style={{ backgroundColor: "transparent" }}>
-            <img src={OuIcon} className="Qualification-Icon" />
+            <img src={OuIcon} className="Qualification-Icon" alt="Open University" />
           </IconButton>
           <IconButton style={{ backgroundColor: "transparent" }}>
-            <img src={NvqIcon} className="Qualification-Icon" />
+            <img src={NvqIcon} className="Qualification-Icon" alt="NVQ" />
           </IconButton>
           <br />
           <br />
@@ -211,11 +202,11 @@ const HomePage: React.FC = () => {
           <Typography variant="h6">Flying</Typography>
           <Typography variant="body1">
             I enjoy flying in my free time and I'm currently
-            training to get my private pilots licence at <a href="https://northwealdflighttraining.co.uk/book-trial-lessons-and-flying-experiences/" target="_blank">North Weald Flight
+            training to get my private pilots licence at <a href="https://northwealdflighttraining.co.uk/book-trial-lessons-and-flying-experiences/" target="_blank" rel="noopener noreferrer">North Weald Flight
             Training</a>. I have about 50 hours logged at the moment with 3 hours solo in the circuit at North Weald. Looking to complete my cross country solo soon.
           </Typography>
           <IconButton style={{ backgroundColor: "transparent" }}>
-            <img src={CaaIcon} className="Qualification-Icon" />
+            <img src={CaaIcon} className="Qualification-Icon" alt="CAA" />
           </IconButton>
           <br />
           <br />
@@ -243,7 +234,7 @@ const HomePage: React.FC = () => {
             </Link>
           </Typography>
           <IconButton style={{ backgroundColor: "transparent" }}>
-            <img src={RyaIcon} className="Qualification-Icon" />
+            <img src={RyaIcon} className="Qualification-Icon" alt="RYA" />
           </IconButton>
           <br />
           <br />
@@ -263,7 +254,7 @@ const HomePage: React.FC = () => {
             </Link>
           </Typography>
           <IconButton style={{ backgroundColor: "transparent" }}>
-            <img src={PadiOwdIcon} className="Qualification-Icon" />
+            <img src={PadiOwdIcon} className="Qualification-Icon" alt="PADI" />
           </IconButton>
         </Paper>
       </Grid>
@@ -292,24 +283,20 @@ const HomePage: React.FC = () => {
             >
               <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                 <img
-                  src={CloudIcon}
+                  src={Docker}
                   className="Header-Icon"
-                  alt="CloudComputing"
+                  alt="Docker"
                 />
                 <Typography variant="body2" style={{ lineHeight: 2 }}>
-                  How to deploy a Web App and Load Balancer to Kubernetes on GKE
+                How to bind to a Windows Share using CIFS in Docker
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography variant="body1">
-                  This video walks through creating a Kubernetes cluster on
-                  Google Cloud Platform GKE. It shows hows to deploy a YAML
-                  deployment file using the gcloud SDK and deploy a load
-                  balancer service type to connect to a web server running in a
-                  container.
+                  Docker is great for building stateless, ephemeral services but sometimes these services need to access data outside the container. This article shows you how to bind a network share to a Docker container.
                   <br />
                   <br />
-                  <Link to={"/tech/articles/kubernetes-gke"}>
+                  <Link to={"/tech/articles/docker-bind-mount-network"}>
                     <Typography variant="body1">
                       Read the whole article
                     </Typography>
@@ -396,8 +383,8 @@ const HomePage: React.FC = () => {
             >
               <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                 <Link to={"/spaceblaster"}>
-                  <img src={SbIcon} className="Game-Icon" />
-                  <img src={GamingIcon} className="Game-Icon" />
+                  <img src={SbIcon} className="Game-Icon" alt="Space blaster" />
+                  <img src={GamingIcon} className="Game-Icon" alt="Gaming" />
                   <PlayArrow fontSize="large" />
                 </Link>
               </ExpansionPanelSummary>

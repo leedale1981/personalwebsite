@@ -7,11 +7,15 @@ import FactoryDesignPattern from '../articles/FactoryDesignPatternArticle';
 import BloomFilters from '../articles/BloomFiltersArticle';
 import QuantumCpmputing from '../articles/QuantumComputingArticle';
 import KubernetesGke from '../articles/KubernetesGkeArticle';
+import DockerBindMountNetwork from '../articles/DockerBindMountNetwork';
 
 const ArticlesRouter: React.FC = () => {
 
     return (
         <div>
+        <Route exact path="/tech/articles/docker-bind-mount-network" render={
+            (props) => <DockerBindMountNetwork />
+        } />
         <Route exact path="/tech/articles/blockchain-what-is-it" render={
             (props) => <BlockchainWhatIsItArticle />
         } />

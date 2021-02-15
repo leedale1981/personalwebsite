@@ -35,7 +35,7 @@ import ltIcon from "../images/learningtree-cert.png";
 import wordIcon from "../images/word.png";
 import QuantumImage from "../images/quantum.png";
 import TogafIcon from "../images/togaf.png";
-import CloudIcon from "../images/cloud.png";
+import Docker from "../images/docker2.png";
 import gcpAceIcon from "../images/gcp-ace.png";
 import networkPlusIcon from "../images/networkplus.png";
 import securityPlusIcon from "../images/securityplus.png";
@@ -443,24 +443,20 @@ const SoftwarePage: React.FC = () => {
             >
               <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                 <img
-                  src={CloudIcon}
+                  src={Docker}
                   className="Header-Icon"
-                  alt="CloudComputing"
+                  alt="Docker"
                 />
                 <Typography variant="body2" style={{ lineHeight: 2 }}>
-                  How to deploy a Web App and Load Balancer to Kubernetes on GKE
+                How to bind to a Windows Share using CIFS in Docker
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography variant="body1">
-                  This video walks through creating a Kubernetes cluster on
-                  Google Cloud Platform GKE. It shows hows to deploy a YAML
-                  deployment file using the gcloud SDK and deploy a load
-                  balancer service type to connect to a web server running in a
-                  container.
+                  Docker is great for building stateless, ephemeral services but sometimes these services need to access data outside the container. This article shows you how to bind a network share to a Docker container.
                   <br />
                   <br />
-                  <Link to={"/tech/articles/kubernetes-gke"}>
+                  <Link to={"/tech/articles/docker-bind-mount-network"}>
                     <Typography variant="body1">
                       Read the whole article
                     </Typography>

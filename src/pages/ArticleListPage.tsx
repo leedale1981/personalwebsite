@@ -7,6 +7,7 @@ import AzIcon from "../images/azureicon.png";
 import AlgoIcon from "../images/algorithm.png";
 import QuantumImage from "../images/quantum.png";
 import CloudIcon from "../images/cloud.png";
+import Docker from "../images/docker2.png";
 import { Link } from 'react-router-dom';
 
 const ArticleListPage: React.FC = () => {
@@ -17,6 +18,12 @@ const ArticleListPage: React.FC = () => {
                 <Typography variant='h5' className='Courier-Typography'>All Articles</Typography>
                 <Paper className="Paper">
                 <List>
+                    <Link to={"/tech/articles/docker-bind-mount-network"}>
+                        <ListItem divider>
+                            <ListItemAvatar><img src={Docker} className="Header-Icon"  alt="How to bind to a Windows Share using CIFS in Docker"/></ListItemAvatar>
+                            <ListItemText><Typography variant="body1" style={{lineHeight: 1.5}}>How to bind to a Windows Share using CIFS in Docker</Typography></ListItemText>
+                        </ListItem>
+                    </Link>
                     <Link to={"/tech/articles/kubernetes-gke"}>
                         <ListItem divider>
                             <ListItemAvatar><img src={CloudIcon} className="Header-Icon"  alt="How to deploy a Web App and Load Balancer to Kubernetes on GKE"/></ListItemAvatar>
