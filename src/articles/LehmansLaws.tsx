@@ -48,7 +48,7 @@ const LehmansLaws: React.FC = () => {
             Software evolution is more about understanding the need for change and thinking about how a piece of software can adapt to its changing environment.
             </Typography>
             <Typography variant="body1">
-            This way of thinking is nowadays encapsulated by the <a href="https://en.wikipedia.org/wiki/Agile_software_development">Agile</a> and <a href="https://en.wikipedia.org/wiki/Site_reliability_engineering">Site Reliability Engineering</a> mindsets. These mindsets put software evolution at the forefront of systems development and attempt to build systems that are resilient and adaptable to change. They understand that changes in software are enviable.
+            This way of thinking is nowadays encapsulated by the <a href="https://en.wikipedia.org/wiki/Agile_software_development">Agile</a> and <a href="https://en.wikipedia.org/wiki/Site_reliability_engineering">Site Reliability Engineering</a> mindsets. These mindsets put software evolution at the forefront of systems development and attempt to build systems that are resilient and adaptable to change. They understand that changes in software are envitable.
             </Typography>
             <Typography variant="h6">Lehman’s Laws</Typography>
             <Typography variant="body1">
