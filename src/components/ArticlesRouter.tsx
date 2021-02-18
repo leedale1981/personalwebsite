@@ -8,11 +8,15 @@ import BloomFilters from '../articles/BloomFiltersArticle';
 import QuantumCpmputing from '../articles/QuantumComputingArticle';
 import KubernetesGke from '../articles/KubernetesGkeArticle';
 import DockerBindMountNetwork from '../articles/DockerBindMountNetwork';
+import LehmansLaws from '../articles/LehmansLaws';
 
 const ArticlesRouter: React.FC = () => {
 
     return (
         <div>
+        <Route exact path="/tech/articles/software-evolution" render={
+            (props) => <LehmansLaws />
+        } />
         <Route exact path="/tech/articles/docker-bind-mount-network" render={
             (props) => <DockerBindMountNetwork />
         } />

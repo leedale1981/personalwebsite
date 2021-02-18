@@ -29,7 +29,6 @@ import ReactIcon from "../images/react.png";
 import AzureIcon from "../images/azure.png";
 import GamingIcon from "../images/gaming.png";
 import IntroCyberIcon from "../images/introcyber.png";
-import CloudIcon from "../images/cloud.png";
 import Docker from "../images/docker2.png";
 import SbIcon from "../images/spaceblaster.jpg";
 import gcpAceIcon from "../images/gcp-ace.png";
