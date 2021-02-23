@@ -97,337 +97,7 @@ const SoftwarePage: React.FC = () => {
       direction="row"
     >
       <Grid item md={7} xs={12}>
-        <Typography variant="h5" className="Courier-Typography">
-          Recent Projects
-        </Typography>
-
-        <ExpansionPanel
-          className="Expansion"
-          expanded={providorExpanded === "providorPanel"}
-          onChange={handleExpansionChange("providorPanel")}
-        >
-          <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-            <Grid
-              container
-              spacing={3}
-              alignItems="flex-start"
-              justify="flex-start"
-            >
-              <Grid item md={3}>
-                <img src={ProvidorIcon} className="Header-Icon" alt="Providor" />
-              </Grid>
-              <Hidden xsDown>
-                <Grid item md={2}>
-                  <img
-                    src={DockerIcon}
-                    className="Qualification-Icon"
-                    alt="Docker"
-                  />
-                </Grid>
-                <Grid item md={2}>
-                  <img
-                    src={ReactIcon}
-                    className="Qualification-Icon"
-                    alt="React"
-                  />
-                </Grid>
-                <Grid item md={1}>
-                  <img
-                    src={NetCoreIcon}
-                    className="Qualification-Icon"
-                    alt=".NET Core"
-                  />
-                </Grid>
-                <Grid item md={2}>
-                  <img
-                    src={AzureIcon}
-                    className="Qualification-Icon"
-                    alt="Azure"
-                  />
-                </Grid>
-                <Grid item md={2}>
-                  <img
-                    src={TsIcon}
-                    className="Qualification-Icon"
-                    alt="Typescript"
-                  />
-                </Grid>
-              </Hidden>
-            </Grid>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography variant="body1">
-              <Typography variant="caption">July 2020 - Present</Typography>
-              <br />
-              I am a software developer/technical lead/cloud architect who has been designing
-            and building software solutions professionally for the last twenty
-            years. I have worked thirteen of those years as a freelance
-            developer specialising in building enterprise web applications for
-            various clients in many different industries. I currently work for a company called Providor which is part of the Sureserve Group designing and building software solutions in the energy industry.
-              system.
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-
-
-        <ExpansionPanel
-          className="Expansion"
-          expanded={ofqualExpanded === "ofqualPanel"}
-          onChange={handleExpansionChange("ofqualPanel")}
-        >
-          <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-            <Grid
-              container
-              spacing={3}
-              alignItems="flex-start"
-              justify="flex-start"
-            >
-              <Grid item md={3}>
-                <img src={OfqualIcon} className="Header-Icon" alt="Ofqual" />
-              </Grid>
-              <Hidden xsDown>
-                <Grid item md={2}>
-                  <img
-                    src={ReactIcon}
-                    className="Qualification-Icon"
-                    alt="React"
-                  />
-                </Grid>
-                <Grid item md={1}>
-                  <img
-                    src={NetCoreIcon}
-                    className="Qualification-Icon"
-                    alt=".NET Core"
-                  />
-                </Grid>
-                <Grid item md={2}>
-                  <img
-                    src={AzureIcon}
-                    className="Qualification-Icon"
-                    alt="Azure"
-                  />
-                </Grid>
-                <Grid item md={2}>
-                  <img
-                    src={TsIcon}
-                    className="Qualification-Icon"
-                    alt="Typescript"
-                  />
-                </Grid>
-                <Grid item md={1}>
-                  <img
-                    src={NodeIcon}
-                    className="Qualification-Icon"
-                    alt="Node"
-                  />
-                </Grid>
-              </Hidden>
-            </Grid>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography variant="body1">
-              <Typography variant="caption">June 2018 - April 2020</Typography>
-              <br />
-              My role at Ofqual was to design and build from scratch a fully
-              working single page web application that would allow Ofqual to
-              manage awarding organisations across England and Wales and to
-              handle their accreditation process. React was choosen for the
-              front end application calling into and Node backend API. The
-              application was hosted on the Micrtosoft Azure Cloud and services
-              like CosmosDB, Azure AD and Azure Search were utilised within the
-              application. The application was sucessfully delivered into
-              production. I went back to Ofqual a while later to migrate the
-              backend API to .NET core and build extra functionality into the
-              system.
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        <ExpansionPanel
-          className="Expansion"
-          expanded={dunnhumbyExpanded === "dunnhumbyPanel"}
-          onChange={handleExpansionChange("dunnhumbyPanel")}
-        >
-          <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-            <Grid
-              container
-              spacing={3}
-              alignItems="flex-start"
-              justify="flex-start"
-            >
-              <Grid item md={5}>
-                <img src={DhIcon} className="Header-Icon" alt="Dunnhumby" />
-              </Grid>
-              <Hidden xsDown>
-                <Grid item md={2}>
-                  <img
-                    src={NetCoreIcon}
-                    className="Qualification-Icon"
-                    alt=".Net Core"
-                  />
-                </Grid>
-                <Grid item md={2}>
-                  <img
-                    src={GcpIcon}
-                    className="Qualification-Icon"
-                    alt="Google Cloud Platform"
-                  />
-                </Grid>
-                <Grid item md={2}>
-                  <img
-                    src={KubeIcon}
-                    className="Qualification-Icon"
-                    alt="Kubernetes"
-                  />
-                </Grid>
-              </Hidden>
-            </Grid>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography variant="body1">
-              <Typography variant="caption">
-                July 2019 - November 2019
-              </Typography>
-              <br />
-              This project was helping to rebuild from scratch, Dunnhumby's core
-              data science platform with modern technologies such as .NET Core,
-              Google Cloud Platform, Docker, Kubernetes and React. My role as a
-              senior software engineer was to design and develop some middle
-              tier and backend services utilising .NET Core. The services hooked
-              into GCP PubSub messaging queues and a PostgresSQL database.
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        <Typography variant="h5" className="Courier-Typography">
-          Certifications
-        </Typography>
-        <ExpansionPanel
-          className="Expansion"
-          expanded={certExpanded === "certPanel"}
-          onChange={handleExpansionChange("certPanel")}
-        >
-          <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-            <img src={MedalIcon} className="Header-Icon" alt="Certifications" />
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Grid
-              container
-              spacing={3}
-              alignItems="flex-start"
-              justify="flex-start"
-            >
-              <Grid item md={4} sm={6}>
-                <Tooltip title="Google Certified Associate Cloud Engineer">
-                  <img
-                    src={gcpAceIcon}
-                    className="Qualification-Icon-Large"
-                    alt="Google Certified Associate Cloud Engineer"
-                  />
-                </Tooltip>
-              </Grid>
-              <Grid item md={4} sm={6}>
-                <Tooltip title="TOGAF 9.2 Certified">
-                  <img
-                    src={TogafIcon}
-                    className="Qualification-Icon-Large"
-                    alt="TOGAF 9.2 Certified"
-                  />
-                </Tooltip>
-              </Grid>
-              <Grid item md={4} sm={6}>
-                <Tooltip title="Azure Developer Associate">
-                  <img
-                    src={AzDevIcon}
-                    className="Qualification-Icon-Large"
-                    alt="Azure Developer Associate"
-                  />
-                </Tooltip>
-              </Grid>
-              <Grid item md={4} sm={6}>
-                <Tooltip title="Azure Fundamentals">
-                  <img
-                    src={AzFundIcon}
-                    className="Qualification-Icon-Large"
-                    alt="Azure Fundamentals"
-                  />
-                </Tooltip>
-              </Grid>
-              <Grid item md={4} sm={6}>
-                <Tooltip title="MCSD Web App Builder">
-                  <img
-                    src={McsdIcon}
-                    className="Qualification-Icon-Large"
-                    alt="MCSD App Builder"
-                  />
-                </Tooltip>
-              </Grid>
-              <Grid item md={4} sm={6}>
-                <Tooltip title="MCSA Web Applications">
-                  <img
-                    src={McsaIcon}
-                    className="Qualification-Icon-Large"
-                    alt="MCSA Web Applications"
-                  />
-                </Tooltip>
-              </Grid>
-              <Grid item md={4} sm={6}>
-                <Tooltip title="CompTIA Security+">
-                  <img
-                    src={securityPlusIcon}
-                    className="Qualification-Icon-Large"
-                    alt="CompTIA Security+"
-                  />
-                </Tooltip>
-              </Grid>
-              <Grid item md={4} sm={6}>
-                <Tooltip title="CompTIA Network+">
-                  <img
-                    src={networkPlusIcon}
-                    className="Qualification-Icon-Large"
-                    alt="CompTIA Network+"
-                  />
-                </Tooltip>
-              </Grid>
-              <Grid item md={4} sm={6}>
-                <Tooltip title="Foundation Certificate in Systems Development">
-                  <img
-                    src={BcsIcon}
-                    className="Qualification-Icon-Large"
-                    alt="Foundation Certificate in Systems Development"
-                  />
-                </Tooltip>
-              </Grid>
-              <Grid item md={4} sm={6}>
-                <Tooltip title="Introduction to Cyber Security">
-                  <img
-                    src={IntroCyberIcon}
-                    className="Qualification-Icon-Large"
-                    alt="Introduction to Cyber Security"
-                  />
-                </Tooltip>
-              </Grid>
-              <Grid item md={4} sm={6}>
-                <Tooltip title="Visual Basic 6 Enterprise Development Certified Professional">
-                  <img
-                    src={ltIcon}
-                    className="Qualification-Icon-Large"
-                    alt="Visual Basic 6 Enterprise Development Certified Professional"
-                  />
-                </Tooltip>
-              </Grid>
-            </Grid>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-      </Grid>
-      <Grid item md={5} xs={12}>
-        <Grid
-          container
-          spacing={5}
-          alignItems="flex-start"
-          justify="flex-start"
-          direction="column"
-        >
-          <Grid item md={12} xs={12}>
-            <Typography
+        <Typography
               variant="h5"
               className="Courier-Typography Section-Header"
             >
@@ -595,6 +265,337 @@ const SoftwarePage: React.FC = () => {
                 </Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>
+
+        <Typography variant="h5" className="Courier-Typography">
+          Certifications
+        </Typography>
+        <ExpansionPanel
+          className="Expansion"
+          expanded={certExpanded === "certPanel"}
+          onChange={handleExpansionChange("certPanel")}
+        >
+          <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+            <img src={MedalIcon} className="Header-Icon" alt="Certifications" />
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <Grid
+              container
+              spacing={3}
+              alignItems="flex-start"
+              justify="flex-start"
+            >
+              <Grid item md={4} sm={6}>
+                <Tooltip title="Google Certified Associate Cloud Engineer">
+                  <img
+                    src={gcpAceIcon}
+                    className="Qualification-Icon-Large"
+                    alt="Google Certified Associate Cloud Engineer"
+                  />
+                </Tooltip>
+              </Grid>
+              <Grid item md={4} sm={6}>
+                <Tooltip title="TOGAF 9.2 Certified">
+                  <img
+                    src={TogafIcon}
+                    className="Qualification-Icon-Large"
+                    alt="TOGAF 9.2 Certified"
+                  />
+                </Tooltip>
+              </Grid>
+              <Grid item md={4} sm={6}>
+                <Tooltip title="Azure Developer Associate">
+                  <img
+                    src={AzDevIcon}
+                    className="Qualification-Icon-Large"
+                    alt="Azure Developer Associate"
+                  />
+                </Tooltip>
+              </Grid>
+              <Grid item md={4} sm={6}>
+                <Tooltip title="Azure Fundamentals">
+                  <img
+                    src={AzFundIcon}
+                    className="Qualification-Icon-Large"
+                    alt="Azure Fundamentals"
+                  />
+                </Tooltip>
+              </Grid>
+              <Grid item md={4} sm={6}>
+                <Tooltip title="MCSD Web App Builder">
+                  <img
+                    src={McsdIcon}
+                    className="Qualification-Icon-Large"
+                    alt="MCSD App Builder"
+                  />
+                </Tooltip>
+              </Grid>
+              <Grid item md={4} sm={6}>
+                <Tooltip title="MCSA Web Applications">
+                  <img
+                    src={McsaIcon}
+                    className="Qualification-Icon-Large"
+                    alt="MCSA Web Applications"
+                  />
+                </Tooltip>
+              </Grid>
+              <Grid item md={4} sm={6}>
+                <Tooltip title="CompTIA Security+">
+                  <img
+                    src={securityPlusIcon}
+                    className="Qualification-Icon-Large"
+                    alt="CompTIA Security+"
+                  />
+                </Tooltip>
+              </Grid>
+              <Grid item md={4} sm={6}>
+                <Tooltip title="CompTIA Network+">
+                  <img
+                    src={networkPlusIcon}
+                    className="Qualification-Icon-Large"
+                    alt="CompTIA Network+"
+                  />
+                </Tooltip>
+              </Grid>
+              <Grid item md={4} sm={6}>
+                <Tooltip title="Foundation Certificate in Systems Development">
+                  <img
+                    src={BcsIcon}
+                    className="Qualification-Icon-Large"
+                    alt="Foundation Certificate in Systems Development"
+                  />
+                </Tooltip>
+              </Grid>
+              <Grid item md={4} sm={6}>
+                <Tooltip title="Introduction to Cyber Security">
+                  <img
+                    src={IntroCyberIcon}
+                    className="Qualification-Icon-Large"
+                    alt="Introduction to Cyber Security"
+                  />
+                </Tooltip>
+              </Grid>
+              <Grid item md={4} sm={6}>
+                <Tooltip title="Visual Basic 6 Enterprise Development Certified Professional">
+                  <img
+                    src={ltIcon}
+                    className="Qualification-Icon-Large"
+                    alt="Visual Basic 6 Enterprise Development Certified Professional"
+                  />
+                </Tooltip>
+              </Grid>
+            </Grid>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+      </Grid>
+      <Grid item md={5} xs={12}>
+        <Grid
+          container
+          spacing={5}
+          alignItems="flex-start"
+          justify="flex-start"
+          direction="column"
+        >
+          <Grid item md={12} xs={12}>
+            <Typography variant="h5" className="Courier-Typography">
+              Recent Projects
+            </Typography>
+
+            <ExpansionPanel
+              className="Expansion"
+              expanded={providorExpanded === "providorPanel"}
+              onChange={handleExpansionChange("providorPanel")}
+            >
+              <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                <Grid
+                  container
+                  spacing={3}
+                  alignItems="flex-start"
+                  justify="flex-start"
+                >
+                  <Grid item md={3}>
+                    <img src={ProvidorIcon} className="Header-Icon" alt="Providor" />
+                  </Grid>
+                  <Hidden xsDown>
+                    <Grid item md={2}>
+                      <img
+                        src={DockerIcon}
+                        className="Qualification-Icon"
+                        alt="Docker"
+                      />
+                    </Grid>
+                    <Grid item md={2}>
+                      <img
+                        src={ReactIcon}
+                        className="Qualification-Icon"
+                        alt="React"
+                      />
+                    </Grid>
+                    <Grid item md={1}>
+                      <img
+                        src={NetCoreIcon}
+                        className="Qualification-Icon"
+                        alt=".NET Core"
+                      />
+                    </Grid>
+                    <Grid item md={2}>
+                      <img
+                        src={AzureIcon}
+                        className="Qualification-Icon"
+                        alt="Azure"
+                      />
+                    </Grid>
+                    <Grid item md={2}>
+                      <img
+                        src={TsIcon}
+                        className="Qualification-Icon"
+                        alt="Typescript"
+                      />
+                    </Grid>
+                  </Hidden>
+                </Grid>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails>
+                <Typography variant="body1">
+                  <Typography variant="caption">July 2020 - Present</Typography>
+                  <br />
+                  I am a software developer/technical lead/cloud architect who has been designing
+                and building software solutions professionally for the last twenty
+                years. I have worked thirteen of those years as a freelance
+                developer specialising in building enterprise web applications for
+                various clients in many different industries. I currently work for a company called Providor which is part of the Sureserve Group designing and building software solutions in the energy industry.
+                  system.
+                </Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+
+
+          <ExpansionPanel
+            className="Expansion"
+            expanded={ofqualExpanded === "ofqualPanel"}
+            onChange={handleExpansionChange("ofqualPanel")}
+          >
+            <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+              <Grid
+                container
+                spacing={3}
+                alignItems="flex-start"
+                justify="flex-start"
+              >
+                <Grid item md={3}>
+                  <img src={OfqualIcon} className="Header-Icon" alt="Ofqual" />
+                </Grid>
+                <Hidden xsDown>
+                  <Grid item md={2}>
+                    <img
+                      src={ReactIcon}
+                      className="Qualification-Icon"
+                      alt="React"
+                    />
+                  </Grid>
+                  <Grid item md={1}>
+                    <img
+                      src={NetCoreIcon}
+                      className="Qualification-Icon"
+                      alt=".NET Core"
+                    />
+                  </Grid>
+                  <Grid item md={2}>
+                    <img
+                      src={AzureIcon}
+                      className="Qualification-Icon"
+                      alt="Azure"
+                    />
+                  </Grid>
+                  <Grid item md={2}>
+                    <img
+                      src={TsIcon}
+                      className="Qualification-Icon"
+                      alt="Typescript"
+                    />
+                  </Grid>
+                  <Grid item md={1}>
+                    <img
+                      src={NodeIcon}
+                      className="Qualification-Icon"
+                      alt="Node"
+                    />
+                  </Grid>
+                </Hidden>
+              </Grid>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Typography variant="body1">
+                <Typography variant="caption">June 2018 - April 2020</Typography>
+                <br />
+                My role at Ofqual was to design and build from scratch a fully
+                working single page web application that would allow Ofqual to
+                manage awarding organisations across England and Wales and to
+                handle their accreditation process. React was choosen for the
+                front end application calling into and Node backend API. The
+                application was hosted on the Micrtosoft Azure Cloud and services
+                like CosmosDB, Azure AD and Azure Search were utilised within the
+                application. The application was sucessfully delivered into
+                production. I went back to Ofqual a while later to migrate the
+                backend API to .NET core and build extra functionality into the
+                system.
+              </Typography>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+          <ExpansionPanel
+            className="Expansion"
+            expanded={dunnhumbyExpanded === "dunnhumbyPanel"}
+            onChange={handleExpansionChange("dunnhumbyPanel")}
+          >
+            <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+              <Grid
+                container
+                spacing={3}
+                alignItems="flex-start"
+                justify="flex-start"
+              >
+                <Grid item md={5}>
+                  <img src={DhIcon} className="Header-Icon" alt="Dunnhumby" />
+                </Grid>
+                <Hidden xsDown>
+                  <Grid item md={2}>
+                    <img
+                      src={NetCoreIcon}
+                      className="Qualification-Icon"
+                      alt=".Net Core"
+                    />
+                  </Grid>
+                  <Grid item md={2}>
+                    <img
+                      src={GcpIcon}
+                      className="Qualification-Icon"
+                      alt="Google Cloud Platform"
+                    />
+                  </Grid>
+                  <Grid item md={2}>
+                    <img
+                      src={KubeIcon}
+                      className="Qualification-Icon"
+                      alt="Kubernetes"
+                    />
+                  </Grid>
+                </Hidden>
+              </Grid>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Typography variant="body1">
+                <Typography variant="caption">
+                  July 2019 - November 2019
+                </Typography>
+                <br />
+                This project was helping to rebuild from scratch, Dunnhumby's core
+                data science platform with modern technologies such as .NET Core,
+                Google Cloud Platform, Docker, Kubernetes and React. My role as a
+                senior software engineer was to design and develop some middle
+                tier and backend services utilising .NET Core. The services hooked
+                into GCP PubSub messaging queues and a PostgresSQL database.
+              </Typography>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
           </Grid>
           <Grid item md={12} xs={12}>
             <Typography variant="h5" className="Courier-Typography">
