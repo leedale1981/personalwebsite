@@ -39,6 +39,10 @@
   font-size: 1rem !important;
 }
 
+.MuiTooltip-tooltip {
+  font-size: 0.9rem !important;
+}
+
 .Nav-Button {
   height: 70px;
 }
