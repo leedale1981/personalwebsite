@@ -74,7 +74,7 @@ const ArticleListPage: React.FC = () => {
                         </ListItem>
                     </Link>
                     <ListItem divider>
-                        <a href="https://leedale.wordpress.com/page/1/" target="_blank">
+                        <a href="https://leedale.wordpress.com/page/1/" target="_blank" rel="noopener noreferrer">
                             <ListItemText><Typography variant="body1" style={{lineHeight: 2.3}}>View article archive on Wordpress.</Typography></ListItemText>
                         </a>
                     </ListItem>

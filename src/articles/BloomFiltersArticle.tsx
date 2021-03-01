@@ -20,7 +20,7 @@ const BloomFiltersArticle: React.FC = () => {
                 </div>
                 <Typography variant="caption" className="Article-Date">1st May 2020</Typography>
                 <Typography variant="body1">
-                    This article is about a data structure called a <a href="https://en.wikipedia.org/wiki/Bloom_filter" target="_blank">Bloom Filter</a>. I was asked to write this as part of the M269 module for my Open University degree course in 2018. I thought I would share this here as it has some applications in network routing and may be interesting to some.
+                    This article is about a data structure called a <a href="https://en.wikipedia.org/wiki/Bloom_filter" target="_blank" rel="noopener noreferrer">Bloom Filter</a>. I was asked to write this as part of the M269 module for my Open University degree course in 2018. I thought I would share this here as it has some applications in network routing and may be interesting to some.
                 </Typography>
                 <Typography variant="h6">A brief explanation of Bloom Filters</Typography>
                 <Typography variant="body1">
@@ -65,13 +65,13 @@ const BloomFiltersArticle: React.FC = () => {
                 </Typography>
                 <Typography variant="h6">References</Typography>
                 <Typography variant="body1">
-                    Srivastav, Prakhar. (2014) Bloom Filters for Dummies [Online]. Available at <a href="https://prakhar.me/articles/bloom-filters-for-dummies/" target="_blank">https://prakhar.me/articles/bloom-filters-for-dummies/</a>
+                    Srivastav, Prakhar. (2014) Bloom Filters for Dummies [Online]. Available at <a href="https://prakhar.me/articles/bloom-filters-for-dummies/" target="_blank" rel="noopener noreferrer">https://prakhar.me/articles/bloom-filters-for-dummies/</a>
                 </Typography>
                 <Typography variant="body1">
-                    Stanford Algorithms (2017) Bloom Filters The Basics [Online]. Available at <a href="https://www.youtube.com/watch?v=zYlxP7F3Z3c" target="_blank">https://www.youtube.com/watch?v=zYlxP7F3Z3c </a>
+                    Stanford Algorithms (2017) Bloom Filters The Basics [Online]. Available at <a href="https://www.youtube.com/watch?v=zYlxP7F3Z3c" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=zYlxP7F3Z3c </a>
                 </Typography>
                 <Typography variant="body1">
-                    Wikipedia (2018) Bloom filter [Online]. Available at <a href="https://en.wikipedia.org/wiki/Bloom_filter" target="_blank">https://en.wikipedia.org/wiki/Bloom_filter</a>
+                    Wikipedia (2018) Bloom filter [Online]. Available at <a href="https://en.wikipedia.org/wiki/Bloom_filter" target="_blank" rel="noopener noreferrer">https://en.wikipedia.org/wiki/Bloom_filter</a>
                 </Typography>
                 <Typography variant="body1">
                     <a href="https://commons.wikimedia.org/wiki/File:Bloom_filter.svg" title="via Wikimedia Commons">David Eppstein</a> / Public domain

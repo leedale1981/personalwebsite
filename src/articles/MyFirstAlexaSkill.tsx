@@ -9,7 +9,7 @@ const MyFirstAlexaSkill: React.FC = () => {
         <div>
         <Link to={"/articles"}><Typography variant='h6' className='Courier-Typography'>{`<- Back to articles`}</Typography></Link>
         <Paper className="Article">
-            <img src={AlIcon} />
+            <img src={AlIcon} alt="Alexa" />
             <Typography variant="h4" style={{marginBottom: 20}}>My first Alexa Skill with Node & Typescript.
             </Typography>
             <div className="Article-Tags">

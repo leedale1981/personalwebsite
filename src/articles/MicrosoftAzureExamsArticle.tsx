@@ -45,13 +45,13 @@ const MicrosoftAzureExamsArticle: React.FC = () => {
                 <img src={Az900Page} alt="AZ-900 Exam Page" />
             </div>
             <Typography variant="body1">
-                The first thing I did was purchase <a href="https://www.udemy.com/course/az900-azure/" target="_blank">Scott Duffy’s course on Udemy</a>. I did a bit of research on Azure courses and found that Scott’s courses had good reviews.
+                The first thing I did was purchase <a href="https://www.udemy.com/course/az900-azure/" target="_blank" rel="noopener noreferrer">Scott Duffy’s course on Udemy</a>. I did a bit of research on Azure courses and found that Scott’s courses had good reviews.
             </Typography>
             <div className="Article-Large">
                 <img src={Az900Course} alt="AZ-900 Udemy Course"/>
             </div>
             <Typography variant="body1">
-                I also found the <a href="https://docs.microsoft.com/en-us/learn/" target="_blank">Microsoft Learn site</a> extremely useful and studied all the content in the  <a href="https://docs.microsoft.com/en-gb/learn/paths/azure-fundamentals/" target="_blank">Fundamentals learning path.</a>  
+                I also found the <a href="https://docs.microsoft.com/en-us/learn/" target="_blank" rel="noopener noreferrer">Microsoft Learn site</a> extremely useful and studied all the content in the  <a href="https://docs.microsoft.com/en-gb/learn/paths/azure-fundamentals/" target="_blank" rel="noopener noreferrer">Fundamentals learning path.</a>  
             </Typography>
             <div className="Article-Large">
                 <img src={Az900Learn} alt="AZ-900 Microsoft Learn Page"/>
@@ -72,13 +72,13 @@ const MicrosoftAzureExamsArticle: React.FC = () => {
                 The content for this is much heavier than AZ-900 and goes into a lot more depth on the different services Azure provides for deploying, monitoring and configuring solutions.
             </Typography>
             <Typography variant="body1">
-                I purchased <a href="https://www.udemy.com/course/70532-azure/" target="_blank" >Scott’s course on Udemy for AZ-203.</a> This time it took me a lot longer to get through the content. Probably about a week to get through it all as I was supplementing Scott’s videos with Microsoft learn modules.
+                I purchased <a href="https://www.udemy.com/course/70532-azure/" target="_blank" rel="noopener noreferrer" >Scott’s course on Udemy for AZ-203.</a> This time it took me a lot longer to get through the content. Probably about a week to get through it all as I was supplementing Scott’s videos with Microsoft learn modules.
             </Typography>
             <Typography variant="body1">
                 I would not bother going through all the MS Learn modules the page above suggests for AZ-203 as there are loads. What I would do is specifically target the modules that you come across in Scott’s course and the Skills outline.
             </Typography>
             <Typography variant="body1">
-                As this is a developer exam, you need to practice writing code. So I <a href="https://github.com/leedale1981/azure-sdk-cli-references" target="_blank">created a small project on GitHub</a> where I could practice using the SDK, CLI and PowerShell code needed to pass the exam. 
+                As this is a developer exam, you need to practice writing code. So I <a href="https://github.com/leedale1981/azure-sdk-cli-references" target="_blank" rel="noopener noreferrer">created a small project on GitHub</a> where I could practice using the SDK, CLI and PowerShell code needed to pass the exam. 
             </Typography>
             <Typography variant="body1">
             Once I felt comfortable I had covered enough of the course content, I took some practice exams to see what knowledge I was missing. I spent a couple of days just going back through Microsoft Documentation and filling in the gaps where I felt I was weak.

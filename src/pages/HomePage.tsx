@@ -82,7 +82,7 @@ const HomePage: React.FC = () => {
             and building software solutions professionally for the last twenty
             years. I have worked thirteen of those years as a freelance
             developer specialising in building enterprise web applications for
-            various clients in many different industries. I currently work for a company called Providor which is part of the Sureserve Group designing and building software solutions in the energy industry.
+            various clients in many different industries. I currently work for a company called Providor which is part of the <a href="https://www.sureservegroup.co.uk/" target="_blank" rel="noopener noreferrer">Sureserve Group</a> designing and building software solutions in the energy industry.
             <br />
             <br />
           </Typography>
@@ -182,22 +182,6 @@ const HomePage: React.FC = () => {
           <Divider />
           <br />
           <br />
-          <Typography variant="h6">Education</Typography>
-          <Typography variant="body1">
-            I am about the finish up a <a href="http://www.open.ac.uk/courses/combined-studies/degrees/open-degree-qd" target="_blank" rel="noopener noreferrer">BSc Hons degree with the Open University</a> in June. My degree was split between physics and computing.
-            I also completed an <a href="https://essentialsiteskills.co.uk/nvq/level-2-diploma-business-administration" target="_blank" rel="noopener noreferrer">NVQ in Business Administration</a> 
-          </Typography>
-          <IconButton style={{ backgroundColor: "transparent" }}>
-            <img src={OuIcon} className="Qualification-Icon" alt="Open University" />
-          </IconButton>
-          <IconButton style={{ backgroundColor: "transparent" }}>
-            <img src={NvqIcon} className="Qualification-Icon" alt="NVQ" />
-          </IconButton>
-          <br />
-          <br />
-          <Divider />
-          <br />
-          <br />
           <Typography variant="h6">Flying</Typography>
           <Typography variant="body1">
             I enjoy flying in my free time and I'm currently
@@ -222,10 +206,10 @@ const HomePage: React.FC = () => {
           <br />
           <Typography variant="h6">Sailing</Typography>
           <Typography variant="body1">
-            I enjoy sailing and I am currently working my through the <a href="https://www.rya.org.uk/courses-training/courses/Pages/hub.aspx" target="_blank">RYA qualifications</a>. I have completed Level 1 & 2 Dinghy and the Compentent Crew course
+            I enjoy sailing and I am currently working my through the <a href="https://www.rya.org.uk/courses-training/courses/Pages/hub.aspx" target="_blank" rel="noopener noreferrer">RYA qualifications</a>. I have completed Level 1 & 2 Dinghy and the Compentent Crew course
             <br />
             <br />
-            <Link to={"/flying"}>
+            <Link to={"/sailing"}>
               <Typography variant="body1">
                 Visit the sailing section for updates and photos of our
                 journey.
@@ -242,10 +226,10 @@ const HomePage: React.FC = () => {
           <br />
           <Typography variant="h6">Diving</Typography>
           <Typography variant="body1">
-            My last (but not least) hobby is scuba diving. I am currently qualified as an <a href="https://www.padi.com/courses/advanced-open-water" target="_blank">PADI Advanced Open Water diver</a>.
+            My last (but not least) hobby is scuba diving. I am currently qualified as an <a href="https://www.padi.com/courses/advanced-open-water" target="_blank" rel="noopener noreferrer">PADI Advanced Open Water diver</a>.
             <br />
             <br />
-            <Link to={"/flying"}>
+            <Link to={"/diving"}>
               <Typography variant="body1">
                 Check out the diving section for updates on my diving
                 progress.
@@ -365,7 +349,7 @@ const HomePage: React.FC = () => {
                     July 2020 - Present
                   </Typography>
                   <br />
-                  In my role as senior software developer at <a href="https://www.providor.co.uk/">Providor</a> I am currentlydeveloping a new in house smart meter data flow system. 
+                  In my role as senior software developer at <a href="https://www.providor.co.uk/" target="_blank" rel="noopener noreferrer">Providor</a> I am currentlydeveloping a new in house smart meter data flow system. 
                   The system is based on a microservice architecture using .NET Core, React, Docker Swarm, Azure DevOps among other technologies.
                 </Typography>
               </ExpansionPanelDetails>
@@ -395,7 +379,7 @@ const HomePage: React.FC = () => {
                   <br />
                   <br />
                   View the source at{" "}
-                  <a href="https://github.com/leedale1981/SpaceBlaster">
+                  <a href="https://github.com/leedale1981/SpaceBlaster" target="_blank" rel="noopener noreferrer">
                     https://github.com/leedale1981/SpaceBlaster
                   </a>
                 </Typography>

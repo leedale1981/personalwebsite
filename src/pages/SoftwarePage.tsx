@@ -247,7 +247,7 @@ const SoftwarePage: React.FC = () => {
                   This article is about a data structure called a{" "}
                   <a
                     href="https://en.wikipedia.org/wiki/Bloom_filter"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                   >
                     Bloom Filter
                   </a>
