@@ -25,18 +25,26 @@
     monospace !important;
 }
 
+.MuiTypography-body1 {
+  font-size: 1.2rem !important;
+  font-weight: 300 !important;
+  line-height: 1.6 !important;
+}
+
+.MuiTypography-caption {
+  font-size: 0.9rem !important;
+}
+
+.MuiTypography-body2 {
+  font-size: 1rem !important;
+}
+
 .Nav-Button {
   height: 70px;
 }
 
 .Paper {
   padding: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.Article {
-  padding: 50px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -119,12 +127,24 @@ span {
     height: 100px;
     float: left;
   }
+
+  .Article {
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 
 @media only screen and (min-width: 600px) {
   .Qualification-Icon-Large {
     height: 150px;
     float: left;
+  }
+
+  .Article {
+    padding: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 

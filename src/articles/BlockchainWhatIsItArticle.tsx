@@ -9,7 +9,7 @@ const BlockchainWhatIsItArticle: React.FC = () => {
         <div>
         <Link to={"/articles"}><Typography variant='h6' className='Courier-Typography'>{`<- Back to articles`}</Typography></Link>
         <Paper className="Article">
-            <img src={BcIcon} />
+            <img src={BcIcon} alt="Blockchain"/>
             <Typography variant="h4" style={{marginBottom: 20}}>The blockchain what is it?
             </Typography>
             <div className="Article-Tags">

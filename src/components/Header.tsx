@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { Grid, Typography, Avatar, Icon, Hidden, Button, Menu, MenuItem, Divider } from "@material-ui/core";
-import MeLogo from "../images/me.jpg";
+import { Grid, Typography, Icon, Hidden, Button, Menu, MenuItem } from "@material-ui/core";
 import AviationIcon from "../images/propeller.png";
 import TechIcon from "../images/macbook.png";
-import ScienceIcon from "../images/science.png";
 import ScubaIcon from "../images/mask.png";
 import BoatIcon from "../images/boat.png";
 import { Instagram, LinkedIn, Twitter, GitHub, Dehaze } from '@material-ui/icons';
@@ -21,13 +19,8 @@ const Header: React.FC = () => {
 
   return (
     <Grid container spacing={0} alignItems='center' justify='center' direction='row'>
-      <Hidden smDown>
-        <Grid item md={3} lg={2} style={{marginBottom: 30}}>
-          <Link to={"/"}><Avatar alt="Lee Dale" src={MeLogo} className='Me-Avatar' /></Link>
-        </Grid>
-      </Hidden>
       <Grid item md={3} lg={2} sm={4} alignContent='flex-start' alignItems='flex-start' style={{marginBottom: 30}}>
-        <Typography variant='h4' className='Courier-Typography'>Lee Dale</Typography>
+        <Link to={"/"} style={{textAlign: "left"}}><Typography variant='h4' className='Courier-Typography' style={{marginTop: 40}}>Lee Dale</Typography></Link>
         <Grid container spacing={0} direction='row'>
           <Grid item md={2}>
             <a href="https://www.instagram.com/its.a.dales.life/" target="_blank" rel='noreferrer noopener' className="Social-Links"><Instagram /></a>
