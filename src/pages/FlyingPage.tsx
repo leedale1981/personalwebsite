@@ -7,11 +7,15 @@ import Solo1 from '../images/solo1.jpg';
 import Solo2 from '../images/solo2.jpg';
 
 const FlyingPage: React.FC = () => {
-    const [update2Expanded, setUpdate2Expanded] = useState("update2Panel");
+    const [update3Expanded, setUpdate3Expanded] = useState("update3Panel");
+    const [update2Expanded, setUpdate2Expanded] = useState("");
     const [update1Expanded, setUpdate1Expanded] = useState("");
 
     const handleExpansionChange = (panel: string) => (event: any, newExpanded: boolean) => {
         switch (panel) {
+          case "update3Panel":
+            setUpdate3Expanded(newExpanded ? panel : "");
+            break;
           case "update2Panel":
             setUpdate2Expanded(newExpanded ? panel : "");
             break;
@@ -25,6 +29,30 @@ const FlyingPage: React.FC = () => {
         <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='row'>
             <Grid item md={7} xs={12}>
                 <Typography variant='h5' className='Courier-Typography'>Updates</Typography>
+                <ExpansionPanel className='Expansion' expanded={update3Expanded === 'update3Panel'} onChange={handleExpansionChange('update3Panel')}>
+                    <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                    <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
+                        <Grid item xs={2}>
+                            <img src={FlyingIcon} className="Header-Icon"  alt="Flying update"/>
+                        </Grid>
+                        <Grid item xs={10}>
+                            <Typography variant="h5">22nd April 2021</Typography><br />
+                        </Grid>
+                    </Grid>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails>
+                        <Typography variant="body1">
+                            We are finally allowed back to flight training after the COVID-19 lockdown here in the UK. I had a great couple of flights with my instructor over the weekend. 
+                            We needed to refresh a few things and get get rid of the 4 months of rust build up. A local flight to the east from North Weald with a couple of circuits thrown in. 
+                            Still alot to brush up on but I felt good and hopefully be able to get out for a solo nav flight soon.
+                            <br /><br />
+                            <div className="Article-Large">
+                            <iframe title="Flying" width="100%" height="315px" src="https://www.youtube.com/embed/zr3EKZRzXyM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            </div>
+                        </Typography>
+                    </ExpansionPanelDetails>
+                </ExpansionPanel>
+
                 <ExpansionPanel className='Expansion' expanded={update2Expanded === 'update2Panel'} onChange={handleExpansionChange('update2Panel')}>
                     <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
@@ -44,8 +72,8 @@ const FlyingPage: React.FC = () => {
                             In the meantime, heres a couple of videos of solo flights:
                             <br /><br />
                             <div className="Article-Large">
-                            <iframe width="100%" height="315px" src="https://www.youtube.com/embed/137PsMFD0Wg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                            <iframe width="100%" height="315px" src="https://www.youtube.com/embed/vQZsiQnw6Hg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            <iframe title="Flying" width="100%" height="315px" src="https://www.youtube.com/embed/137PsMFD0Wg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            <iframe title="Flying" width="100%" height="315px" src="https://www.youtube.com/embed/vQZsiQnw6Hg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
                             </div>
                         </Typography>
                     </ExpansionPanelDetails>
@@ -183,11 +211,12 @@ const FlyingPage: React.FC = () => {
             <Grid item md={12} xs={12}>
                 <Typography variant='h5' className='Courier-Typography'>Videos</Typography>
                 <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='row'>
-                    <Grid item md={6} xs={6}><iframe width="100%" height="250px" src="https://www.youtube.com/embed/Nl-KGapB6GM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
-                    <Grid item md={6} xs={6}><iframe width="100%" height="250px" src="https://www.youtube.com/embed/WASz-0Tb51c" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
-                    <Grid item md={6} xs={6}><iframe width="100%" height="250px" src="https://www.youtube.com/embed/c8WISS9nvzQ" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
-                    <Grid item md={6} xs={6}><iframe width="100%" height="250px" src="https://www.youtube.com/embed/PIVJkKprRkM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
-                    <Grid item md={6} xs={6}><iframe width="100%" height="250px" src="https://www.youtube.com/embed/c9Ae9ISOvSg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
+                    <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/137PsMFD0Wg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
+                    <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/Nl-KGapB6GM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
+                    <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/WASz-0Tb51c" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
+                    <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/c8WISS9nvzQ" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
+                    <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/PIVJkKprRkM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
+                    <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/c9Ae9ISOvSg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
                 </Grid>
             </Grid>
         </Grid>
