@@ -7,12 +7,16 @@ import Solo1 from '../images/solo1.jpg';
 import Solo2 from '../images/solo2.jpg';
 
 const FlyingPage: React.FC = () => {
-    const [update3Expanded, setUpdate3Expanded] = useState("update3Panel");
+    const [update4Expanded, setUpdate4Expanded] = useState("update4Panel");
+    const [update3Expanded, setUpdate3Expanded] = useState("");
     const [update2Expanded, setUpdate2Expanded] = useState("");
     const [update1Expanded, setUpdate1Expanded] = useState("");
 
     const handleExpansionChange = (panel: string) => (event: any, newExpanded: boolean) => {
         switch (panel) {
+          case "update4Panel":
+            setUpdate4Expanded(newExpanded ? panel : "");
+            break;
           case "update3Panel":
             setUpdate3Expanded(newExpanded ? panel : "");
             break;
@@ -29,6 +33,27 @@ const FlyingPage: React.FC = () => {
         <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='row'>
             <Grid item md={7} xs={12}>
                 <Typography variant='h5' className='Courier-Typography'>Updates</Typography>
+                <ExpansionPanel className='Expansion' expanded={update4Expanded === 'update4Panel'} onChange={handleExpansionChange('update4Panel')}>
+                    <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                    <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
+                        <Grid item xs={2}>
+                            <img src={FlyingIcon} className="Header-Icon"  alt="Flying update"/>
+                        </Grid>
+                        <Grid item xs={10}>
+                            <Typography variant="h5">4th May 2021</Typography><br />
+                        </Grid>
+                    </Grid>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails>
+                        <Typography variant="body1">
+                            This weekend I completed two solo navigation flights totalling two hours of solo time. I planned and executed a solo flight from North Weald to Tiptree via Billericay. 
+                            Sunday presented me with small localized showers in the area so I tried my best to avoid them. I eventually had to turn back before Witham due to a wall of rain that I didn't fancy flying into.
+                            Monday was more relaxed despite the winds gusting around 20 knots. The winds made for an interesting bumpy route back to the airfield and for landing but no dramas.
+                            All in all a good weekend of flying. I will be doing one more solo nav flight to get my solo time to around 6 hours, then it will be onto land aways.
+                        </Typography>
+                    </ExpansionPanelDetails>
+                </ExpansionPanel>
+
                 <ExpansionPanel className='Expansion' expanded={update3Expanded === 'update3Panel'} onChange={handleExpansionChange('update3Panel')}>
                     <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
@@ -117,10 +142,10 @@ const FlyingPage: React.FC = () => {
                                 <TableBody>
                                     <TableRow>
                                         <TableCell component="th" scope="row">
-                                            50
+                                            54
                                         </TableCell>
                                         <TableCell component="th" scope="row">
-                                            3.15
+                                            5
                                         </TableCell>
                                     </TableRow>
                                 </TableBody>
@@ -211,6 +236,7 @@ const FlyingPage: React.FC = () => {
             <Grid item md={12} xs={12}>
                 <Typography variant='h5' className='Courier-Typography'>Videos</Typography>
                 <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='row'>
+                    <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/zr3EKZRzXyM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
                     <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/137PsMFD0Wg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
                     <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/Nl-KGapB6GM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
                     <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/WASz-0Tb51c" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
