@@ -18,10 +18,8 @@ import AzFundIcon from "../images/azure-fundamentals.png";
 import AzDevIcon from "../images/azure-developer-associate-600x600.png";
 import TogafIcon from "../images/togaf.png";
 import CaaIcon from "../images/caa.gif";
-import OuIcon from "../images/ou.png";
 import PadiOwdIcon from "../images/padiowd.png";
 import BcsIcon from "../images/bcs.png";
-import NvqIcon from "../images/nvq-logo.png";
 import RyaIcon from "../images/rya.gif";
 import NetCoreIcon from "../images/.netcore.png";
 import DockerIcon from "../images/docker.png";
@@ -239,6 +237,26 @@ const HomePage: React.FC = () => {
           <IconButton style={{ backgroundColor: "transparent" }}>
             <img src={PadiOwdIcon} className="Qualification-Icon" alt="PADI" />
           </IconButton>
+        </Paper>
+        <Paper className="Paper" style={{ minHeight: 370 }}>
+          <Typography variant="h5" className="Courier-Typography">
+            Strava
+          </Typography>
+          <br />
+          <Grid
+            container
+            spacing={5}
+            alignItems="flex-start"
+            justify="flex-start"
+            direction="row"
+          >
+            <Grid item md={6} xs={12}>
+              <iframe title='stravaActivities' height='454' src='https://www.strava.com/athletes/2209153/latest-rides/ec6698b825db2503139dd78e4adafc60c391ab5b'></iframe>
+            </Grid>
+            <Grid item md={6} xs={12}>
+              <iframe title='stravaActivity' height='160' src='https://www.strava.com/athletes/2209153/activity-summary/ec6698b825db2503139dd78e4adafc60c391ab5b'></iframe> 
+            </Grid>
+          </Grid>
         </Paper>
       </Grid>
       <Grid item md={5} xs={12}>
