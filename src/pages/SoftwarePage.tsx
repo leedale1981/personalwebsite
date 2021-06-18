@@ -458,12 +458,8 @@ const SoftwarePage: React.FC = () => {
                 <Typography variant="body1">
                   <Typography variant="caption">July 2020 - Present</Typography>
                   <br />
-                  I am a software developer/technical lead/cloud architect who has been designing
-                and building software solutions professionally for the last twenty
-                years. I have worked thirteen of those years as a freelance
-                developer specialising in building enterprise web applications for
-                various clients in many different industries. I currently work for a company called Providor which is part of the Sureserve Group designing and building software solutions in the energy industry.
-                  system.
+                  In my role as lead software developer at <a href="https://www.providor.co.uk/" target="_blank" rel="noopener noreferrer">Providor</a> I am currentlydeveloping a new in house smart meter data flow system. 
+                  The system is based on a microservice architecture using .NET Core, React, Docker Swarm, Azure DevOps among other technologies.
                 </Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>

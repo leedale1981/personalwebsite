@@ -367,7 +367,7 @@ const HomePage: React.FC = () => {
                     July 2020 - Present
                   </Typography>
                   <br />
-                  In my role as senior software developer at <a href="https://www.providor.co.uk/" target="_blank" rel="noopener noreferrer">Providor</a> I am currentlydeveloping a new in house smart meter data flow system. 
+                  In my role as lead software developer at <a href="https://www.providor.co.uk/" target="_blank" rel="noopener noreferrer">Providor</a> I am currentlydeveloping a new in house smart meter data flow system. 
                   The system is based on a microservice architecture using .NET Core, React, Docker Swarm, Azure DevOps among other technologies.
                 </Typography>
               </ExpansionPanelDetails>
