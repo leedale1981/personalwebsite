@@ -42,7 +42,7 @@ const FlyingPage: React.FC = () => {
                     <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
                         <Grid item xs={2}>
-                            <img src={FlyingIcon} style={{width: "500px"}}  alt="Flying update"/>
+                            <img src={FlyingIcon} className="Header-Icon"  alt="Flying update"/>
                         </Grid>
                         <Grid item xs={10}>
                             <Typography variant="h5">11th June 2021</Typography><br />
@@ -53,7 +53,7 @@ const FlyingPage: React.FC = () => {
                         <Typography variant="body1">
                             Today I completed my cross country solo qualifier! 192 nm round trip into two controlled airfields, Southend and Norwich. Will start to work towards my skills test now.
                             <br />
-                            <img src={QxcRoute} className="Header-Icon"  alt="QXC route"/>
+                            <img src={QxcRoute} style={{width: "500px"}}  alt="QXC route"/>
                             <br />
                             <iframe title="Flying" width="100%" height="315px" src="https://www.youtube.com/embed/mXdCTr_-x20" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
                         </Typography>
