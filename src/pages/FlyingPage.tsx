@@ -42,7 +42,7 @@ const FlyingPage: React.FC = () => {
                     <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
                         <Grid item xs={2}>
-                            <img src={FlyingIcon} className="Header-Icon"  alt="Flying update"/>
+                            <img src={FlyingIcon} style={{width: "500px"}}  alt="Flying update"/>
                         </Grid>
                         <Grid item xs={10}>
                             <Typography variant="h5">11th June 2021</Typography><br />
