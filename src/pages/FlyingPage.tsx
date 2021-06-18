@@ -2,18 +2,23 @@ import React, { useState } from 'react';
 import { Grid, Typography, Paper, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, TableContainer, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
 import FlyingIcon from '../images/flying.png';
+import QxcRoute from '../images/qxcroute.jpg';
 import { Done } from '@material-ui/icons';
 import Solo1 from '../images/solo1.jpg';
 import Solo2 from '../images/solo2.jpg';
 
 const FlyingPage: React.FC = () => {
-    const [update4Expanded, setUpdate4Expanded] = useState("update4Panel");
+    const [update5Expanded, setUpdate5Expanded] = useState("update5Panel");
+    const [update4Expanded, setUpdate4Expanded] = useState("");
     const [update3Expanded, setUpdate3Expanded] = useState("");
     const [update2Expanded, setUpdate2Expanded] = useState("");
     const [update1Expanded, setUpdate1Expanded] = useState("");
 
     const handleExpansionChange = (panel: string) => (event: any, newExpanded: boolean) => {
         switch (panel) {
+          case "update5Panel":
+            setUpdate5Expanded(newExpanded ? panel : "");
+            break;
           case "update4Panel":
             setUpdate4Expanded(newExpanded ? panel : "");
             break;
@@ -33,6 +38,28 @@ const FlyingPage: React.FC = () => {
         <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='row'>
             <Grid item md={7} xs={12}>
                 <Typography variant='h5' className='Courier-Typography'>Updates</Typography>
+                <ExpansionPanel className='Expansion' expanded={update5Expanded === 'update5Panel'} onChange={handleExpansionChange('update5Panel')}>
+                    <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                    <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
+                        <Grid item xs={2}>
+                            <img src={FlyingIcon} className="Header-Icon"  alt="Flying update"/>
+                        </Grid>
+                        <Grid item xs={10}>
+                            <Typography variant="h5">11th June 2021</Typography><br />
+                        </Grid>
+                    </Grid>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails>
+                        <Typography variant="body1">
+                            Today I completed my cross country solo qualifier! 192 nm round trip into two controlled airfields, Southend and Norwich. Will start to work towards my skills test now.
+                            <br />
+                            <img src={QxcRoute} className="Header-Icon"  alt="QXC route"/>
+                            <br />
+                            <iframe title="Flying" width="100%" height="315px" src="https://www.youtube.com/embed/mXdCTr_-x20" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                        </Typography>
+                    </ExpansionPanelDetails>
+                </ExpansionPanel>
+
                 <ExpansionPanel className='Expansion' expanded={update4Expanded === 'update4Panel'} onChange={handleExpansionChange('update4Panel')}>
                     <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
@@ -142,10 +169,10 @@ const FlyingPage: React.FC = () => {
                                 <TableBody>
                                     <TableRow>
                                         <TableCell component="th" scope="row">
-                                            54
+                                            60
                                         </TableCell>
                                         <TableCell component="th" scope="row">
-                                            5
+                                            10
                                         </TableCell>
                                     </TableRow>
                                 </TableBody>
