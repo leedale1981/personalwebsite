@@ -9,6 +9,7 @@ import QuantumImage from "../images/quantum.png";
 import CloudIcon from "../images/cloud.png";
 import Docker from "../images/docker2.png";
 import Maintanance from "../images/maintenance.png";
+import DevIcon from "../images/dev.png";
 import { Link } from 'react-router-dom';
 
 const ArticleListPage: React.FC = () => {
@@ -19,6 +20,12 @@ const ArticleListPage: React.FC = () => {
                 <Typography variant='h5' className='Courier-Typography'>All Articles</Typography>
                 <Paper className="Paper">
                 <List>
+                    <Link to={"/tech/articles/creating-dotnet-new-templates"}>
+                        <ListItem divider>
+                            <ListItemAvatar><img src={DevIcon} className="Header-Icon"  alt="Creating Opinionated .NET Templates for your Organisation"/></ListItemAvatar>
+                            <ListItemText><Typography variant="body1" style={{lineHeight: 1.5}}>Creating Opinionated .NET Templates for your Organisation</Typography></ListItemText>
+                        </ListItem>
+                    </Link>
                     <Link to={"/tech/articles/software-evolution"}>
                         <ListItem divider>
                             <ListItemAvatar><img src={Maintanance} className="Header-Icon"  alt="Software Evolution – Lehman’s Laws"/></ListItemAvatar>

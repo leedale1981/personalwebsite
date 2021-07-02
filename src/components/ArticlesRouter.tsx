@@ -9,11 +9,15 @@ import QuantumCpmputing from '../articles/QuantumComputingArticle';
 import KubernetesGke from '../articles/KubernetesGkeArticle';
 import DockerBindMountNetwork from '../articles/DockerBindMountNetwork';
 import LehmansLaws from '../articles/LehmansLaws';
+import DotnetNewTemplates from '../articles/CreatingOpinionatedDotnetTemplates';
 
 const ArticlesRouter: React.FC = () => {
 
     return (
         <div>
+        <Route exact path="/tech/articles/creating-dotnet-new-templates" render={
+            (props) => <DotnetNewTemplates />
+        } />
         <Route exact path="/tech/articles/software-evolution" render={
             (props) => <LehmansLaws />
         } />

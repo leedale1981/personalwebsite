@@ -40,6 +40,7 @@ import gcpAceIcon from "../images/gcp-ace.png";
 import networkPlusIcon from "../images/networkplus.png";
 import securityPlusIcon from "../images/securityplus.png";
 import DockerIcon from "../images/docker.png";
+import DevIcon from "../images/dev.png";
 import { Link } from "react-router-dom";
 
 const SoftwarePage: React.FC = () => {
@@ -48,10 +49,7 @@ const SoftwarePage: React.FC = () => {
   const [ofqualExpanded, setOfqualExpanded] = useState("");
   const [certExpanded, setCertExpanded] = useState("certPanel");
   const [gamesExpanded, setGamesExpanded] = useState("gamesPanel");
-  const [blockchainExpanded, setBlockchainExpanded] = useState("");
-  const [factoryPatternExpanded, setFactoryPatternExpanded] = useState("");
-  const [quantumExpanded, setQuantumExpanded] = useState("");
-  const [gkeExpanded, setGkeExpanded] = useState("gkePanel");
+  const [articleExpanded, setArticleExpanded] = useState("articlePanel");
 
   const handleExpansionChange = (panel: string) => (
     event: any,
@@ -73,18 +71,9 @@ const SoftwarePage: React.FC = () => {
       case "certPanel":
         setCertExpanded(newExpanded ? panel : "");
         break;
-      case "blockchainPanel":
-        setBlockchainExpanded(newExpanded ? panel : "");
-        break;
-      case "factoryPatternPanel":
-        setFactoryPatternExpanded(newExpanded ? panel : "");
-        break;
-      case "quantumPanel":
-        setQuantumExpanded(newExpanded ? panel : "");
-        break;
-      case "gkePanel":
-        setGkeExpanded(newExpanded ? panel : "");
-        break;
+      case "articlePanel":
+          setArticleExpanded(newExpanded ? panel : "");
+          break;
     }
   };
 
@@ -101,163 +90,32 @@ const SoftwarePage: React.FC = () => {
               variant="h5"
               className="Courier-Typography Section-Header"
             >
-              Articles
+              Latest Article
             </Typography>
             <Link to={"/articles"} className="Section-Link">
               <Typography variant="body1">View All</Typography>
             </Link>
             <ExpansionPanel
               className="Expansion Section-Body"
-              expanded={gkeExpanded === "gkePanel"}
-              onChange={handleExpansionChange("gkePanel")}
+              expanded={articleExpanded === "articlePanel"}
+              onChange={handleExpansionChange("articlePanel")}
             >
               <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                 <img
-                  src={Docker}
+                  src={DevIcon}
                   className="Header-Icon"
                   alt="Docker"
                 />
                 <Typography variant="body2" style={{ lineHeight: 2 }}>
-                How to bind to a Windows Share using CIFS in Docker
+                Creating Opinionated .NET Templates for your Organisation
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography variant="body1">
-                  Docker is great for building stateless, ephemeral services but sometimes these services need to access data outside the container. This article shows you how to bind a network share to a Docker container.
+                When designing and building your application with a microservice approach you will find that you will be continually creating the same projects over and over with the same configuration and folder structure. When you add in Docker files, DevOps pipelines and other technologies you may have chosen it makes sense to try and standardise on your approach and this is where dotnet templates can be useful
                   <br />
                   <br />
-                  <Link to={"/tech/articles/docker-bind-mount-network"}>
-                    <Typography variant="body1">
-                      Read the whole article
-                    </Typography>
-                  </Link>
-                </Typography>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel
-              className="Expansion Section-Body"
-              expanded={quantumExpanded === "quantumPanel"}
-              onChange={handleExpansionChange("quantumPanel")}
-            >
-              <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                <img
-                  src={QuantumImage}
-                  className="Header-Icon"
-                  alt="QuantumComputing"
-                />
-                <Typography variant="body2" style={{ lineHeight: 2 }}>
-                  Quantum Computing: What is the Schrodinger Equation anyway?
-                </Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
-                <Typography variant="body1">
-                  In this article I give a very brief introduction to the
-                  Schrodinger Equation and how we can use quantum mechanics in
-                  computing to achieve things classical computation methods
-                  cannot.
-                  <br />
-                  <br />
-                  <Link to={"/tech/articles/quantum-computing"}>
-                    <Typography variant="body1">
-                      Read the whole article
-                    </Typography>
-                  </Link>
-                </Typography>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel
-              className="Expansion Section-Body"
-              expanded={factoryPatternExpanded === "factoryPatternPanel"}
-              onChange={handleExpansionChange("factoryPatternPanel")}
-            >
-              <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                <img
-                  src={AzIcon}
-                  className="Header-Icon"
-                  alt="Factory Pattern"
-                />
-                <Typography variant="body2" style={{ lineHeight: 2 }}>
-                  How I studied and passed two Microsoft Azure Exams in a month
-                </Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
-                <Typography variant="body1">
-                  This article outlines what resources and approach I took to
-                  passing Microsoft exams AZ-900 and AZ-203
-                  <br />
-                  <br />
-                  <Link to={"/tech/articles/microsoft-azure-exams"}>
-                    <Typography variant="body1">
-                      Read the whole article
-                    </Typography>
-                  </Link>
-                </Typography>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel
-              className="Expansion"
-              expanded={factoryPatternExpanded === "factoryPatternPanel"}
-              onChange={handleExpansionChange("factoryPatternPanel")}
-            >
-              <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                <img
-                  src={FpIcon}
-                  className="Header-Icon"
-                  alt="Factory Pattern"
-                />
-                <Typography variant="body2" style={{ lineHeight: 3 }}>
-                  How to use the Factory Design Pattern with C#.
-                </Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
-                <Typography variant="body1">
-                  The factory method is a design pattern that can be used in
-                  your .NET projects to support dependency injection and
-                  therefore testable classes while also keeping your components
-                  decoupled from external dependencies.
-                  <br />
-                  <br />
-                  <Link
-                    to={"/tech/articles/factory-method-design-pattern-csharp"}
-                  >
-                    <Typography variant="body1">
-                      Read the whole article
-                    </Typography>
-                  </Link>
-                </Typography>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel
-              className="Expansion"
-              expanded={blockchainExpanded === "blockchainPanel"}
-              onChange={handleExpansionChange("blockchainPanel")}
-            >
-              <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                <img
-                  src={AlgoIcon}
-                  className="Header-Icon"
-                  alt="Bloom filter"
-                />
-                <Typography variant="body2" style={{ lineHeight: 2.3 }}>
-                  What is a Bloom Filter?
-                </Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
-                <Typography variant="body1">
-                  This article is about a data structure called a{" "}
-                  <a
-                    href="https://en.wikipedia.org/wiki/Bloom_filter"
-                    target="_blank" rel="noopener noreferrer"
-                  >
-                    Bloom Filter
-                  </a>
-                  . I was asked to write this as part of the M269 module for my
-                  Open University degree course in 2018. I thought I would share
-                  this here as it has some applications in network routing and
-                  may be interesting to some.
-                  <br />
-                  <br />
-                  <Link to={"/tech/articles/bloom-filters"}>
+                  <Link to={"/tech/articles/creating-dotnet-new-templates"}>
                     <Typography variant="body1">
                       Read the whole article
                     </Typography>

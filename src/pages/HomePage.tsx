@@ -27,12 +27,12 @@ import ReactIcon from "../images/react.png";
 import AzureIcon from "../images/azure.png";
 import GamingIcon from "../images/gaming.png";
 import IntroCyberIcon from "../images/introcyber.png";
-import Docker from "../images/docker2.png";
 import SbIcon from "../images/spaceblaster.jpg";
 import gcpAceIcon from "../images/gcp-ace.png";
 import networkPlusIcon from "../images/networkplus.png";
 import securityPlusIcon from "../images/securityplus.png";
 import ProvidorIcon from "../images/providor.jpg";
+import DevIcon from "../images/dev.png";
 import { Link } from "react-router-dom";
 import {
   ExpandMore,
@@ -184,7 +184,7 @@ const HomePage: React.FC = () => {
           <Typography variant="body1">
             I enjoy flying in my free time and I'm currently
             training to get my private pilots licence at <a href="https://northwealdflighttraining.co.uk/book-trial-lessons-and-flying-experiences/" target="_blank" rel="noopener noreferrer">North Weald Flight
-            Training</a>. I have about 50 hours logged at the moment with 3 hours solo in the circuit at North Weald. Looking to complete my cross country solo soon.
+            Training</a>. I have about 60 hours logged at the moment with 10 hours solo, all ground exams done and I have just completed my solo cross country qualifier. On to my skills test next!
           </Typography>
           <IconButton style={{ backgroundColor: "transparent" }}>
             <img src={CaaIcon} className="Qualification-Icon" alt="CAA" />
@@ -284,20 +284,20 @@ const HomePage: React.FC = () => {
             >
               <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                 <img
-                  src={Docker}
+                  src={DevIcon}
                   className="Header-Icon"
                   alt="Docker"
                 />
                 <Typography variant="body2" style={{ lineHeight: 2 }}>
-                How to bind to a Windows Share using CIFS in Docker
+                Creating Opinionated .NET Templates for your Organisation
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography variant="body1">
-                  Docker is great for building stateless, ephemeral services but sometimes these services need to access data outside the container. This article shows you how to bind a network share to a Docker container.
+                When designing and building your application with a microservice approach you will find that you will be continually creating the same projects over and over with the same configuration and folder structure. When you add in Docker files, DevOps pipelines and other technologies you may have chosen it makes sense to try and standardise on your approach and this is where dotnet templates can be useful
                   <br />
                   <br />
-                  <Link to={"/tech/articles/docker-bind-mount-network"}>
+                  <Link to={"/tech/articles/creating-dotnet-new-templates"}>
                     <Typography variant="body1">
                       Read the whole article
                     </Typography>
