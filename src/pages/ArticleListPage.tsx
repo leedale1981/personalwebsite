@@ -20,6 +20,12 @@ const ArticleListPage: React.FC = () => {
                 <Typography variant='h5' className='Courier-Typography'>All Articles</Typography>
                 <Paper className="Paper">
                 <List>
+                    <Link to={"/tech/articles/web-application-basics-in-go"}>
+                        <ListItem divider>
+                            <ListItemAvatar><img src={DevIcon} className="Header-Icon"  alt="Web Application Basics in Go"/></ListItemAvatar>
+                            <ListItemText><Typography variant="body1" style={{lineHeight: 1.5}}>Web Application Basics in Go</Typography></ListItemText>
+                        </ListItem>
+                    </Link>
                     <Link to={"/tech/articles/creating-dotnet-new-templates"}>
                         <ListItem divider>
                             <ListItemAvatar><img src={DevIcon} className="Header-Icon"  alt="Creating Opinionated .NET Templates for your Organisation"/></ListItemAvatar>

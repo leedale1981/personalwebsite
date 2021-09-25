@@ -6,9 +6,12 @@ import QxcRoute from '../images/qxcroute.jpg';
 import { Done } from '@material-ui/icons';
 import Solo1 from '../images/solo1.jpg';
 import Solo2 from '../images/solo2.jpg';
+import PplPass1 from '../images/pplpass1.jpg';
+import PplPass2 from '../images/pplpass2.jpg';
 
 const FlyingPage: React.FC = () => {
-    const [update5Expanded, setUpdate5Expanded] = useState("update5Panel");
+    const [update6Expanded, setUpdate6Expanded] = useState("update6Panel");
+    const [update5Expanded, setUpdate5Expanded] = useState("");
     const [update4Expanded, setUpdate4Expanded] = useState("");
     const [update3Expanded, setUpdate3Expanded] = useState("");
     const [update2Expanded, setUpdate2Expanded] = useState("");
@@ -16,6 +19,9 @@ const FlyingPage: React.FC = () => {
 
     const handleExpansionChange = (panel: string) => (event: any, newExpanded: boolean) => {
         switch (panel) {
+          case "update6Panel":
+            setUpdate6Expanded(newExpanded ? panel : "");
+            break;
           case "update5Panel":
             setUpdate5Expanded(newExpanded ? panel : "");
             break;
@@ -38,6 +44,32 @@ const FlyingPage: React.FC = () => {
         <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='row'>
             <Grid item md={7} xs={12}>
                 <Typography variant='h5' className='Courier-Typography'>Updates</Typography>
+                <ExpansionPanel className='Expansion' expanded={update6Expanded === 'update6Panel'} onChange={handleExpansionChange('update6Panel')}>
+                    <ExpansionPanelSummary expandIcon={<ExpandMore />}>
+                    <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
+                        <Grid item xs={2}>
+                            <img src={FlyingIcon} className="Header-Icon"  alt="Flying update"/>
+                        </Grid>
+                        <Grid item xs={10}>
+                            <Typography variant="h5">27th August 2021</Typography><br />
+                        </Grid>
+                    </Grid>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails>
+                        <Typography variant="body1">
+                            Today I passed my skills test and completed my radio exam so I can finally send off for my PPL licence! 
+                            <br />
+                            <br />
+                            <img src={PplPass1} style={{width: "500px"}}  alt="PPL pass"/>
+                            <br />
+                            <img src={PplPass2} style={{width: "500px"}}  alt="PPL pass2"/>
+                            <br />
+                            <br />
+                            I'm looking forward to getting out on my own, planning some trips to new airfields around the country and of course taking passengers!
+                        </Typography>
+                    </ExpansionPanelDetails>
+                </ExpansionPanel>
+
                 <ExpansionPanel className='Expansion' expanded={update5Expanded === 'update5Panel'} onChange={handleExpansionChange('update5Panel')}>
                     <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                     <Grid container spacing={3} alignItems='flex-start' justify='flex-start'>
@@ -169,10 +201,10 @@ const FlyingPage: React.FC = () => {
                                 <TableBody>
                                     <TableRow>
                                         <TableCell component="th" scope="row">
-                                            60
+                                            80
                                         </TableCell>
                                         <TableCell component="th" scope="row">
-                                            10
+                                            11
                                         </TableCell>
                                     </TableRow>
                                 </TableBody>
@@ -263,6 +295,7 @@ const FlyingPage: React.FC = () => {
             <Grid item md={12} xs={12}>
                 <Typography variant='h5' className='Courier-Typography'>Videos</Typography>
                 <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='row'>
+                    <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/LnzIv5xF-uk" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
                     <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/zr3EKZRzXyM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
                     <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/137PsMFD0Wg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
                     <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/Nl-KGapB6GM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>

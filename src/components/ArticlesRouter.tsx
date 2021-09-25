@@ -10,11 +10,15 @@ import KubernetesGke from '../articles/KubernetesGkeArticle';
 import DockerBindMountNetwork from '../articles/DockerBindMountNetwork';
 import LehmansLaws from '../articles/LehmansLaws';
 import DotnetNewTemplates from '../articles/CreatingOpinionatedDotnetTemplates';
+import WebAppBasicsInGo from '../articles/WebApplicationBasicsInGo';
 
 const ArticlesRouter: React.FC = () => {
 
     return (
         <div>
+        <Route exact path="/tech/articles/web-application-basics-in-go" render={
+            (props) => <WebAppBasicsInGo />
+        } />
         <Route exact path="/tech/articles/creating-dotnet-new-templates" render={
             (props) => <DotnetNewTemplates />
         } />

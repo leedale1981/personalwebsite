@@ -106,16 +106,16 @@ const SoftwarePage: React.FC = () => {
                   className="Header-Icon"
                   alt="Docker"
                 />
-                <Typography variant="body2" style={{ lineHeight: 2 }}>
-                Creating Opinionated .NET Templates for your Organisation
+                <Typography variant="h6" style={{ lineHeight: 2 }}>
+                Web Application Basics in Go
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography variant="body1">
-                When designing and building your application with a microservice approach you will find that you will be continually creating the same projects over and over with the same configuration and folder structure. When you add in Docker files, DevOps pipelines and other technologies you may have chosen it makes sense to try and standardise on your approach and this is where dotnet templates can be useful
+                Go has some great support for easily building web applications utilising the supplied http package. There are however some concepts to grasp before fully understanding how Go handles web requests which you should probably know before creating your own applications.
                   <br />
                   <br />
-                  <Link to={"/tech/articles/creating-dotnet-new-templates"}>
+                  <Link to={"/tech/articles/web-application-basics-in-go"}>
                     <Typography variant="body1">
                       Read the whole article
                     </Typography>
@@ -255,7 +255,7 @@ const SoftwarePage: React.FC = () => {
         >
           <Grid item md={12} xs={12}>
             <Typography variant="h5" className="Courier-Typography">
-              Recent Projects
+              Latest Project
             </Typography>
 
             <ExpansionPanel
@@ -321,135 +321,6 @@ const SoftwarePage: React.FC = () => {
                 </Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>
-
-
-          <ExpansionPanel
-            className="Expansion"
-            expanded={ofqualExpanded === "ofqualPanel"}
-            onChange={handleExpansionChange("ofqualPanel")}
-          >
-            <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-              <Grid
-                container
-                spacing={3}
-                alignItems="flex-start"
-                justify="flex-start"
-              >
-                <Grid item md={3}>
-                  <img src={OfqualIcon} className="Header-Icon" alt="Ofqual" />
-                </Grid>
-                <Hidden xsDown>
-                  <Grid item md={2}>
-                    <img
-                      src={ReactIcon}
-                      className="Qualification-Icon"
-                      alt="React"
-                    />
-                  </Grid>
-                  <Grid item md={1}>
-                    <img
-                      src={NetCoreIcon}
-                      className="Qualification-Icon"
-                      alt=".NET Core"
-                    />
-                  </Grid>
-                  <Grid item md={2}>
-                    <img
-                      src={AzureIcon}
-                      className="Qualification-Icon"
-                      alt="Azure"
-                    />
-                  </Grid>
-                  <Grid item md={2}>
-                    <img
-                      src={TsIcon}
-                      className="Qualification-Icon"
-                      alt="Typescript"
-                    />
-                  </Grid>
-                  <Grid item md={1}>
-                    <img
-                      src={NodeIcon}
-                      className="Qualification-Icon"
-                      alt="Node"
-                    />
-                  </Grid>
-                </Hidden>
-              </Grid>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography variant="body1">
-                <Typography variant="caption">June 2018 - April 2020</Typography>
-                <br />
-                My role at Ofqual was to design and build from scratch a fully
-                working single page web application that would allow Ofqual to
-                manage awarding organisations across England and Wales and to
-                handle their accreditation process. React was choosen for the
-                front end application calling into and Node backend API. The
-                application was hosted on the Micrtosoft Azure Cloud and services
-                like CosmosDB, Azure AD and Azure Search were utilised within the
-                application. The application was sucessfully delivered into
-                production. I went back to Ofqual a while later to migrate the
-                backend API to .NET core and build extra functionality into the
-                system.
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel
-            className="Expansion"
-            expanded={dunnhumbyExpanded === "dunnhumbyPanel"}
-            onChange={handleExpansionChange("dunnhumbyPanel")}
-          >
-            <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-              <Grid
-                container
-                spacing={3}
-                alignItems="flex-start"
-                justify="flex-start"
-              >
-                <Grid item md={5}>
-                  <img src={DhIcon} className="Header-Icon" alt="Dunnhumby" />
-                </Grid>
-                <Hidden xsDown>
-                  <Grid item md={2}>
-                    <img
-                      src={NetCoreIcon}
-                      className="Qualification-Icon"
-                      alt=".Net Core"
-                    />
-                  </Grid>
-                  <Grid item md={2}>
-                    <img
-                      src={GcpIcon}
-                      className="Qualification-Icon"
-                      alt="Google Cloud Platform"
-                    />
-                  </Grid>
-                  <Grid item md={2}>
-                    <img
-                      src={KubeIcon}
-                      className="Qualification-Icon"
-                      alt="Kubernetes"
-                    />
-                  </Grid>
-                </Hidden>
-              </Grid>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography variant="body1">
-                <Typography variant="caption">
-                  July 2019 - November 2019
-                </Typography>
-                <br />
-                This project was helping to rebuild from scratch, Dunnhumby's core
-                data science platform with modern technologies such as .NET Core,
-                Google Cloud Platform, Docker, Kubernetes and React. My role as a
-                senior software engineer was to design and develop some middle
-                tier and backend services utilising .NET Core. The services hooked
-                into GCP PubSub messaging queues and a PostgresSQL database.
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
           </Grid>
           <Grid item md={12} xs={12}>
             <Typography variant="h5" className="Courier-Typography">

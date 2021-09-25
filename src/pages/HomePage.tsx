@@ -83,6 +83,9 @@ const HomePage: React.FC = () => {
             various clients in many different industries. I currently work for a company called Providor which is part of the <a href="https://www.sureservegroup.co.uk/" target="_blank" rel="noopener noreferrer">Sureserve Group</a> designing and building software solutions in the energy industry.
             <br />
             <br />
+            I have just completed a <a href='https://www.open.ac.uk/courses/combined-studies/degrees/open-degree-qd'>BSc (Honours) degree with The Open University</a> and I will start a <a href='https://www.open.ac.uk/postgraduate/qualifications/f77'>Masters degree in Space Science and Technology</a>
+            <br />
+            <br />
           </Typography>
           <br />
           <IconButton style={{ backgroundColor: "transparent" }}>
@@ -182,9 +185,7 @@ const HomePage: React.FC = () => {
           <br />
           <Typography variant="h6">Flying</Typography>
           <Typography variant="body1">
-            I enjoy flying in my free time and I'm currently
-            training to get my private pilots licence at <a href="https://northwealdflighttraining.co.uk/book-trial-lessons-and-flying-experiences/" target="_blank" rel="noopener noreferrer">North Weald Flight
-            Training</a>. I have about 60 hours logged at the moment with 10 hours solo, all ground exams done and I have just completed my solo cross country qualifier. On to my skills test next!
+            I enjoy flying in my free time and I have recently gained my Private Pilots Licence (PPL A). I have about 80 hours logged so far and will look to be gaining more experience and ratings.
           </Typography>
           <IconButton style={{ backgroundColor: "transparent" }}>
             <img src={CaaIcon} className="Qualification-Icon" alt="CAA" />
@@ -224,7 +225,7 @@ const HomePage: React.FC = () => {
           <br />
           <Typography variant="h6">Diving</Typography>
           <Typography variant="body1">
-            My last (but not least) hobby is scuba diving. I am currently qualified as an <a href="https://www.padi.com/courses/advanced-open-water" target="_blank" rel="noopener noreferrer">PADI Advanced Open Water diver</a>.
+            My last (but not least) hobby is scuba diving. I am currently qualified as an <a href="https://www.padi.com/courses/rescue-diver" target="_blank" rel="noopener noreferrer">PADI Rescue Diver</a>.
             <br />
             <br />
             <Link to={"/diving"}>
@@ -289,15 +290,15 @@ const HomePage: React.FC = () => {
                   alt="Docker"
                 />
                 <Typography variant="body2" style={{ lineHeight: 2 }}>
-                Creating Opinionated .NET Templates for your Organisation
+                Web Application Basics in Go
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography variant="body1">
-                When designing and building your application with a microservice approach you will find that you will be continually creating the same projects over and over with the same configuration and folder structure. When you add in Docker files, DevOps pipelines and other technologies you may have chosen it makes sense to try and standardise on your approach and this is where dotnet templates can be useful
+                Go has some great support for easily building web applications utilising the supplied http package. There are however some concepts to grasp before fully understanding how Go handles web requests which you should probably know before creating your own applications.
                   <br />
                   <br />
-                  <Link to={"/tech/articles/creating-dotnet-new-templates"}>
+                  <Link to={"/tech/articles/web-application-basics-in-go"}>
                     <Typography variant="body1">
                       Read the whole article
                     </Typography>
@@ -367,7 +368,7 @@ const HomePage: React.FC = () => {
                     July 2020 - Present
                   </Typography>
                   <br />
-                  In my role as lead software developer at <a href="https://www.providor.co.uk/" target="_blank" rel="noopener noreferrer">Providor</a> I am currentlydeveloping a new in house smart meter data flow system. 
+                  In my role as lead software developer at <a href="https://www.providor.co.uk/" target="_blank" rel="noopener noreferrer">Providor</a> I am currently developing a new in house smart meter data flow system. 
                   The system is based on a microservice architecture using .NET Core, React, Docker Swarm, Azure DevOps among other technologies.
                 </Typography>
               </ExpansionPanelDetails>
