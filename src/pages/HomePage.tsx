@@ -83,7 +83,7 @@ const HomePage: React.FC = () => {
             various clients in many different industries. I currently work for a company called Providor which is part of the <a href="https://www.sureservegroup.co.uk/" target="_blank" rel="noopener noreferrer">Sureserve Group</a> designing and building software solutions in the energy industry.
             <br />
             <br />
-            I have just completed a <a href='https://www.open.ac.uk/courses/combined-studies/degrees/open-degree-qd'>BSc (Honours) degree with The Open University</a> and I will start a <a href='https://www.open.ac.uk/postgraduate/qualifications/f77'>Masters degree in Space Science and Technology</a>
+            I have just completed a <a href='https://www.open.ac.uk/courses/combined-studies/degrees/open-degree-qd'>BSc (Honours) degree with The Open University</a> and I will start a <a href='https://www.open.ac.uk/postgraduate/qualifications/f77'>Masters degree in Space Science and Technology in January.</a>
             <br />
             <br />
           </Typography>
@@ -194,7 +194,7 @@ const HomePage: React.FC = () => {
           <br />
           <Link to={"/flying"}>
             <Typography variant="body1">
-              If your interested in following my progress in flying then check
+              If your interested in following my progress in aviation then check
               out the flying section.
             </Typography>
           </Link>
@@ -205,12 +205,12 @@ const HomePage: React.FC = () => {
           <br />
           <Typography variant="h6">Sailing</Typography>
           <Typography variant="body1">
-            I enjoy sailing and I am currently working my through the <a href="https://www.rya.org.uk/courses-training/courses/Pages/hub.aspx" target="_blank" rel="noopener noreferrer">RYA qualifications</a>. I have completed Level 1 & 2 Dinghy and the Compentent Crew course
+            Another hobby of mine is sailing and I am currently working my way through the <a href="https://www.rya.org.uk/courses-training/courses/Pages/hub.aspx" target="_blank" rel="noopener noreferrer">RYA qualifications</a>. I have completed Level 1 & 2 Dinghy and the Compentent Crew course
             <br />
             <br />
             <Link to={"/sailing"}>
               <Typography variant="body1">
-                Visit the sailing section for updates and photos of our
+                Visit the sailing section for updates and photos of my
                 journey.
               </Typography>
             </Link>
@@ -230,8 +230,7 @@ const HomePage: React.FC = () => {
             <br />
             <Link to={"/diving"}>
               <Typography variant="body1">
-                Check out the diving section for updates on my diving
-                progress.
+                Check out the diving section to follow my diving adventures.
               </Typography>
             </Link>
           </Typography>
