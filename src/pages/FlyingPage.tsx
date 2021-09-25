@@ -295,7 +295,7 @@ const FlyingPage: React.FC = () => {
             <Grid item md={12} xs={12}>
                 <Typography variant='h5' className='Courier-Typography'>Videos</Typography>
                 <Grid container spacing={5} alignItems='flex-start' justify='flex-start' direction='row'>
-                    <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/LnzIv5xF-uk" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
+                    <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/o9onO_AYY5g" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
                     <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/zr3EKZRzXyM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
                     <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/137PsMFD0Wg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
                     <Grid item md={6} xs={6}><iframe title="Flying" width="100%" height="250px" src="https://www.youtube.com/embed/Nl-KGapB6GM" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></Grid>
