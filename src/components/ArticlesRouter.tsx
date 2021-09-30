@@ -11,11 +11,15 @@ import DockerBindMountNetwork from '../articles/DockerBindMountNetwork';
 import LehmansLaws from '../articles/LehmansLaws';
 import DotnetNewTemplates from '../articles/CreatingOpinionatedDotnetTemplates';
 import WebAppBasicsInGo from '../articles/WebApplicationBasicsInGo';
+import DotnetMinimalApis from '../articles/DotnetMinimalApis';
 
 const ArticlesRouter: React.FC = () => {
 
     return (
         <div>
+        <Route exact path="/tech/articles/dotnet-6-minimal-apis" render={
+            (props) => <DotnetMinimalApis />
+        } />
         <Route exact path="/tech/articles/web-application-basics-in-go" render={
             (props) => <WebAppBasicsInGo />
         } />

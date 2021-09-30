@@ -107,15 +107,15 @@ const SoftwarePage: React.FC = () => {
                   alt="Docker"
                 />
                 <Typography variant="h6" style={{ lineHeight: 2 }}>
-                Web Application Basics in Go
+                .NET 6 Minimal APIs vs Node JS
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography variant="body1">
-                Go has some great support for easily building web applications utilising the supplied http package. There are however some concepts to grasp before fully understanding how Go handles web requests which you should probably know before creating your own applications.
+                With the release of .NET 6 comes a new way to create APIs; a more concise, less verbose way. 
                   <br />
                   <br />
-                  <Link to={"/tech/articles/web-application-basics-in-go"}>
+                  <Link to={"/tech/articles/dotnet-6-minimal-apis"}>
                     <Typography variant="body1">
                       Read the whole article
                     </Typography>

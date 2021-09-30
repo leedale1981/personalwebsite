@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid, Typography, Paper, IconButton, ListItem, List, ListItemAvatar, ListItemText, Chip } from '@material-ui/core';
+import { Grid, Typography, Paper, ListItem, List, ListItemAvatar, ListItemText, Chip } from '@material-ui/core';
 import FpIcon from "../images/factorydesignpattern.png";
 import BcIcon from "../images/blockchain.png";
 import AlIcon from "../images/alexa.png";
@@ -20,6 +20,12 @@ const ArticleListPage: React.FC = () => {
                 <Typography variant='h5' className='Courier-Typography'>All Articles</Typography>
                 <Paper className="Paper">
                 <List>
+                    <Link to={"/tech/articles/dotnet-6-minimal-apis"}>
+                        <ListItem divider>
+                            <ListItemAvatar><img src={DevIcon} className="Header-Icon"  alt=".NET 6 Minimal APIs vs Node JS"/></ListItemAvatar>
+                            <ListItemText><Typography variant="body1" style={{lineHeight: 1.5}}>.NET 6 Minimal APIs vs Node JS</Typography></ListItemText>
+                        </ListItem>
+                    </Link>
                     <Link to={"/tech/articles/web-application-basics-in-go"}>
                         <ListItem divider>
                             <ListItemAvatar><img src={DevIcon} className="Header-Icon"  alt="Web Application Basics in Go"/></ListItemAvatar>
