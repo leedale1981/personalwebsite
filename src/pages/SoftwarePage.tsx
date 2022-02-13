@@ -13,6 +13,7 @@ import DhIcon from "../images/dunnhumby.jpg";
 import NetCoreIcon from "../images/.netcore.png";
 import ProvidorIcon from "../images/providor.jpg";
 import GcpIcon from "../images/gcp.png";
+import AwsCpIcon from "../images/AWS-CloudPractitioner.png"
 import KubeIcon from "../images/kubernetes.png";
 import OfqualIcon from "../images/ofqual.png";
 import MedalIcon from "../images/medal.png";
@@ -107,19 +108,19 @@ const SoftwarePage: React.FC = () => {
                   alt="Docker"
                 />
                 <Typography variant="h6" style={{ lineHeight: 2 }}>
-                .NET 6 Minimal APIs vs Node JS
+                Testing in .NET 6 with WebApplicationFactory (including Minimal APIs)
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography variant="body1">
-                With the release of .NET 6 comes a new way to create APIs; a more concise, less verbose way. 
+                This article aims to discuss the benefits of integration testing in web applications and shows how the WebApplicationFactory class helps with this. At the end I also demonstrate how to use WebApplicationFactory to test the new .NET 6 minimal APIs.  
                   <br />
                   <br />
-                  <Link to={"/tech/articles/dotnet-6-minimal-apis"}>
+                  <a href="https://lee-jdale.medium.com/testing-in-net-with-webapplicationfactory-including-minimal-apis-ddcb4ed0aef5">
                     <Typography variant="body1">
                       Read the whole article
                     </Typography>
-                  </Link>
+                  </a>
                 </Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>
@@ -142,6 +143,15 @@ const SoftwarePage: React.FC = () => {
               alignItems="flex-start"
               justify="flex-start"
             >
+              <Grid item md={4} sm={6}>
+                <Tooltip title="AWS Certified Cloud Practitioner">
+                  <img
+                    src={AwsCpIcon}
+                    className="Qualification-Icon-Large"
+                    alt="AWS Certified Cloud Practitioner"
+                  />
+                </Tooltip>
+              </Grid>
               <Grid item md={4} sm={6}>
                 <Tooltip title="Google Certified Associate Cloud Engineer">
                   <img

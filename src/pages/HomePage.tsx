@@ -17,6 +17,7 @@ import McsdIcon from "../images/mcsd.png";
 import AzFundIcon from "../images/azure-fundamentals.png";
 import AzDevIcon from "../images/azure-developer-associate-600x600.png";
 import TogafIcon from "../images/togaf.png";
+import AwsCpIcon from "../images/AWS-CloudPractitioner.png"
 import CaaIcon from "../images/caa.gif";
 import PadiOwdIcon from "../images/padiowd.png";
 import BcsIcon from "../images/bcs.png";
@@ -87,7 +88,16 @@ const HomePage: React.FC = () => {
             <br />
             <br />
           </Typography>
-          <br />
+          
+          <IconButton style={{ backgroundColor: "transparent" }}>
+            <Tooltip title="AWS Certified Cloud Practitioner">
+              <img
+                src={AwsCpIcon}
+                className="Qualification-Icon"
+                alt="AWS Certified Cloud Practitioner"
+              />
+            </Tooltip>
+          </IconButton><br />
           <IconButton style={{ backgroundColor: "transparent" }}>
             <Tooltip title="Google Certified Associate Cloud Engineer">
               <img
@@ -289,19 +299,19 @@ const HomePage: React.FC = () => {
                   alt="Docker"
                 />
                 <Typography variant="body2" style={{ lineHeight: 2 }}>
-                .NET 6 Minimal APIs vs Node JS
+                Testing in .NET 6 with WebApplicationFactory (including Minimal APIs)
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography variant="body1">
-                  With the release of .NET 6 comes a new way to create APIs; a more concise, less verbose way. 
+                This article aims to discuss the benefits of integration testing in web applications and shows how the WebApplicationFactory class helps with this. At the end I also demonstrate how to use WebApplicationFactory to test the new .NET 6 minimal APIs. 
                   <br />
                   <br />
-                  <Link to={"/tech/articles/dotnet-6-minimal-apis"}>
+                  <a href="https://lee-jdale.medium.com/testing-in-net-with-webapplicationfactory-including-minimal-apis-ddcb4ed0aef5">
                     <Typography variant="body1">
                       Read the whole article
                     </Typography>
-                  </Link>
+                  </a>
                 </Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>

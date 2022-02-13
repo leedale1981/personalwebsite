@@ -20,6 +20,12 @@ const ArticleListPage: React.FC = () => {
                 <Typography variant='h5' className='Courier-Typography'>All Articles</Typography>
                 <Paper className="Paper">
                 <List>
+                    <a href="https://lee-jdale.medium.com/testing-in-net-with-webapplicationfactory-including-minimal-apis-ddcb4ed0aef5">
+                        <ListItem divider>
+                            <ListItemAvatar><img src={DevIcon} className="Header-Icon"  alt="Testing in .NET 6 with WebApplicationFactory (including Minimal APIs)"/></ListItemAvatar>
+                            <ListItemText><Typography variant="body1" style={{lineHeight: 1.5}}>Testing in .NET 6 with WebApplicationFactory (including Minimal APIs)</Typography></ListItemText>
+                        </ListItem>
+                    </a>
                     <Link to={"/tech/articles/dotnet-6-minimal-apis"}>
                         <ListItem divider>
                             <ListItemAvatar><img src={DevIcon} className="Header-Icon"  alt=".NET 6 Minimal APIs vs Node JS"/></ListItemAvatar>
