@@ -84,7 +84,7 @@ const HomePage: React.FC = () => {
             various clients in many different industries. I currently work for a company called Providor which is part of the <a href="https://www.sureservegroup.co.uk/" target="_blank" rel="noopener noreferrer">Sureserve Group</a> designing and building software solutions in the energy industry.
             <br />
             <br />
-            I have just completed a <a href='https://www.open.ac.uk/courses/combined-studies/degrees/open-degree-qd'>BSc (Honours) degree with The Open University</a> and I will start a <a href='https://www.open.ac.uk/postgraduate/qualifications/f77'>Masters degree in Space Science and Technology in January.</a>
+            I have just completed a <a href='https://www.open.ac.uk/courses/combined-studies/degrees/open-degree-qd'>BSc (Honours) degree with The Open University</a>
             <br />
             <br />
           </Typography>
@@ -195,7 +195,7 @@ const HomePage: React.FC = () => {
           <br />
           <Typography variant="h6">Flying</Typography>
           <Typography variant="body1">
-            I enjoy flying in my free time and I have recently gained my Private Pilots Licence (PPL A). I have about 80 hours logged so far and will look to be gaining more experience and ratings.
+            I enjoy flying in my free time and I have recently gained my Private Pilots Licence (PPL A). I have about 89 hours logged so far and will look to be gaining more experience and ratings.
           </Typography>
           <IconButton style={{ backgroundColor: "transparent" }}>
             <img src={CaaIcon} className="Qualification-Icon" alt="CAA" />

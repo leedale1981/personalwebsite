@@ -20,6 +20,18 @@ const ArticleListPage: React.FC = () => {
                 <Typography variant='h5' className='Courier-Typography'>All Articles</Typography>
                 <Paper className="Paper">
                 <List>
+                    <a href="https://lee-jdale.medium.com/using-azure-key-vault-secrets-in-azure-devops-pipelines-dcf1297085a1">
+                        <ListItem divider>
+                            <ListItemAvatar><img src={DevIcon} className="Header-Icon"  alt="Using Azure Key Vault secrets in Azure DevOps Pipelines"/></ListItemAvatar>
+                            <ListItemText><Typography variant="body1" style={{lineHeight: 1.5}}>Using Azure Key Vault secrets in Azure DevOps Pipelines</Typography></ListItemText>
+                        </ListItem>
+                    </a>
+                    <a href="https://lee-jdale.medium.com/dynamic-group-assignment-in-azure-ad-163942d5aed2">
+                        <ListItem divider>
+                            <ListItemAvatar><img src={DevIcon} className="Header-Icon"  alt="Dynamic group assignment in Azure AD"/></ListItemAvatar>
+                            <ListItemText><Typography variant="body1" style={{lineHeight: 1.5}}>Dynamic group assignment in Azure AD</Typography></ListItemText>
+                        </ListItem>
+                    </a>
                     <a href="https://lee-jdale.medium.com/testing-in-net-with-webapplicationfactory-including-minimal-apis-ddcb4ed0aef5">
                         <ListItem divider>
                             <ListItemAvatar><img src={DevIcon} className="Header-Icon"  alt="Testing in .NET 6 with WebApplicationFactory (including Minimal APIs)"/></ListItemAvatar>
