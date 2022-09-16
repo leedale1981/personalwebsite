@@ -20,6 +20,12 @@ const ArticleListPage: React.FC = () => {
                 <Typography variant='h5' className='Courier-Typography'>All Articles</Typography>
                 <Paper className="Paper">
                 <List>
+                    <a href="https://lee-jdale.medium.com/we-need-to-rethink-our-relationship-with-social-media-31141c177b44">
+                        <ListItem divider>
+                            <ListItemAvatar><img src={DevIcon} className="Header-Icon"  alt="We need to rethink our relationship with Social Media"/></ListItemAvatar>
+                            <ListItemText><Typography variant="body1" style={{lineHeight: 1.5}}>We need to rethink our relationship with Social Media</Typography></ListItemText>
+                        </ListItem>
+                    </a>
                     <a href="https://lee-jdale.medium.com/using-azure-key-vault-secrets-in-azure-devops-pipelines-dcf1297085a1">
                         <ListItem divider>
                             <ListItemAvatar><img src={DevIcon} className="Header-Icon"  alt="Using Azure Key Vault secrets in Azure DevOps Pipelines"/></ListItemAvatar>

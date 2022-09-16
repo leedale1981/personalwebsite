@@ -71,10 +71,10 @@ const FlyingPage: React.FC = () => {
                                 <TableBody>
                                     <TableRow>
                                         <TableCell component="th" scope="row">
-                                            89
+                                            95
                                         </TableCell>
                                         <TableCell component="th" scope="row">
-                                            20
+                                            25
                                         </TableCell>
                                     </TableRow>
                                 </TableBody>

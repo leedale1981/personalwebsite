@@ -22,16 +22,13 @@ const Header: React.FC = () => {
       <Grid item md={3} lg={2} sm={4} alignContent='flex-start' alignItems='flex-start' style={{marginBottom: 30}}>
         <Link to={"/"} style={{textAlign: "left"}}><Typography variant='h4' className='Courier-Typography' style={{marginTop: 40}}>Lee Dale</Typography></Link>
         <Grid container spacing={0} direction='row'>
-          <Grid item md={2}>
-            <a href="https://www.instagram.com/its.a.dales.life/" target="_blank" rel='noreferrer noopener' className="Social-Links"><Instagram /></a>
-          </Grid>
-          <Grid item md={2}>
+          <Grid item md={3}>
             <a href="https://www.linkedin.com/in/leedale/" target="_blank" rel='noreferrer noopener' className="Social-Links"><LinkedIn /></a>
           </Grid>
-          <Grid item md={2}>
+          <Grid item md={3}>
             <a href="https://twitter.com/cloudshark4" target="_blank" rel='noreferrer noopener' className="Social-Links"><Twitter /></a>
           </Grid>
-          <Grid item md={2}>
+          <Grid item md={3}>
             <a href="https://github.com/leedale1981" target="_blank" rel='noreferrer noopener' className="Social-Links"><GitHub /></a>
           </Grid>
         </Grid>

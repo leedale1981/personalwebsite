@@ -21,7 +21,6 @@ import AwsCpIcon from "../images/AWS-CloudPractitioner.png"
 import CaaIcon from "../images/caa.gif";
 import PadiOwdIcon from "../images/padiowd.png";
 import BcsIcon from "../images/bcs.png";
-import RyaIcon from "../images/rya.gif";
 import NetCoreIcon from "../images/.netcore.png";
 import DockerIcon from "../images/docker.png";
 import ReactIcon from "../images/react.png";
@@ -78,13 +77,15 @@ const HomePage: React.FC = () => {
           <Typography variant="h6">Career</Typography>
           <Typography variant="body1">
             I am a software developer/technical lead/cloud architect who has been designing
-            and building software solutions professionally for the last twenty
-            years. I have worked thirteen of those years as a freelance
+            and building software solutions professionally for over twenty
+            years. I worked thirteen of those years as a freelance software
             developer specialising in building enterprise web applications for
             various clients in many different industries. I currently work for a company called Providor which is part of the <a href="https://www.sureservegroup.co.uk/" target="_blank" rel="noopener noreferrer">Sureserve Group</a> designing and building software solutions in the energy industry.
             <br />
             <br />
-            I have just completed a <a href='https://www.open.ac.uk/courses/combined-studies/degrees/open-degree-qd'>BSc (Honours) degree with The Open University</a>
+            I completed a <a href='https://www.open.ac.uk/courses/combined-studies/degrees/open-degree-qd'>BSc (Honours) degree with The Open University in 2021</a> and
+            <br />
+            I am now studying with Edinburgh Napier University for a <a href='https://www.napier.ac.uk/courses/msc-advanced-security-and-digital-forensics-postgraduate-fulltime'>MSc in Advanced Security and Digtial Forensics</a>
             <br />
             <br />
           </Typography>
@@ -195,7 +196,7 @@ const HomePage: React.FC = () => {
           <br />
           <Typography variant="h6">Flying</Typography>
           <Typography variant="body1">
-            I enjoy flying in my free time and I have recently gained my Private Pilots Licence (PPL A). I have about 89 hours logged so far and will look to be gaining more experience and ratings.
+            I enjoy flying in my free time and I have recently gained my Private Pilots Licence (PPL A). I have about 95 hours logged so far and will look to be gaining more experience and ratings.
           </Typography>
           <IconButton style={{ backgroundColor: "transparent" }}>
             <img src={CaaIcon} className="Qualification-Icon" alt="CAA" />
@@ -213,29 +214,9 @@ const HomePage: React.FC = () => {
           <Divider />
           <br />
           <br />
-          <Typography variant="h6">Sailing</Typography>
-          <Typography variant="body1">
-            Another hobby of mine is sailing and I am currently working my way through the <a href="https://www.rya.org.uk/courses-training/courses/Pages/hub.aspx" target="_blank" rel="noopener noreferrer">RYA qualifications</a>. I have completed Level 1 & 2 Dinghy and the Compentent Crew course
-            <br />
-            <br />
-            <Link to={"/sailing"}>
-              <Typography variant="body1">
-                Visit the sailing section for updates and photos of my
-                journey.
-              </Typography>
-            </Link>
-          </Typography>
-          <IconButton style={{ backgroundColor: "transparent" }}>
-            <img src={RyaIcon} className="Qualification-Icon" alt="RYA" />
-          </IconButton>
-          <br />
-          <br />
-          <Divider />
-          <br />
-          <br />
           <Typography variant="h6">Diving</Typography>
           <Typography variant="body1">
-            My last (but not least) hobby is scuba diving. I am currently qualified as an <a href="https://www.padi.com/courses/rescue-diver" target="_blank" rel="noopener noreferrer">PADI Rescue Diver</a>.
+            Another hobby is scuba diving. I am currently qualified as an <a href="https://www.padi.com/courses/master-scuba-diver" target="_blank" rel="noopener noreferrer">PADI Master Scuba Diver</a>.
             <br />
             <br />
             <Link to={"/diving"}>
