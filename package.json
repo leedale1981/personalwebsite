@@ -2,33 +2,29 @@
   "name": "personal-website",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "dependencies": {
-    "@material-ui/core": "^4.6.1",
-    "@material-ui/icons": "^4.5.1",
-    "@types/highlight.js": "^9.12.3",
-    "@types/jest": "24.0.23",
-    "@types/node": "12.12.7",
-    "@types/react": "16.9.11",
-    "@types/react-dom": "16.9.4",
-    "@types/react-router-dom": "^5.1.2",
-    "highlight.js": "^10.0.1",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-mathjax2": "0.0.2",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
-    "serve": "^11.2.0",
-    "typescript": "3.7.2"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^1.3.2",
+    "typescript": "^5.8.0",
+    "vite": "^2.9.18"
   },
   "scripts": {
-    "start": "serve -s build -l 80",
-    "debug": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "dev": "vite --mode tech",
+    "dev:tech": "vite --mode tech",
+    "dev:fitness": "vite --mode fitness",
+    "build": "vite build --mode tech",
+    "build:tech": "vite build --mode tech",
+    "build:fitness": "vite build --mode fitness",
+    "preview": "vite preview --mode tech --host 0.0.0.0 --port 4173",
+    "preview:tech": "vite preview --mode tech --host 0.0.0.0 --port 4173",
+    "preview:fitness": "vite preview --mode fitness --host 0.0.0.0 --port 4174"
   },
   "browserslist": {
     "production": [
