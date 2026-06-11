@@ -1,22 +1,15 @@
-# base image
-FROM node:14.4.0-stretch
-
-# set working directory
+FROM node:22-alpine AS build
 WORKDIR /app
 
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
+COPY package*.json ./
+RUN npm ci
 
-# install and cache app dependencies
-COPY package.json /app/package.json
-RUN npm install --silent
-RUN npm install react-scripts@3.0.1 -g --silent
-
-COPY . ./
-
-RUN npm -g config set user root
-RUN npm install serve -g --silent
+COPY . .
 RUN npm run build
 
-# start app
-CMD ["npm", "start"]
+FROM nginx:1.27-alpine AS production
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,0 +1,361 @@
+[33mcommit e82784be3ae0fadbfd781b94b0270475cbfdd385[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/v2[m[33m, [m[1;31morigin/revamp[m[33m, [m[1;31morigin/master[m[33m, [m[1;32mrevamp[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: 82635a1 3445684
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Fri Sep 16 10:30:43 2022 +0100
+
+    Merge branch 'master' of https://github.com/leedale1981/personalwebsite into master
+
+[33mcommit 82635a14c01d9c9ef5a9caafce089687fe719eb9[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Fri Sep 16 10:30:34 2022 +0100
+
+    Update
+
+[33mcommit 34456841433a14c760cfa84ac0fa7e0619e59b30[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Sun May 15 08:29:54 2022 +0100
+
+    Create docker-image.yml
+
+[33mcommit 69adc2ae6375315c4043e5e2765116a348f07443[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Wed May 4 09:32:37 2022 +0100
+
+    Update
+
+[33mcommit d96f3e17a9b744077b5b4fec612dcc16a3c4a4b2[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Fri Mar 25 07:56:56 2022 +0000
+
+    Create codeql-analysis.yml
+
+[33mcommit 2d9bdd4511fd478ded305aaa3d396d8bd899992c[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Sun Feb 13 11:23:37 2022 +0000
+
+    Update
+
+[33mcommit 5e3e007856198e3a112452ca068277cebc888438[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Thu Sep 30 15:05:15 2021 +0100
+
+    Adding new article
+
+[33mcommit a71dd76e3f313ee86ba2aea90f1850e7a2ec426d[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Sat Sep 25 14:27:06 2021 +0100
+
+    Fix
+
+[33mcommit 8b57cebd5133d18f3400fd62708fa6ea7b98da12[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Sat Sep 25 14:18:52 2021 +0100
+
+    Fix
+
+[33mcommit ccd2befee7c7e4cec242a6ef3d978134ef10cdcc[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Sat Sep 25 11:54:18 2021 +0100
+
+    Updates
+
+[33mcommit 1c72f2b0643ec4e7ffd85a120d25ff2f24ded221[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Fri Jul 2 09:31:13 2021 +0100
+
+    Adding new article
+
+[33mcommit edafe42de025e786fc6f928dd5d6a283d1e9a76f[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Fri Jun 18 10:22:59 2021 +0100
+
+    Update
+
+[33mcommit 96361a56d8c9df42851d6f94058d2789f286c7ba[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Fri Jun 18 10:22:35 2021 +0100
+
+    Update
+
+[33mcommit d9ae7b088ebf586646b838aebf5cc8c7f7daf0ff[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Fri Jun 18 08:49:44 2021 +0100
+
+    Update
+
+[33mcommit b2fc72659019f499239cb5cc983aa1f44d2630cd[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Fri Jun 18 07:01:55 2021 +0100
+
+    Update
+
+[33mcommit 14ff6f3a71be37289152d4c1cace3ebe1b1b2167[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Fri Jun 4 11:30:51 2021 +0100
+
+    Adding Strava
+
+[33mcommit 1066a8ac4dca244312af7e3729cf4e862b5e0135[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Tue May 4 07:51:55 2021 +0100
+
+    Flying update
+
+[33mcommit 828371e57528d620e955c921fab42cb8b3613e5a[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Thu Apr 22 08:28:12 2021 +0100
+
+    Adding new flying update
+
+[33mcommit d8aa80e47a382e2565e0def52a083712fed9fc13[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Mon Mar 1 10:52:02 2021 +0000
+
+    Update
+
+[33mcommit 9161c9fd6c29e56ac9cd1ef7763950e2e1fb0ffb[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Mon Mar 1 08:53:05 2021 +0000
+
+    Enlarging tooltip font
+
+[33mcommit 754947bb5527b1947c3862da8a9d443235830d62[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Mon Mar 1 08:34:54 2021 +0000
+
+    Removing image
+
+[33mcommit 7c146c90c75d56d2685de5887de560138a67939b[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Tue Feb 23 07:42:12 2021 +0000
+
+    Update
+
+[33mcommit 761b106eca06f4fd57c4bc352440a158f9149770[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Thu Feb 18 10:56:22 2021 +0000
+
+    Adding software evolution article
+
+[33mcommit 88d6867d90844bcbb6344baaebdefb308fce9373[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Thu Feb 18 10:22:46 2021 +0000
+
+    Adding software evolution article
+
+[33mcommit b5ccb382bad40979cbdefd5c8c91efa88e1e7237[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Thu Feb 18 10:10:51 2021 +0000
+
+    Adding software evolution article
+
+[33mcommit 0cb42599fdd89a10b9b4dfad757a59c0e3749670[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Mon Feb 15 09:50:33 2021 +0000
+
+    Adding Docker bind mount article
+
+[33mcommit a94e2f5be70dc22c52120a36b482cd60c74fad96[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Fri Jan 8 08:21:28 2021 +0000
+
+    Update
+
+[33mcommit 89e4b0b7fb1a83579969cfd7a5f327b6952b350d[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Tue Dec 29 20:19:41 2020 +0000
+
+    Update
+
+[33mcommit c14a4b698d4ebe896b318dc314061eb4548ce3fc[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Tue Dec 29 19:09:52 2020 +0000
+
+    Update
+
+[33mcommit 0c9b6d2a8fe12ec9784776204c9a18597f2d49a2[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Wed Jun 24 07:46:07 2020 +0100
+
+    Updating node image
+
+[33mcommit 078228784a5c35e51ee9b70b6141db7ab3a306cc[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Tue Jun 23 15:16:18 2020 +0100
+
+    Adding security+ cert
+
+[33mcommit a001759566ad9c86733edf882b5889ada0e0456a[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Tue Jun 2 11:51:38 2020 +0100
+
+    Update N+
+
+[33mcommit e1ab4e7557941bc96dbc487e973a051b0f5e8c83[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Mon Jun 1 14:45:52 2020 +0100
+
+    Adding network+ cert
+
+[33mcommit dd3fe7290aa7546d0a35e30c5f900faf346dcbf8[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Wed May 20 08:10:38 2020 +0100
+
+    Adding GCP ACE Certification
+
+[33mcommit 81a77f44d4d59e155310ed4288d097545f40c9b6[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Thu May 14 11:03:22 2020 +0100
+
+    Adding Kubernetes article
+
+[33mcommit a2ca4b89170b6c9048a5fec7204bae31bb617a01[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Thu May 14 11:00:05 2020 +0100
+
+    Adding Kubernetes article
+
+[33mcommit 28cb4504bad7a5a204648462ad73beb8d3c8406d[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Thu May 7 19:44:55 2020 +0100
+
+    Adding TOGAF certification
+
+[33mcommit d326d2c992719d106f8a2435046e0e66c6863443[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Sun May 3 13:10:48 2020 +0100
+
+    Adding quantum computing article
+
+[33mcommit ffbdb850aa732a293ad90b60526c6abef293ff50[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Fri May 1 13:20:36 2020 +0100
+
+    Adding AdSense
+
+[33mcommit 8487db4b7283568a3abd9655192b797d871c94fd[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Fri May 1 12:28:20 2020 +0100
+
+    Adding AdSense
+
+[33mcommit 4c27d990a46f7ad498be6d08bb351f4527d6cac7[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Fri May 1 12:08:34 2020 +0100
+
+    Adding AdSense
+
+[33mcommit 8373a46038c4168c036454ced21e5bf21388378d[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Fri May 1 11:01:51 2020 +0100
+
+    Flying content
+
+[33mcommit e16fd28b1967c79f80e6d8d88eddc4a28d6a4792[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Fri May 1 09:13:56 2020 +0100
+
+    Adding bloom filter article
+
+[33mcommit ceec901aadde2331a3ea759d80dfee1057464f22[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Fri May 1 07:43:39 2020 +0100
+
+    Fixed article image scaling
+
+[33mcommit 376c7facda3b6f715d2c1dad21a813bcc2b0c79a[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Thu Apr 30 19:12:52 2020 +0100
+
+    Adding azure exam article
+
+[33mcommit 8ff693a7f69256cb9b9b8be08aca1f6bdf928f03[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Tue Apr 28 16:49:44 2020 +0100
+
+    Adding Azure Developer Associate cert
+
+[33mcommit 7f87dbe702aec241206b0e9342af29b598090733[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Tue Apr 28 16:29:13 2020 +0100
+
+    Adding Azure Developer Associate cert
+
+[33mcommit 2942296a2b781792316a66cf8603f909decb5e13[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Mon Mar 30 10:01:35 2020 +0100
+
+    Adding Azure MS Cert
+
+[33mcommit a0604091a506ffed12c77a47f0d6c197b7154d8e[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Sat Mar 28 19:42:49 2020 +0000
+
+    Updating packages
+
+[33mcommit 399f9ef4063b085303832e5b44df6bc454e22236[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Sat Mar 28 19:25:52 2020 +0000
+
+    added mcsd
+
+[33mcommit 760851b67ebb962bdb8eff337bef47c36408524c[m
+Merge: f224045 418f94d
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Sat Mar 28 19:22:11 2020 +0000
+
+    Merge branch 'master' of https://github.com/leedale1981/personalwebsite
+
+[33mcommit f224045df46121e19e5aad3e70f5560abf1c310c[m
+Author: Lee Dale <lee.jdale@gmail.com>
+Date:   Sat Mar 28 19:22:06 2020 +0000
+
+    added mcsd
+
+[33mcommit 418f94d7ba543b5dffc94977f6ce888b30aeb765[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Fri Mar 27 20:05:46 2020 +0000
+
+    Updated sofwtare and study page
+
+[33mcommit 5529ed8122468589486934a9fe574be5953acdc2[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Fri Mar 27 14:51:12 2020 +0000
+
+    Updating software page
+
+[33mcommit 45e3bfa59990d1087e844b3782d95a28a0ffa338[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Fri Mar 27 14:25:46 2020 +0000
+
+    Updating software page
+
+[33mcommit 79b0d009fa9eb0485b26d6d1aeea294b9e192592[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Wed Nov 27 13:12:07 2019 +0000
+
+    Updating software page articles.
+
+[33mcommit aaae235522d3e63221e43f3284d72c1fb28c0b43[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Wed Nov 27 10:55:58 2019 +0000
+
+    Adding new article
+
+[33mcommit a1d5b50ddf9169a9837bba6ca4e738f1e6690e84[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Tue Nov 19 19:32:14 2019 +0000
+
+    Updates to pages
+
+[33mcommit 93612558d1665d749ef36421f5109eb2396720cf[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Sun Nov 17 19:30:33 2019 +0000
+
+    Updating dockerfile@
+
+[33mcommit 82176a1016fffbaefeda2098e114d3af4873ac56[m
+Author: Lee Dale <lee.dale@ofqual.gov.uk>
+Date:   Sun Nov 17 19:09:41 2019 +0000
+
+    Updating dockerfile@
