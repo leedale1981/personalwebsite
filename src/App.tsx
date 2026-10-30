@@ -19,7 +19,6 @@ import homeFitnessImage from "./images/home-fitness.jpg";
 import homeSoftwareDevImage from "./images/home-software-dev.jpg";
 import homeMindsetImage from "./images/home-mindset.jpg";
 import homeGoalsImage from "./images/home-goals.jpg";
-import mediumLogo from "./images/master-wordmark.png";
 import ouLogo from "./images/ou.png";
 import enuLogo from "./images/HarrietENU_Logo_866x245.png";
 import pdfIcon from "./images/pdf.png";
@@ -31,13 +30,7 @@ import mcsaLogo from "./images/mcsa.png";
 import cimspaLogo from "./images/CIMSPA-500_980978b27712b32266cf2aeaba4191ba.png";
 import origymLogo from "./images/focus-awards-logo.png";
 import leesArcadeImage from "../images/leesarcade.jpg";
-
-type MediumArticle = {
-  title: string;
-  link: string;
-  pubDate: string;
-  tags: string[];
-};
+import leeRunningImage from "./images/lee-dale-running.jpg";
 
 type SiteVariant = "tech" | "fitness";
 
@@ -290,8 +283,6 @@ const techCertifications: CertificationLogo[] = [
 
 
 
-const mediumFeedUrl = "https://medium.com/feed/@leedale1981";
-
 const siteConfigs: Record<SiteVariant, SiteConfig> = {
   tech: {
     variant: "tech",
@@ -299,20 +290,15 @@ const siteConfigs: Record<SiteVariant, SiteConfig> = {
     brandSubtitle: "Lead Software Engineer | Cyber Security",
     navItems: [
       { to: "/", label: "Home" },
-      { to: "/academic", label: "Academic" },
-      { to: "/articles", label: "Articles" }
+      { to: "/academic", label: "Academic" }
     ],
     showGitHub: true
   },
   fitness: {
     variant: "fitness",
     brandName: "Lee Dale Performance",
-    brandSubtitle: "Running and Fitness Coaching",
-    navItems: [
-      { to: "/", label: "Home" },
-      { to: "/courses", label: "Courses" },
-      { to: "/articles", label: "Articles" }
-    ],
+    brandSubtitle: "Level 3 Personal Trainer | Running and Fitness Coaching",
+    navItems: [],
     showGitHub: false
   }
 };
@@ -974,89 +960,6 @@ function useAzureCourseAuth() {
   return { user, configured, signIn, signUp, signOut };
 }
 
-const fitnessArticleTag = "fitness";
-
-function normalizeTag(value: string): string {
-  return value.trim().toLowerCase();
-}
-
-function parseMediumFeed(xml: string): MediumArticle[] {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(xml, "application/xml");
-  const items = Array.from(doc.querySelectorAll("item"));
-
-  return items.map((item) => ({
-    title: item.querySelector("title")?.textContent?.trim() ?? "Untitled",
-    link: item.querySelector("link")?.textContent?.trim() ?? "https://medium.com",
-    pubDate: item.querySelector("pubDate")?.textContent?.trim() ?? "",
-    tags: Array.from(item.querySelectorAll("category"))
-      .map((category) => category.textContent?.trim() ?? "")
-      .filter(Boolean)
-  }));
-}
-
-async function fetchMediumArticles(): Promise<MediumArticle[]> {
-  const xmlSources = [
-    mediumFeedUrl,
-    `https://api.allorigins.win/raw?url=${encodeURIComponent(mediumFeedUrl)}`,
-    `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(mediumFeedUrl)}`
-  ];
-
-  for (const source of xmlSources) {
-    try {
-      const response = await fetch(source);
-      if (!response.ok) {
-        continue;
-      }
-      const xml = await response.text();
-      const parsed = parseMediumFeed(xml);
-      if (parsed.length > 0) {
-        return parsed;
-      }
-    } catch {
-      // Try the next source.
-    }
-  }
-
-  try {
-    const jsonResponse = await fetch(
-      `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(mediumFeedUrl)}`
-    );
-    if (jsonResponse.ok) {
-      const payload = await jsonResponse.json();
-      if (payload?.status === "ok" && Array.isArray(payload.items) && payload.items.length > 0) {
-        return payload.items.map((item: { title?: string; link?: string; pubDate?: string; categories?: string[] }) => ({
-          title: item.title?.trim() ?? "Untitled",
-          link: item.link?.trim() ?? "https://medium.com",
-          pubDate: item.pubDate?.trim() ?? "",
-          tags: Array.isArray(item.categories) ? item.categories.filter(Boolean) : []
-        }));
-      }
-    }
-  } catch {
-    // No further source available.
-  }
-
-  throw new Error("Could not retrieve Medium articles.");
-}
-
-function formatDate(value: string): string {
-  if (!value) {
-    return "";
-  }
-
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) {
-    return "";
-  }
-
-  return date.toLocaleDateString("en-GB", {
-    year: "numeric",
-    month: "short",
-    day: "numeric"
-  });
-}
-
 function GitHubIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
@@ -1110,90 +1013,45 @@ function SocialLinks({ showGitHub = true }: { showGitHub?: boolean }) {
 
 function Layout({ children, site }: { children: ReactNode; site: SiteConfig }) {
   const year = useMemo(() => new Date().getFullYear(), []);
-  const [isCvDialogOpen, setIsCvDialogOpen] = useState(false);
-  const [requestEmail, setRequestEmail] = useState("");
-  const [requestMessage, setRequestMessage] = useState("");
-
-  function submitCvRequest(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const subject = encodeURIComponent(`CV request from ${requestEmail}`);
-    const body = encodeURIComponent(
-      `Hello Lee,\n\nI would like to request your CV.\n\nEmail: ${requestEmail}\n\nMessage:\n${requestMessage}`
-    );
-    window.location.href = `mailto:leedale@proton.me?subject=${subject}&body=${body}`;
-    setIsCvDialogOpen(false);
-    setRequestEmail("");
-    setRequestMessage("");
-  }
 
   return (
     <div className={`page-shell site-variant-${site.variant}`}>
       <div className="site-frame">
         <header className="topbar">
           <NavLink className="brand" to="/">
-            <img src="/images/me.png" alt="Lee Dale" className="brand-icon" />
+            {site.variant === "fitness" ? (
+              <span className="fitness-brand-mark" aria-hidden="true">LD<span>.</span></span>
+            ) : (
+              <img src="/images/me.png" alt="Lee Dale" className="brand-icon" />
+            )}
             <span>
               <strong>{site.brandName}</strong>
               <small>{site.brandSubtitle}</small>
             </span>
           </NavLink>
 
-          <nav className="site-nav" aria-label="Primary">
-            {site.navItems.map((item) => (
-              <NavItem key={item.to} to={item.to}>{item.label}</NavItem>
-            ))}
-          </nav>
+          {site.navItems.length > 0 ? (
+            <nav className="site-nav" aria-label="Primary">
+              {site.navItems.map((item) => (
+                <NavItem key={item.to} to={item.to}>{item.label}</NavItem>
+              ))}
+            </nav>
+          ) : null}
 
           <div className="header-actions">
-            <SocialLinks showGitHub={site.showGitHub} />
-            <button className="btn btn-subtle" type="button" onClick={() => setIsCvDialogOpen(true)}>
-              Request CV
-            </button>
+            {site.variant === "fitness" ? (
+              <a className="fitness-button fitness-header-cta" href={fitnessBookingUrl} target="_blank" rel="noreferrer">
+                Let’s talk <span aria-hidden="true">↗</span>
+              </a>
+            ) : <SocialLinks showGitHub={site.showGitHub} />}
           </div>
         </header>
-
-        {isCvDialogOpen ? (
-          <div className="cv-modal-backdrop" role="presentation" onClick={() => setIsCvDialogOpen(false)}>
-            <div className="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title" onClick={(e) => e.stopPropagation()}>
-              <h2 id="cv-modal-title">Request CV</h2>
-              <p>Enter your email and message. This opens your email client and sends the request to leedale@proton.me.</p>
-              <form onSubmit={submitCvRequest} className="cv-request-form">
-                <label htmlFor="request-email">Your email</label>
-                <input
-                  id="request-email"
-                  type="email"
-                  required
-                  value={requestEmail}
-                  onChange={(e) => setRequestEmail(e.target.value)}
-                  placeholder="you@company.com"
-                />
-                <label htmlFor="request-message">Message</label>
-                <textarea
-                  id="request-message"
-                  required
-                  rows={5}
-                  value={requestMessage}
-                  onChange={(e) => setRequestMessage(e.target.value)}
-                  placeholder="Tell me what role or context you need the CV for"
-                />
-                <div className="cta-row">
-                  <button type="submit" className="btn btn-solid">
-                    Send Request
-                  </button>
-                  <button type="button" className="btn btn-ghost" onClick={() => setIsCvDialogOpen(false)}>
-                    Cancel
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        ) : null}
 
         <main>{children}</main>
 
         <footer className="footer-panel">
           <div className="footer-links">
-            <p>© {year} Lee Dale. React 19, Vite and Nginx.</p>
+            <p>© {year} Lee Dale.{site.variant === "fitness" ? " Personal training. Lasting progress." : " React 19, Vite and Nginx."}</p>
             <SocialLinks showGitHub={site.showGitHub} />
           </div>
         </footer>
@@ -1229,7 +1087,7 @@ function HomePage() {
     <>
       <section className="home-hero-split">
         <section className="hero-panel">
-          <p className="eyebrow">Lead Software Engineer | Fitness Coach</p>
+          <p className="eyebrow">Lead Software Engineer | Level 3 Personal Trainer</p>
           <h1>Software Engineering, Leadership, Coaching and Fitness</h1>
           <p className="lead-text">
             I build secure, scalable platforms and lead engineering teams. Outside of tech, I coach
@@ -1326,7 +1184,7 @@ function HomePage() {
           <img
             src={origymLogo}
             alt="Focus Awards"
-            title="Level 2 certified gym instructor"
+            title="Level 3 Personal Trainer"
             className="cert-logo"
           />
           <img
@@ -1411,105 +1269,102 @@ function TechPage() {
 
 function FitnessPage() {
   return (
-    <>
-      <section className="fitness-hero-split">
-        <div className="hero-panel fitness-hero-copy">
-          <p className="eyebrow">Fitness</p>
-          <h1>Progress-led coaching for real results.</h1>
-          <p className="lead-text">
-            I am a Level 2 certified gym instructor soon to qualify as a Level 3 personal trainer. Focused on practical fitness routines,
-            beginner runner coaching and building sustainable habits through evidence-based methods.
-          </p>
-          <div className="hashtag-chip-list" aria-label="Fitness coaching tags">
-            {fitnessHashtags.map((tag) => (
-              <span key={tag} className="hashtag-chip">{tag}</span>
-            ))}
+    <div className="fitness-landing">
+      <section className="fitness-hero" aria-labelledby="fitness-heading">
+        <img className="fitness-hero-photo" src={runningImage} alt="Athletes training with battle ropes in a gym" fetchPriority="high" />
+        <div className="fitness-hero-content">
+          <p className="fitness-kicker">Personal training · Running · Mindset</p>
+          <h1 id="fitness-heading">Build strength.<br />Find your stride.<br /><em>Keep going.</em></h1>
+          <p className="fitness-hero-intro">Fitness that fits your life. Practical coaching to help you move with confidence, build better habits and make progress that lasts.</p>
+          <div className="fitness-hero-actions">
+            <a className="fitness-button" href={fitnessBookingUrl} target="_blank" rel="noreferrer">Book a free consultation <span aria-hidden="true">↗</span></a>
+            <a className="fitness-text-link" href="#coaching">Explore the coaching <span aria-hidden="true">↓</span></a>
+          </div>
+          <p className="fitness-hero-note">Your starting point is enough. Let’s build from there.</p>
+        </div>
+        <div className="fitness-photo-caption"><span aria-hidden="true">01 /</span> Small steps. Stronger every day.</div>
+      </section>
+
+      <div className="fitness-trust-strip" aria-label="Qualifications and coaching approach">
+        <div><strong>Level 3</strong><span>Qualified Personal Trainer</span></div>
+        <div><strong>CIMSPA</strong><span>Professional member</span></div>
+        <div><strong>Your pace.</strong><span>Your goals. Your progress.</span></div>
+      </div>
+
+      <section className="fitness-services fitness-section" id="coaching" aria-labelledby="coaching-heading">
+        <div className="fitness-section-heading">
+          <div><p className="fitness-kicker">Coaching built around you</p><h2 id="coaching-heading">A stronger you.<br />In and out of the gym.</h2></div>
+          <p>Whether you’re starting fresh or finding your rhythm again, we’ll focus on practical steps you can keep taking.</p>
+        </div>
+        <div className="fitness-service-grid">
+          <article className="fitness-service">
+            <span className="fitness-service-number">01 / STRENGTH</span>
+            <h3>Feel stronger.<br />Move better.</h3>
+            <p>Build a solid foundation with fitness plans for beginners and intermediate exercisers, shaped around your goals and starting point.</p>
+            <a href={fitnessBookingUrl} target="_blank" rel="noreferrer">Let’s build your strength <span aria-hidden="true">↗</span></a>
+          </article>
+          <article className="fitness-service">
+            <span className="fitness-service-number">02 / RUNNING</span>
+            <h3>From first steps<br />to your first 5K.</h3>
+            <p>Find your feet with achievable running plans. Build confidence and consistency, whether you’re a complete beginner or getting back to it.</p>
+            <a href={fitnessBookingUrl} target="_blank" rel="noreferrer">Find your running rhythm <span aria-hidden="true">↗</span></a>
+          </article>
+          <article className="fitness-service">
+            <span className="fitness-service-number">03 / MINDSET</span>
+            <h3>Build the habits.<br />Keep the momentum.</h3>
+            <p>Turn good intentions into a routine that works. Get support with realistic goals, accountability and making room for fitness in everyday life.</p>
+            <a href={fitnessBookingUrl} target="_blank" rel="noreferrer">Take your next step <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section className="fitness-about fitness-section" aria-labelledby="about-heading">
+        <div className="fitness-coach-photo">
+          <img src={leeRunningImage} alt="Lee Dale running in a road race" loading="lazy" width="3000" height="4000" />
+          <div className="fitness-coach-label"><strong>LEE DALE</strong><span>Your coach. In your corner.</span></div>
+        </div>
+        <div className="fitness-about-copy">
+          <p className="fitness-kicker">Meet your coach</p>
+          <h2 id="about-heading">Real life.<br />Real commitment.<br /><span>Lasting progress.</span></h2>
+          <p>I’m Lee, a Level 3 Personal Trainer and CIMSPA member. I help people build strength, discover running and develop habits they can stick with.</p>
+          <p>Fitness is a big part of my own life. I run for Orion Harriers running club, enjoy longer runs and train consistently throughout the year. My approach to coaching is the same: achievable steps, a clear purpose and consistency over intensity.</p>
+          <div className="fitness-credentials">
+            <div><img src={origymLogo} alt="Focus Awards" loading="lazy" /><span>OriGym qualified<br /><strong>Level 3 Personal Trainer</strong></span></div>
+            <div><img src={cimspaLogo} alt="CIMSPA" loading="lazy" /><span>Professional membership<br /><strong>CIMSPA member</strong></span></div>
+          </div>
+          <div className="fitness-running-links">
+            <a className="fitness-text-link" href="https://www.strava.com/athletes/2209153" target="_blank" rel="noreferrer">Follow my training on Strava <span aria-hidden="true">↗</span></a>
+            <a className="fitness-text-link" href="https://www.powerof10.uk/Home/Athlete/43e38ca7-852e-43df-b04f-b00419e8543a" target="_blank" rel="noreferrer">View my PowerOf10 profile <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-
-        <section className="panel fitness-banner-panel">
-          <img src={runningImage} alt="Runner on a road" className="fitness-banner-image" />
-        </section>
       </section>
 
-      <section className="panel course-promo-panel">
-        <p className="eyebrow">New Courses</p>
-        <h2>Couch to 5K Course</h2>
-        <p>
-          A beginner-friendly, structured course with video and lesson notes covering progressive overload,
-          running mechanics, warm-up drills, recovery routines, and habit systems to get you to your first 5K.
-        </p>
-        <section className="course-promo-image-grid" aria-label="Course previews for running and strength mobility">
-          <NavLink className="course-promo-image-card" to="/courses/couch-to-5k-running">
-            <img src={runningImage} alt="Running course image" className="course-promo-image" />
-            <span>Couch to 5K Running</span>
-          </NavLink>
-          <NavLink className="course-promo-image-card" to="/courses/running-strength-mobility">
-            <img src={homeFitnessImage} alt="Strength and mobility course image" className="course-promo-image" />
-            <span>Running Strength and Mobility</span>
-          </NavLink>
-        </section>
-        <div className="cta-row">
-          <NavLink className="btn btn-solid" to="/courses/couch-to-5k-running">
-            View Course
-          </NavLink>
-          <NavLink className="btn btn-ghost" to="/courses">
-            Browse All Courses
-          </NavLink>
+      <section className="fitness-process fitness-section" aria-labelledby="process-heading">
+        <div className="fitness-section-heading"><div><p className="fitness-kicker">Your next chapter starts here</p><h2 id="process-heading">One conversation.<br />A clear way forward.</h2></div><p>You don’t need to have it all figured out. We’ll start with where you are today.</p></div>
+        <ol className="fitness-process-grid">
+          <li><span>01</span><h3>Let’s talk</h3><p>Book a free initial video consultation. Tell me what you want to achieve and what’s been getting in the way.</p></li>
+          <li><span>02</span><h3>Find your focus</h3><p>We’ll discuss your starting point, your schedule and the kind of coaching that could work for you.</p></li>
+          <li><span>03</span><h3>Take the next step</h3><p>Leave the conversation with a clearer direction and practical next steps towards your goals.</p></li>
+        </ol>
+      </section>
+
+      <section className="fitness-faq fitness-section" aria-labelledby="faq-heading">
+        <div><p className="fitness-kicker">Good questions</p><h2 id="faq-heading">Before you<br />take the leap.</h2></div>
+        <div className="fitness-faq-list">
+          <details><summary>Do I need to be fit to get started?</summary><p>No. My coaching includes beginners and people returning to fitness. We start with your current ability and build from there.</p></details>
+          <details><summary>What happens in the free consultation?</summary><p>It’s an initial video conversation about your goals, fitness background and schedule. We’ll talk through your starting point and practical next steps.</p></details>
+          <details><summary>Can you help me get into running?</summary><p>Yes. I coach beginner runners with structured, achievable plans, whether your goal is your first 5K or building a regular running habit.</p></details>
         </div>
       </section>
 
-      <section className="panel consultation-panel">
-        <h2>Free initial consultation</h2>
-        <p>
-          Book a free video consultation for fitness and mindset coaching. We will map your starting point,
-          goals, schedule, and next practical steps.
-        </p>
-        <a className="btn btn-solid" href={fitnessBookingUrl} target="_blank" rel="noreferrer">
-          Book Session
-        </a>
-        <p className="booking-note">Booking service: Calendly</p>
+      <section className="fitness-final-cta" aria-labelledby="booking-heading">
+        <p className="fitness-kicker">Start where you are</p>
+        <h2 id="booking-heading">Your next step?<br />Let’s take it together.</h2>
+        <p>Tell me your goals. We’ll work out where to begin.</p>
+        <a className="fitness-button" href={fitnessBookingUrl} target="_blank" rel="noreferrer">Book your free consultation <span aria-hidden="true">↗</span></a>
+        <span className="fitness-cta-note">Free initial video consultation · Book a time that suits you</span>
       </section>
-
-      <section className="section-grid two-col-grid">
-        <article className="panel">
-          <h2>Credentials and Memberships</h2>
-          <div className="cert-logo-strip">
-            <img src={origymLogo} alt="OriGym" title="OriGym Level 2 Personal Trainer" className="cert-logo" />
-            <img src={cimspaLogo} alt="CIMSPA" title="CIMSPA Member" className="cert-logo cimspa-logo" />
-          </div>
-          <ul className="plain-list">
-            <li>OriGym Level 2 Certified Personal Trainer</li>
-            <li>Working toward OriGym Level 3 Certification</li>
-            <li>Member of CIMSPA (Chartered Institute for the Management of Sport and Physical Activity)</li>
-          </ul>
-        </article>
-
-        <article className="panel">
-          <h2>Coaching Focus</h2>
-          <ul className="plain-list">
-            <li>Beginner and intermediate fitness plans</li>
-            <li>Beginner runner coaching — structured plans to build from zero to consistent running</li>
-            <li>Accountability and momentum frameworks</li>
-            <li>Practical goal tracking and habit building</li>
-          </ul>
-        </article>
-      </section>
-
-      <section className="panel">
-        <h2>Running</h2>
-        <p>Running is a big part of how I stay sharp and grounded. I enjoy longer distances and train consistently throughout the year. I coach beginner runners with practical, achievable plans focused on consistency over intensity — whether your goal is a first 5k or building a regular running habit.</p>
-        <a
-          href="https://www.strava.com/athletes/2209153"
-          target="_blank"
-          rel="noreferrer"
-          className="strava-link"
-        >
-          <img src={stravaLogo} alt="Strava" className="strava-logo" />
-          <span>Follow on Strava</span>
-        </a>
-      </section>
-    </>
+    </div>
   );
 }
 
@@ -1939,77 +1794,6 @@ function AcademicPage() {
   );
 }
 
-function ArticlesPage({ variant }: { variant: SiteVariant }) {
-  const [articles, setArticles] = useState<MediumArticle[]>([]);
-  const [articlesLoading, setArticlesLoading] = useState(true);
-  const [articlesError, setArticlesError] = useState("");
-  const isFitnessSite = variant === "fitness";
-
-  useEffect(() => {
-    let mounted = true;
-
-    async function run() {
-      try {
-        const list = await fetchMediumArticles();
-        const filteredList = isFitnessSite
-          ? list.filter((article) => article.tags.some((tag) => normalizeTag(tag) === fitnessArticleTag))
-          : list;
-
-        if (mounted) {
-          setArticles(filteredList.slice(0, 6));
-        }
-      } catch {
-        if (mounted) {
-          setArticlesError("Unable to load Medium articles right now.");
-        }
-      } finally {
-        if (mounted) {
-          setArticlesLoading(false);
-        }
-      }
-    }
-
-    void run();
-
-    return () => {
-      mounted = false;
-    };
-  }, [isFitnessSite]);
-
-  return (
-    <>
-      <PageHero
-        eyebrow="Articles"
-        title={isFitnessSite ? "Articles on coaching, consistency and fitness." : "Technical writing on engineering, architecture and emerging technology."}
-        text={isFitnessSite ? "Latest Medium posts tagged fitness are shown here for the coaching site." : "Latest posts are fetched from Medium and presented here as a focused reading list."}
-      />
-      <section className="list-stack">
-        {articlesLoading ? <p className="status">Loading articles...</p> : null}
-        {articlesError ? <p className="status error">{articlesError}</p> : null}
-        {!articlesLoading && !articlesError && articles.length === 0 ? (
-          <p className="status">{isFitnessSite ? "No fitness-tagged Medium articles found yet." : "No Medium articles found yet."}</p>
-        ) : null}
-        {!articlesLoading && !articlesError
-          ? articles.map((article) => (
-              <article className="panel article-panel" key={`${article.link}-${article.title}`}>
-                <div className="card-head">
-                  <img src={mediumLogo} alt="Medium" className="card-logo" />
-                  <div>
-                    <h2>{article.title}</h2>
-                    <p>{formatDate(article.pubDate)}</p>
-                  </div>
-                </div>
-                <a href={article.link} target="_blank" rel="noreferrer">
-                  Read on Medium
-                </a>
-              </article>
-            ))
-          : null}
-      </section>
-    </>
-  );
-}
-
 function App() {
   const variant: SiteVariant = import.meta.env.MODE === "fitness" ? "fitness" : "tech";
   const site = siteConfigs[variant];
@@ -2017,7 +1801,7 @@ function App() {
   useEffect(() => {
     document.body.dataset.theme = variant;
     document.title = variant === "fitness"
-      ? "Lee Dale Performance | Running and Fitness Coaching"
+      ? "Lee Dale Performance | Level 3 Personal Trainer"
       : "Lee Dale | Lead Software Engineer";
 
     return () => {
@@ -2032,17 +1816,12 @@ function App() {
           {variant === "fitness" ? (
             <>
               <Route path="/" element={<FitnessPage />} />
-              <Route path="/courses" element={<CoursesPage />} />
-              <Route path="/courses/:slug" element={<CourseDetailPage />} />
-              <Route path="/courses/:slug/modules/:moduleIndex" element={<CourseModulePage />} />
-              <Route path="/articles" element={<ArticlesPage variant={variant} />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
           ) : (
             <>
               <Route path="/" element={<TechPage />} />
               <Route path="/academic" element={<AcademicPage />} />
-              <Route path="/articles" element={<ArticlesPage variant={variant} />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
           )}
