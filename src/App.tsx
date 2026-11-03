@@ -170,6 +170,11 @@ const sideProjects: Project[] = [
 
 const academicQualifications: QualificationItem[] = [
   {
+    name: "PhD student — Secure coding with AI assistants (in progress)",
+    institution: "Edinburgh Napier University",
+    logo: enuLogo
+  },
+  {
     name: "MSc Advanced Security and Digital Forensics",
     institution: "Edinburgh Napier University",
     logo: enuLogo
@@ -1022,7 +1027,7 @@ function Layout({ children, site }: { children: ReactNode; site: SiteConfig }) {
             {site.variant === "fitness" ? (
               <span className="fitness-brand-mark" aria-hidden="true">LD<span>.</span></span>
             ) : (
-              <img src="/images/me.png" alt="Lee Dale" className="brand-icon" />
+              <span className="tech-brand-mark" aria-hidden="true">LD<span>.</span></span>
             )}
             <span>
               <strong>{site.brandName}</strong>
@@ -1043,7 +1048,7 @@ function Layout({ children, site }: { children: ReactNode; site: SiteConfig }) {
               <a className="fitness-button fitness-header-cta" href={fitnessBookingUrl} target="_blank" rel="noreferrer">
                 Let’s talk <span aria-hidden="true">↗</span>
               </a>
-            ) : <SocialLinks showGitHub={site.showGitHub} />}
+            ) : <a className="tech-button tech-header-cta" href={techBookingUrl} target="_blank" rel="noreferrer">Let’s talk <span aria-hidden="true">↗</span></a>}
           </div>
         </header>
 
@@ -1201,69 +1206,85 @@ function HomePage() {
 
 function TechPage() {
   return (
-    <>
-      <PageHero
-        eyebrow="Tech"
-        title="Software engineering, architecture, secure coding, and AI assisted development"
-        text={profileDescription}
-      />
-
-      <section className="panel consultation-panel">
-        <h2>Book a consultancy session</h2>
-        <p>
-          Need support with software engineering, architecture, modernisation, AI coding tools,
-          GitHub Copilot, Claude Code, or delivery leadership? Book a video session.
-        </p>
-        <div className="hashtag-chip-list" aria-label="Tech consulting tags">
-          {aiHashtags.map((tag) => (
-            <span key={tag} className="hashtag-chip">{tag}</span>
-          ))}
+    <div className="tech-landing">
+      <section className="tech-hero" aria-labelledby="tech-heading">
+        <img className="tech-hero-photo" src={homeSoftwareDevImage} alt="Software development workspace" fetchPriority="high" />
+        <div className="tech-hero-content">
+          <p className="tech-kicker">Software engineering · Cyber security · AI</p>
+          <h1 id="tech-heading">Build with purpose.<br />Design for scale.<br /><em>Move forward.</em></h1>
+          <p className="tech-hero-intro">Secure software. Clear architecture. Practical AI. I help teams turn complex challenges into working systems that last.</p>
+          <div className="tech-hero-actions">
+            <a className="tech-button" href={techBookingUrl} target="_blank" rel="noreferrer">Book a consultation <span aria-hidden="true">↗</span></a>
+            <a className="tech-text-link" href="#expertise">Explore my work <span aria-hidden="true">↓</span></a>
+          </div>
+          <p className="tech-hero-note">Hands-on engineering. Thoughtful leadership. Real progress.</p>
         </div>
-        <a className="btn btn-solid" href={techBookingUrl} target="_blank" rel="noreferrer">
-          Book Session
-        </a>
-        <p className="booking-note">Booking service: Calendly</p>
+        <div className="tech-photo-caption"><span aria-hidden="true">01 /</span> Better systems. Stronger teams.</div>
       </section>
-
-      <section className="panel">
-        <div className="cert-grid">
+      <div className="tech-trust-strip" aria-label="Experience and qualifications">
+        <div><strong>Over 25 years</strong><span>Experience as a software engineer</span></div>
+        <div><strong>MSc</strong><span>Cyber security & digital forensics</span></div>
+        <div><strong>CITP</strong><span>Chartered IT Professional</span></div>
+      </div>
+      <section className="tech-services tech-section" id="expertise" aria-labelledby="expertise-heading">
+        <div className="tech-section-heading">
+          <div><p className="tech-kicker">Engineering with intent</p><h2 id="expertise-heading">Strong foundations.<br />Smarter delivery.</h2></div>
+          <p>Practical support for the systems you build, the tools you use and the teams behind them.</p>
+        </div>
+        <div className="tech-service-grid">
+          <article className="tech-service"><span className="tech-service-number">01 / ENGINEERING</span><h3>Software &<br />architecture</h3><p>Business-critical C# and .NET platforms, Azure, event-driven architecture and modernisation grounded in commercial goals.</p><a href={techBookingUrl} target="_blank" rel="noreferrer">Discuss your platform <span aria-hidden="true">↗</span></a></article>
+          <article className="tech-service"><span className="tech-service-number">02 / AI WORKFLOWS</span><h3>AI assisted<br />development</h3><p>Bring GitHub Copilot and Claude Code into everyday engineering with practical workflows, secure practices and measurable productivity gains.</p><a href={techBookingUrl} target="_blank" rel="noreferrer">Explore AI adoption <span aria-hidden="true">↗</span></a></article>
+          <article className="tech-service"><span className="tech-service-number">03 / LEADERSHIP</span><h3>Secure systems.<br />Confident teams.</h3><p>Application security, DevOps and delivery leadership. Improve deployment maturity, mentor engineers and reduce vendor dependency.</p><a href={techBookingUrl} target="_blank" rel="noreferrer">Talk about your team <span aria-hidden="true">↗</span></a></article>
+        </div>
+      </section>
+      <section className="tech-about tech-section" aria-labelledby="tech-about-heading">
+        <div className="tech-coach-photo">
+          <img src={homeAiCodingImage} alt="AI assisted software development" loading="lazy" />
+          <div className="tech-coach-label"><strong>LEE DALE</strong><span>Lead Software Engineer · CITP</span></div>
+        </div>
+        <div className="tech-about-copy">
+          <p className="tech-kicker">Experience behind the engineering</p>
+          <h2 id="tech-about-heading">Technical depth.<br /><span>Practical perspective.</span></h2>
+          {profileDescription.split("\n\n").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          <p>I am also a PhD student at Edinburgh Napier University, with a research focus on secure coding with AI assistants.</p>
+          <NavLink className="tech-text-link" to="/academic">Explore qualifications & research <span aria-hidden="true">↗</span></NavLink>
+        </div>
+      </section>
+      <section className="tech-process tech-section" aria-labelledby="credentials-heading">
+        <div className="tech-section-heading"><div><p className="tech-kicker">Always learning</p><h2 id="credentials-heading">Knowledge that<br />supports the work.</h2></div><p>Cloud, security, software design, quantum computing and AI.</p></div>
+        <div className="tech-cert-grid">
           {techCertifications.map((cert) => (
-            <div key={cert.name} className="cert-grid-item">
-              <img src={cert.src} alt={cert.name} />
+            <div key={cert.name} className="tech-cert-item">
+              <img src={cert.src} alt="" loading="lazy" />
               <span>{cert.name}</span>
             </div>
           ))}
         </div>
       </section>
-
-      <h2 className="section-heading">Side Projects</h2>
-
-      <section className="panel arcade-card">
-        <img src={leesArcadeImage} alt="Lee's Arcade" className="arcade-card-image" />
-        <div className="arcade-copy">
-          <h2>Lee's Arcade</h2>
-          <p>Game development, experiments and interactive builds.</p>
-          <a href="https://leesarcade.co.uk" target="_blank" rel="noreferrer">
-            leesarcade.co.uk &rarr;
-          </a>
+      <section className="tech-services tech-section" id="projects" aria-labelledby="projects-heading">
+        <div className="tech-section-heading"><div><p className="tech-kicker">Curiosity in practice</p><h2 id="projects-heading">Ideas built.<br />Lessons learned.</h2></div><p>Side projects, open-source tools and experiments beyond the day job.</p></div>
+        <a className="tech-arcade" href="https://leesarcade.co.uk" target="_blank" rel="noreferrer">
+          <img src={leesArcadeImage} alt="Lee's Arcade" loading="lazy" />
+          <div><h3>Lee’s Arcade <span aria-hidden="true">↗</span></h3><p>Game development, experiments and interactive builds.</p><span>Explore leesarcade.co.uk</span></div>
+        </a>
+        <div className="tech-service-grid tech-project-grid">
+          {sideProjects.map((project, index) => (
+            <article className="tech-service" key={project.url}>
+              <span className="tech-service-number">{String(index + 1).padStart(2, "0")} / PROJECT</span>
+              <h3>{project.name}</h3><p>{project.summary}</p>
+              <a href={project.url} target="_blank" rel="noreferrer">View repository <span aria-hidden="true">↗</span></a>
+            </article>
+          ))}
         </div>
       </section>
-
-      <section className="card-grid">
-        {sideProjects.map((project) => (
-          <article className="panel card-panel" key={project.url}>
-            <div className="card-head">
-              <GitHubIcon className="card-icon" />
-              <h2>{project.name}</h2>
-            </div>
-            <p>{project.summary}</p>
-            <a href={project.url} target="_blank" rel="noreferrer">
-              View repository
-            </a>
-          </article>
-        ))}
+      <section className="tech-final-cta" aria-labelledby="tech-booking-heading">
+        <p className="tech-kicker">Let’s build what’s next</p>
+        <h2 id="tech-booking-heading">A conversation.<br />A clearer way forward.</h2>
+        <p>Bring your software, architecture or AI workflow challenge. Let’s talk it through.</p>
+        <a className="tech-button" href={techBookingUrl} target="_blank" rel="noreferrer">Book a consultancy session <span aria-hidden="true">↗</span></a>
+        <span className="tech-cta-note">Video consultation · Choose a time on Calendly</span>
       </section>
-    </>
+    </div>
   );
 }
 
