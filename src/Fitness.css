@@ -671,3 +671,53 @@ body[data-theme="fitness"] {
     transform: none;
   }
 }
+
+.site-variant-fitness .topbar { flex-wrap: wrap; }
+.fitness-page-intro { background: #242820; }
+.fitness-page-intro h1 { font-size: clamp(2.5rem, 5.5vw, 5rem); line-height: 1.08; }
+.fitness-page-intro h1 em { color: var(--accent); font-style: normal; }
+.fitness-page-intro > p:last-child { max-width: 680px; margin: 28px 0 0; color: #d0d0c9; font-size: 1.1rem; }
+.fitness-single-session { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: center; gap: 48px; }
+.fitness-single-session h2 { font-size: clamp(2rem, 3.5vw, 3rem); }
+.fitness-single-session > div > p:not(.fitness-kicker):not(.fitness-price) { max-width: 600px; color: #b8bab0; }
+.fitness-landing .fitness-price { font-size: 3rem; font-weight: 600; letter-spacing: -0.05em; line-height: 1.2; margin: 24px 0 8px; }
+.fitness-price span { font-size: 1rem; font-weight: 400; letter-spacing: normal; }
+.fitness-rate-option { width: 100%; padding: 20px 0; }
+.fitness-rate-option + .fitness-rate-option { border-top: 1px solid #77796f; }
+.fitness-rate-option > strong { font-size: 0.9rem; }
+.fitness-landing .fitness-rate-option .fitness-price { margin-top: 10px; }
+.fitness-single-session .fitness-button { margin-top: 18px; }
+.fitness-package-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.fitness-package { display: flex; flex-direction: column; align-items: flex-start; border: 1px solid #c6cabe; border-top: 3px solid #a23e0c; border-radius: 4px; padding: clamp(24px, 3vw, 40px); }
+.fitness-package h3 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); line-height: 1.15; }
+.fitness-package > p { color: #5c6056; }
+.fitness-package .fitness-package-duration { margin: 0 0 24px; font-size: 0.8rem; font-weight: 600; color: #a23e0c; }
+.fitness-package .fitness-price { color: #23271f; }
+.fitness-package .fitness-package-total { color: #a23e0c; margin: 0; font-weight: 600; }
+.fitness-package ul { padding-left: 20px; margin: 0 0 28px; line-height: 1.7; }
+.fitness-package li + li { margin-top: 10px; }
+.fitness-package .fitness-button { margin-top: auto; width: 100%; }
+.fitness-package-note { max-width: 900px; margin: 32px 0 0; font-size: 0.9rem; color: #5c6056; }
+.fitness-contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); }
+.fitness-contact-grid h3 { font-size: 1.6rem; }
+.fitness-contact-grid p { color: #5c6056; }
+.fitness-contact-subheading { margin-top: 40px; }
+.fitness-contact-address { font-size: clamp(1.1rem, 2vw, 1.5rem); overflow-wrap: anywhere; }
+.fitness-enquiry { padding: clamp(22px, 3vw, 40px); border: 1px solid #c6cabe; border-radius: 4px; }
+.fitness-enquiry label { display: block; margin: 24px 0 8px; font-weight: 500; }
+.fitness-enquiry select { width: 100%; min-width: 0; padding: 14px 10px; border: 1px solid #77796f; border-radius: 4px; background: #fffefa; color: #23271f; font: inherit; }
+.fitness-enquiry select:focus-visible { outline: 3px solid #a23e0c; outline-offset: 3px; }
+.fitness-enquiry .fitness-button { margin-top: 28px; width: 100%; }
+.fitness-email-help { font-size: 0.85rem; overflow-wrap: anywhere; }
+.fitness-faq-list p a { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 980px) {
+  .site-variant-fitness .site-nav { order: 3; width: 100%; justify-content: center; }
+  .site-variant-fitness .header-actions { margin-left: auto; }
+}
+
+@media (max-width: 640px) {
+  .fitness-package-grid, .fitness-single-session, .fitness-contact-grid { grid-template-columns: 1fr; gap: 28px; }
+  .site-variant-fitness .nav-link { padding: 10px 18px; }
+  .fitness-package .fitness-button { gap: 12px; }
+}

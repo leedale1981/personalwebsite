@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { BrowserRouter, Navigate, NavLink, Route, Routes, useParams } from "react-router-dom";
+import { BrowserRouter, Navigate, NavLink, Route, Routes, useLocation, useParams } from "react-router-dom";
 import awsLogo from "./images/AWS-CloudPractitioner.png";
 import azureLogo from "./images/azure-developer-associate-600x600.png";
 import azureFundamentalsLogo from "./images/azure-fundamentals.png";
@@ -31,6 +31,7 @@ import cimspaLogo from "./images/CIMSPA-500_980978b27712b32266cf2aeaba4191ba.png
 import origymLogo from "./images/focus-awards-logo.png";
 import leesArcadeImage from "../images/leesarcade.jpg";
 import leeRunningImage from "./images/lee-dale-running.jpg";
+import { FitnessContactPage, FitnessPricingPage } from "./FitnessPages";
 
 type SiteVariant = "tech" | "fitness";
 
@@ -302,8 +303,12 @@ const siteConfigs: Record<SiteVariant, SiteConfig> = {
   fitness: {
     variant: "fitness",
     brandName: "Lee Dale Performance",
-    brandSubtitle: "Level 3 Personal Trainer | Running and Fitness Coaching",
-    navItems: [],
+    brandSubtitle: "Personal training in Colchester & online coaching",
+    navItems: [
+      { to: "/", label: "Home" },
+      { to: "/pricing", label: "Pricing" },
+      { to: "/contact", label: "Contact" }
+    ],
     showGitHub: false
   }
 };
@@ -1018,6 +1023,15 @@ function SocialLinks({ showGitHub = true }: { showGitHub?: boolean }) {
 
 function Layout({ children, site }: { children: ReactNode; site: SiteConfig }) {
   const year = useMemo(() => new Date().getFullYear(), []);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (site.variant !== "fitness") return;
+    window.scrollTo(0, 0);
+    const page = pathname === "/pricing" ? "Pricing & Packages" : pathname === "/contact" ? "Contact" : "Colchester Personal Trainer & Online Coach";
+    document.title = `${page} | Lee Dale Performance`;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", "Face-to-face personal training in Colchester, Essex, and online coaching with Lee Dale. Explore weekly coaching packages or email an enquiry.");
+  }, [pathname, site.variant]);
 
   return (
     <div className={`page-shell site-variant-${site.variant}`}>
@@ -1056,7 +1070,7 @@ function Layout({ children, site }: { children: ReactNode; site: SiteConfig }) {
 
         <footer className="footer-panel">
           <div className="footer-links">
-            <p>© {year} Lee Dale.{site.variant === "fitness" ? " Personal training. Lasting progress." : " React 19, Vite and Nginx."}</p>
+            <p>© {year} Lee Dale.{site.variant === "fitness" ? " Face-to-face coaching in Colchester · Online coaching." : " React 19, Vite and Nginx."}</p>
             <SocialLinks showGitHub={site.showGitHub} />
           </div>
         </footer>
@@ -1294,12 +1308,12 @@ function FitnessPage() {
       <section className="fitness-hero" aria-labelledby="fitness-heading">
         <img className="fitness-hero-photo" src={runningImage} alt="Athletes training with battle ropes in a gym" fetchPriority="high" />
         <div className="fitness-hero-content">
-          <p className="fitness-kicker">Personal training · Running · Mindset</p>
+          <p className="fitness-kicker">Colchester personal trainer · Online coach</p>
           <h1 id="fitness-heading">Build strength.<br />Find your stride.<br /><em>Keep going.</em></h1>
-          <p className="fitness-hero-intro">Fitness that fits your life. Practical coaching to help you move with confidence, build better habits and make progress that lasts.</p>
+          <p className="fitness-hero-intro">Face-to-face personal training in Colchester, Essex, and online coaching wherever you are. Build strength, find your running rhythm and make healthier habits part of everyday life.</p>
           <div className="fitness-hero-actions">
             <a className="fitness-button" href={fitnessBookingUrl} target="_blank" rel="noreferrer">Book a free consultation <span aria-hidden="true">↗</span></a>
-            <a className="fitness-text-link" href="#coaching">Explore the coaching <span aria-hidden="true">↓</span></a>
+            <NavLink className="fitness-text-link" to="/pricing">Explore coaching & prices <span aria-hidden="true">→</span></NavLink>
           </div>
           <p className="fitness-hero-note">Your starting point is enough. Let’s build from there.</p>
         </div>
@@ -1347,7 +1361,7 @@ function FitnessPage() {
         <div className="fitness-about-copy">
           <p className="fitness-kicker">Meet your coach</p>
           <h2 id="about-heading">Real life.<br />Real commitment.<br /><span>Lasting progress.</span></h2>
-          <p>I’m Lee, a Level 3 Personal Trainer and CIMSPA member. I help people build strength, discover running and develop habits they can stick with.</p>
+          <p>I’m Lee, a Level 3 Personal Trainer and CIMSPA member based in Colchester, Essex. I work with clients face to face in Colchester and online, helping them build strength, discover running and develop habits they can stick with.</p>
           <p>Fitness is a big part of my own life. I run for Orion Harriers running club, enjoy longer runs and train consistently throughout the year. My approach to coaching is the same: achievable steps, a clear purpose and consistency over intensity.</p>
           <div className="fitness-credentials">
             <div><img src={origymLogo} alt="Focus Awards" loading="lazy" /><span>OriGym qualified<br /><strong>Level 3 Personal Trainer</strong></span></div>
@@ -1372,6 +1386,8 @@ function FitnessPage() {
       <section className="fitness-faq fitness-section" aria-labelledby="faq-heading">
         <div><p className="fitness-kicker">Good questions</p><h2 id="faq-heading">Before you<br />take the leap.</h2></div>
         <div className="fitness-faq-list">
+          <details><summary>Where do you coach?</summary><p>I’m based in Colchester, Essex, for face-to-face coaching. I also offer online coaching, with sessions by video and a plan to follow wherever you train. We’ll agree the location or online format before you book.</p></details>
+          <details><summary>How much does coaching cost?</summary><p>Face-to-face coaching in Colchester is £40 for a 60-minute session, or £36 per week on a package. Online coaching is 25% cheaper: £30 per hour or £27 per week on a package. All packages include one 60-minute session each week and save 10% against single sessions in the same format. <NavLink to="/pricing">See all packages and total prices</NavLink>, or <NavLink to="/contact">email me with a question</NavLink>.</p></details>
           <details><summary>Do I need to be fit to get started?</summary><p>No. My coaching includes beginners and people returning to fitness. We start with your current ability and build from there.</p></details>
           <details><summary>What happens in the free consultation?</summary><p>It’s an initial video conversation about your goals, fitness background and schedule. We’ll talk through your starting point and practical next steps.</p></details>
           <details><summary>Can you help me get into running?</summary><p>Yes. I coach beginner runners with structured, achievable plans, whether your goal is your first 5K or building a regular running habit.</p></details>
@@ -1821,9 +1837,7 @@ function App() {
 
   useEffect(() => {
     document.body.dataset.theme = variant;
-    document.title = variant === "fitness"
-      ? "Lee Dale Performance | Level 3 Personal Trainer"
-      : "Lee Dale | Lead Software Engineer";
+    if (variant === "tech") document.title = "Lee Dale | Lead Software Engineer";
 
     return () => {
       delete document.body.dataset.theme;
@@ -1837,6 +1851,8 @@ function App() {
           {variant === "fitness" ? (
             <>
               <Route path="/" element={<FitnessPage />} />
+              <Route path="/pricing" element={<FitnessPricingPage />} />
+              <Route path="/contact" element={<FitnessContactPage bookingUrl={fitnessBookingUrl} />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </>
           ) : (
